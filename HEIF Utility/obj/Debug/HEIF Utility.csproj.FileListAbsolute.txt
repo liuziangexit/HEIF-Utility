@@ -1,0 +1,14 @@
+C:\Users\Administrator\source\repos\HEIF Utility\bin\Debug\HEIF Utility.exe.config
+C:\Users\Administrator\source\repos\HEIF Utility\bin\Debug\HEIF Utility.exe
+C:\Users\Administrator\source\repos\HEIF Utility\bin\Debug\HEIF Utility.pdb
+C:\Users\Administrator\source\repos\HEIF Utility\obj\Debug\HEIF Utility.csprojResolveAssemblyReference.cache
+C:\Users\Administrator\source\repos\HEIF Utility\obj\Debug\HEIF_Utility.Properties.Resources.resources
+C:\Users\Administrator\source\repos\HEIF Utility\obj\Debug\HEIF Utility.csproj.GenerateResource.Cache
+C:\Users\Administrator\source\repos\HEIF Utility\obj\Debug\HEIF Utility.csproj.CoreCompileInputs.cache
+C:\Users\Administrator\source\repos\HEIF Utility\obj\Debug\HEIF Utility.exe
+C:\Users\Administrator\source\repos\HEIF Utility\obj\Debug\HEIF Utility.pdb
+C:\Users\Administrator\source\repos\HEIF Utility\obj\Debug\HEIF_Utility.MainWindow.resources
+C:\Users\Administrator\source\repos\HEIF Utility\obj\Debug\HEIF_Utility.About.resources
+C:\Users\Administrator\source\repos\HEIF Utility\obj\Debug\HEIF_Utility.Credit.resources
+C:\Users\Administrator\source\repos\HEIF Utility\obj\Debug\HEIF_Utility.sc.resources
+C:\Users\Administrator\source\repos\HEIF Utility\obj\Debug\HEIF_Utility.LICENSE.resources
