@@ -64,7 +64,7 @@ namespace HEIF_Utility
             try
             {
                 var box = new SaveFileDialog();
-                box.Filter = "PNG|*.png|JPG|*.jpg|All Files|*.*";
+                box.Filter = "PNG|*.png|JPG|*.jpg";
                 box.ShowDialog();
                 if (box.FileName == "") return;
 

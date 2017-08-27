@@ -37,13 +37,13 @@
             this.richTextBox1.DetectUrls = false;
             this.richTextBox1.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.richTextBox1.ForeColor = System.Drawing.Color.SlateBlue;
-            this.richTextBox1.Location = new System.Drawing.Point(23, 30);
+            this.richTextBox1.Location = new System.Drawing.Point(35, 30);
             this.richTextBox1.Name = "richTextBox1";
             this.richTextBox1.ReadOnly = true;
             this.richTextBox1.ScrollBars = System.Windows.Forms.RichTextBoxScrollBars.None;
-            this.richTextBox1.Size = new System.Drawing.Size(247, 43);
+            this.richTextBox1.Size = new System.Drawing.Size(220, 43);
             this.richTextBox1.TabIndex = 0;
-            this.richTextBox1.Text = "https://github.com/liuziangexit/HEIF-Utility-CommandLineTool";
+            this.richTextBox1.Text = "https://github.com/liuziangexit/HEIF-Utility";
             // 
             // sc
             // 
