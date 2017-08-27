@@ -35,7 +35,6 @@ namespace HEIF_Utility
 
         private void MainWindow_Load(object sender, EventArgs e)
         {
-            return;
             if (!(System.IO.File.Exists("HUD.exe") && System.IO.File.Exists("ffmpeg.exe")))
             {
                 MessageBox.Show("缺少核心组件，HEIF 实用工具无法启动。");
@@ -48,6 +47,7 @@ namespace HEIF_Utility
             try
             {
                 var filepicker = new OpenFileDialog();
+                filepicker.Multiselect = false;
                 filepicker.ShowDialog();
                 if (filepicker.FileName == "") return;
                 filename = filepicker.FileName;
@@ -184,6 +184,12 @@ namespace HEIF_Utility
             {
                 e.Effect = DragDropEffects.None;
             }
+        }
+
+        private void 批量转换ToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            var box = new BC();
+            box.ShowDialog();
         }
     }
 }

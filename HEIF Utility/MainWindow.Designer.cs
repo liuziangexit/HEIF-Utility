@@ -33,8 +33,10 @@
             this.选择HEIFToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.详细信息ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.另存为ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.关于ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.更多ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.关于ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.批量转换ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
@@ -43,7 +45,7 @@
             // 
             this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.文件ToolStripMenuItem,
-            this.关于ToolStripMenuItem});
+            this.更多ToolStripMenuItem});
             this.menuStrip1.LayoutStyle = System.Windows.Forms.ToolStripLayoutStyle.HorizontalStackWithOverflow;
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
@@ -65,15 +67,15 @@
             // 选择HEIFToolStripMenuItem
             // 
             this.选择HEIFToolStripMenuItem.Name = "选择HEIFToolStripMenuItem";
-            this.选择HEIFToolStripMenuItem.Size = new System.Drawing.Size(150, 22);
-            this.选择HEIFToolStripMenuItem.Text = "打开HEIF图片";
+            this.选择HEIFToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.选择HEIFToolStripMenuItem.Text = "打开HEIF";
             this.选择HEIFToolStripMenuItem.Click += new System.EventHandler(this.选择HEIFToolStripMenuItem_Click);
             // 
             // 详细信息ToolStripMenuItem
             // 
             this.详细信息ToolStripMenuItem.Enabled = false;
             this.详细信息ToolStripMenuItem.Name = "详细信息ToolStripMenuItem";
-            this.详细信息ToolStripMenuItem.Size = new System.Drawing.Size(150, 22);
+            this.详细信息ToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
             this.详细信息ToolStripMenuItem.Text = "详细信息";
             this.详细信息ToolStripMenuItem.Click += new System.EventHandler(this.详细信息ToolStripMenuItem_Click);
             // 
@@ -81,16 +83,9 @@
             // 
             this.另存为ToolStripMenuItem.Enabled = false;
             this.另存为ToolStripMenuItem.Name = "另存为ToolStripMenuItem";
-            this.另存为ToolStripMenuItem.Size = new System.Drawing.Size(150, 22);
+            this.另存为ToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
             this.另存为ToolStripMenuItem.Text = "导出为";
             this.另存为ToolStripMenuItem.Click += new System.EventHandler(this.另存为ToolStripMenuItem_Click);
-            // 
-            // 关于ToolStripMenuItem
-            // 
-            this.关于ToolStripMenuItem.Name = "关于ToolStripMenuItem";
-            this.关于ToolStripMenuItem.Size = new System.Drawing.Size(44, 21);
-            this.关于ToolStripMenuItem.Text = "关于";
-            this.关于ToolStripMenuItem.Click += new System.EventHandler(this.关于ToolStripMenuItem_Click);
             // 
             // pictureBox1
             // 
@@ -106,6 +101,29 @@
             this.pictureBox1.TabStop = false;
             this.pictureBox1.DragDrop += new System.Windows.Forms.DragEventHandler(this.MainWindow_DragDrop);
             this.pictureBox1.DragEnter += new System.Windows.Forms.DragEventHandler(this.pictureBox1_DragEnter);
+            // 
+            // 更多ToolStripMenuItem
+            // 
+            this.更多ToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.批量转换ToolStripMenuItem,
+            this.关于ToolStripMenuItem});
+            this.更多ToolStripMenuItem.Name = "更多ToolStripMenuItem";
+            this.更多ToolStripMenuItem.Size = new System.Drawing.Size(44, 21);
+            this.更多ToolStripMenuItem.Text = "更多";
+            // 
+            // 关于ToolStripMenuItem
+            // 
+            this.关于ToolStripMenuItem.Name = "关于ToolStripMenuItem";
+            this.关于ToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.关于ToolStripMenuItem.Text = "关于";
+            this.关于ToolStripMenuItem.Click += new System.EventHandler(this.关于ToolStripMenuItem_Click);
+            // 
+            // 批量转换ToolStripMenuItem
+            // 
+            this.批量转换ToolStripMenuItem.Name = "批量转换ToolStripMenuItem";
+            this.批量转换ToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.批量转换ToolStripMenuItem.Text = "批量转换";
+            this.批量转换ToolStripMenuItem.Click += new System.EventHandler(this.批量转换ToolStripMenuItem_Click);
             // 
             // MainWindow
             // 
@@ -139,8 +157,10 @@
         private System.Windows.Forms.ToolStripMenuItem 选择HEIFToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem 详细信息ToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem 另存为ToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem 关于ToolStripMenuItem;
         private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.ToolStripMenuItem 更多ToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem 关于ToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem 批量转换ToolStripMenuItem;
     }
 }
 
