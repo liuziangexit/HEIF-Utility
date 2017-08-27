@@ -124,7 +124,7 @@
             this.label6.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.label6.Size = new System.Drawing.Size(115, 17);
             this.label6.TabIndex = 5;
-            this.label6.Text = "Version 201708272";
+            this.label6.Text = "Version 201708273";
             this.label6.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // label7

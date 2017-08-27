@@ -20,6 +20,13 @@ namespace HEIF_Utility
             this.pictureBox1.AllowDrop = true;
         }
 
+        public MainWindow(string filename)
+        {
+            InitializeComponent();
+            this.pictureBox1.AllowDrop = true;
+            open(filename);
+        }
+
         private void 关于ToolStripMenuItem_Click(object sender, EventArgs e)
         {
             var box = new About();
@@ -28,6 +35,7 @@ namespace HEIF_Utility
 
         private void MainWindow_Load(object sender, EventArgs e)
         {
+            return;
             if (!(System.IO.File.Exists("HUD.exe") && System.IO.File.Exists("ffmpeg.exe")))
             {
                 MessageBox.Show("缺少核心组件，HEIF 实用工具无法启动。");
@@ -63,14 +71,14 @@ namespace HEIF_Utility
                 if (box.FileName == "") return;
 
                 System.Diagnostics.Process p = new System.Diagnostics.Process();
-                p.StartInfo.FileName = "cmd.exe";
+                p.StartInfo.FileName = Application.StartupPath + "//ffmpeg.exe";
                 p.StartInfo.UseShellExecute = false;
                 p.StartInfo.RedirectStandardInput = true;
                 p.StartInfo.RedirectStandardOutput = true;
                 p.StartInfo.RedirectStandardError = true;
                 p.StartInfo.CreateNoWindow = true;
-                p.Start();
-                p.StandardInput.WriteLine("ffmpeg -y -i out.265 " + box.FileName + "&exit");
+                p.StartInfo.Arguments = "-y -i " + Application.StartupPath + "//out.265 " + box.FileName;
+                p.Start();                
                 p.StandardInput.AutoFlush = true;
                 p.WaitForExit();
                 p.Close();
@@ -99,51 +107,41 @@ namespace HEIF_Utility
             {
                 if (openthis == "") return;
                 filename = openthis;
-
+                
                 try
                 {
-                    System.IO.File.Delete("src.heic");
+                    System.IO.File.Delete(Application.StartupPath + "//peek.jpg");
                 }
                 catch (Exception)
                 { }
                 try
                 {
-                    System.IO.File.Delete("peek.jpg");
+                    System.IO.File.Delete(Application.StartupPath + "//out.265");
                 }
                 catch (Exception)
                 { }
-                try
-                {
-                    System.IO.File.Delete("out.265");
-                }
-                catch (Exception)
-                { }
-
-                try
-                {
-                    System.IO.File.Copy(openthis, "src.heic");
-                }
-                catch (Exception)
-                {
-                    MessageBox.Show("无法复制文件到临时目录。");
-                    return;
-                }
-
+                
                 System.Diagnostics.Process p = new System.Diagnostics.Process();
-                p.StartInfo.FileName = "cmd.exe";
+                p.StartInfo.FileName = Application.StartupPath + "//HUD.exe";
                 p.StartInfo.UseShellExecute = false;
                 p.StartInfo.RedirectStandardInput = true;
                 p.StartInfo.RedirectStandardOutput = true;
                 p.StartInfo.RedirectStandardError = true;
                 p.StartInfo.CreateNoWindow = true;
+                p.StartInfo.Arguments = openthis + " " + Application.StartupPath + "//out.265";
                 p.Start();
-                p.StandardInput.WriteLine("HUD src.heic out.265");
-                p.StandardInput.WriteLine("ffmpeg -y -i out.265 peek.jpg&exit");
                 p.StandardInput.AutoFlush = true;
                 p.WaitForExit();
                 p.Close();
 
-                Stream s = new FileStream("peek.jpg", FileMode.Open, FileAccess.Read, FileShare.Read);
+                p.StartInfo.FileName = Application.StartupPath + "//ffmpeg.exe";
+                p.StartInfo.Arguments = "-y -i " + Application.StartupPath + "//out.265 " + Application.StartupPath + "//peek.jpg";
+                p.Start();
+                p.StandardInput.AutoFlush = true;
+                p.WaitForExit();
+                p.Close();
+
+                Stream s = new FileStream(Application.StartupPath + "//peek.jpg", FileMode.Open, FileAccess.Read, FileShare.Read);
                 Image img = new Bitmap(s);
                 pictureBox1.Image = img;
                 s.Close();
