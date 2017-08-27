@@ -119,12 +119,12 @@
             this.label6.Font = new System.Drawing.Font("Calibri Light", 10.5F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label6.ForeColor = System.Drawing.Color.DarkGray;
             this.label6.ImageAlign = System.Drawing.ContentAlignment.TopLeft;
-            this.label6.Location = new System.Drawing.Point(206, 130);
+            this.label6.Location = new System.Drawing.Point(199, 130);
             this.label6.Name = "label6";
             this.label6.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.label6.Size = new System.Drawing.Size(108, 17);
+            this.label6.Size = new System.Drawing.Size(115, 17);
             this.label6.TabIndex = 5;
-            this.label6.Text = "Version 20170827";
+            this.label6.Text = "Version 201708272";
             this.label6.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // label7
