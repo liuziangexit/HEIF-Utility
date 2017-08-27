@@ -17,12 +17,7 @@ namespace HEIF_Utility
         public MainWindow()
         {
             InitializeComponent();
-        }
-
-        public MainWindow(string openthis)
-        {
-            InitializeComponent();
-            open(openthis);
+            this.pictureBox1.AllowDrop = true;
         }
 
         private void 关于ToolStripMenuItem_Click(object sender, EventArgs e)
@@ -38,7 +33,6 @@ namespace HEIF_Utility
                 MessageBox.Show("缺少核心组件，HEIF 实用工具无法启动。");
                 Environment.Exit(0);
             }
-            this.pictureBox1.AllowDrop = true;
         }
 
         private void 选择HEIFToolStripMenuItem_Click(object sender, EventArgs e)

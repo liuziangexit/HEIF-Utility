@@ -12,7 +12,7 @@ namespace HEIF_Utility
         /// 应用程序的主入口点。
         /// </summary>
         [STAThread]
-        static void Main(string[] args)
+        static void Main()
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
@@ -34,9 +34,9 @@ namespace HEIF_Utility
             }
             catch (Exception)
             { }
-            if (args.Length != 0)
-                Application.Run(new MainWindow(args[0]));
-            else
+            //if (args.Length != 0)
+            //    Application.Run(new MainWindow(args[0]));
+            //else
                 Application.Run(new MainWindow());
             try
             {
