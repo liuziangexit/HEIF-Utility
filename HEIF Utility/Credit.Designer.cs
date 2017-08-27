@@ -37,16 +37,16 @@
             this.label1.Font = new System.Drawing.Font("Calibri Light", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.Location = new System.Drawing.Point(0, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(215, 118);
+            this.label1.Size = new System.Drawing.Size(215, 135);
             this.label1.TabIndex = 0;
-            this.label1.Text = "DiNgO_ZY\r\nGiGA_F\r\niXerol\r\nnymaxmo\r\nyohhoy";
+            this.label1.Text = "DiNgO_ZY\r\nGiGA_F\r\niXerol\r\nlinwangjia\r\nnymaxmo\r\nyohhoy";
             this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // Credit
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(215, 118);
+            this.ClientSize = new System.Drawing.Size(215, 135);
             this.Controls.Add(this.label1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
             this.Name = "Credit";
