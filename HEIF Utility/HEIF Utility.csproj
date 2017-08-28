@@ -88,6 +88,12 @@
     <Compile Include="Confirm.Designer.cs">
       <DependentUpon>Confirm.cs</DependentUpon>
     </Compile>
+    <Compile Include="pb.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="pb.Designer.cs">
+      <DependentUpon>pb.cs</DependentUpon>
+    </Compile>
     <Compile Include="Credit.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -122,6 +128,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Confirm.resx">
       <DependentUpon>Confirm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="pb.resx">
+      <DependentUpon>pb.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Credit.resx">
       <DependentUpon>Credit.cs</DependentUpon>

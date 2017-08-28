@@ -47,5 +47,11 @@ namespace HEIF_Utility
         {
             MessageBox.Show("Email: liuziang@liuziangexit.com");
         }
+
+        private void label10_Click(object sender, EventArgs e)
+        {
+            var box = new pb();
+            box.ShowDialog();
+        }
     }
 }

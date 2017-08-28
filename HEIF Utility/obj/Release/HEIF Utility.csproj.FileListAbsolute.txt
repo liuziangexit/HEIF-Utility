@@ -13,3 +13,5 @@ C:\Users\Administrator\source\repos\HEIF Utility\obj\Release\HEIF Utility.exe
 C:\Users\Administrator\source\repos\HEIF Utility\obj\Release\HEIF Utility.pdb
 C:\Users\Administrator\source\repos\HEIF Utility\obj\Release\HEIF_Utility.BC.resources
 C:\Users\Administrator\source\repos\HEIF Utility\obj\Release\HEIF_Utility.Confirm.resources
+C:\Users\Administrator\source\repos\HEIF Utility\obj\Release\HEIF Utility.csprojResolveAssemblyReference.cache
+C:\Users\Administrator\source\repos\HEIF Utility\obj\Release\HEIF_Utility.pb.resources
