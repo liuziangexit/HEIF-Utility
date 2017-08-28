@@ -35,7 +35,7 @@ namespace HEIF_Utility
 
         private void MainWindow_Load(object sender, EventArgs e)
         {
-            if (!(System.IO.File.Exists("HUD.exe") && System.IO.File.Exists("ffmpeg.exe")))
+            if (!(System.IO.File.Exists(Application.StartupPath + "\\HUD.exe") || !System.IO.File.Exists(Application.StartupPath + "ffmpeg.exe")))
             {
                 MessageBox.Show("缺少核心组件，HEIF 实用工具无法启动。");
                 Environment.Exit(0);
@@ -71,13 +71,13 @@ namespace HEIF_Utility
                 if (box.FileName == "") return;
 
                 System.Diagnostics.Process p = new System.Diagnostics.Process();
-                p.StartInfo.FileName = Application.StartupPath + "//ffmpeg.exe";
+                p.StartInfo.FileName = Application.StartupPath + "\\ffmpeg.exe";
                 p.StartInfo.UseShellExecute = false;
                 p.StartInfo.RedirectStandardInput = true;
                 p.StartInfo.RedirectStandardOutput = true;
                 p.StartInfo.RedirectStandardError = true;
                 p.StartInfo.CreateNoWindow = true;
-                p.StartInfo.Arguments = "-y -i " + Application.StartupPath + "//out.265 " + box.FileName;
+                p.StartInfo.Arguments = "-y -i " + Application.StartupPath + "\\out.265 " + box.FileName;
                 p.Start();                
                 p.StandardInput.AutoFlush = true;
                 p.WaitForExit();
@@ -110,38 +110,38 @@ namespace HEIF_Utility
                 
                 try
                 {
-                    System.IO.File.Delete(Application.StartupPath + "//peek.jpg");
+                    System.IO.File.Delete(Application.StartupPath + "\\peek.jpg");
                 }
                 catch (Exception)
                 { }
                 try
                 {
-                    System.IO.File.Delete(Application.StartupPath + "//out.265");
+                    System.IO.File.Delete(Application.StartupPath + "\\out.265");
                 }
                 catch (Exception)
                 { }
                 
                 System.Diagnostics.Process p = new System.Diagnostics.Process();
-                p.StartInfo.FileName = Application.StartupPath + "//HUD.exe";
+                p.StartInfo.FileName = Application.StartupPath + "\\HUD.exe";
                 p.StartInfo.UseShellExecute = false;
                 p.StartInfo.RedirectStandardInput = true;
                 p.StartInfo.RedirectStandardOutput = true;
                 p.StartInfo.RedirectStandardError = true;
                 p.StartInfo.CreateNoWindow = true;
-                p.StartInfo.Arguments = openthis + " " + Application.StartupPath + "//out.265";
+                p.StartInfo.Arguments = "\"" + openthis + "\" " + "\"" + Application.StartupPath + "\\out.265" + "\"";
                 p.Start();
                 p.StandardInput.AutoFlush = true;
                 p.WaitForExit();
                 p.Close();
 
-                p.StartInfo.FileName = Application.StartupPath + "//ffmpeg.exe";
-                p.StartInfo.Arguments = "-y -i " + Application.StartupPath + "//out.265 " + Application.StartupPath + "//peek.jpg";
+                p.StartInfo.FileName = Application.StartupPath + "\\ffmpeg.exe";
+                p.StartInfo.Arguments = "-y -i " + "\"" + Application.StartupPath + "\\out.265\" " + "\"" + Application.StartupPath + "\\peek.jpg\"";
                 p.Start();
                 p.StandardInput.AutoFlush = true;
                 p.WaitForExit();
                 p.Close();
 
-                Stream s = new FileStream(Application.StartupPath + "//peek.jpg", FileMode.Open, FileAccess.Read, FileShare.Read);
+                Stream s = new FileStream(Application.StartupPath + "\\peek.jpg", FileMode.Open, FileAccess.Read, FileShare.Read);
                 Image img = new Bitmap(s);
                 pictureBox1.Image = img;
                 s.Close();
