@@ -47,6 +47,7 @@ namespace HEIF_Utility
             try
             {
                 var filepicker = new OpenFileDialog();
+                filepicker.Title = "打开HEIF";
                 filepicker.Multiselect = false;
                 filepicker.ShowDialog();
                 if (filepicker.FileName == "") return;
@@ -56,7 +57,8 @@ namespace HEIF_Utility
             }
             catch (Exception ex)
             {
-                MessageBox.Show(ex.Message);
+                //MessageBox.Show(ex.Message);
+                MessageBox.Show("无法打开此文件。");
                 return;
             }
         }
@@ -66,6 +68,7 @@ namespace HEIF_Utility
             try
             {
                 var box = new SaveFileDialog();
+                box.Title = "保存";
                 box.Filter = "PNG|*.png|JPG|*.jpg";
                 box.ShowDialog();
                 if (box.FileName == "") return;
@@ -77,7 +80,7 @@ namespace HEIF_Utility
                 p.StartInfo.RedirectStandardOutput = true;
                 p.StartInfo.RedirectStandardError = true;
                 p.StartInfo.CreateNoWindow = true;
-                p.StartInfo.Arguments = "-y -i " + Application.StartupPath + "\\out.265 " + box.FileName;
+                p.StartInfo.Arguments = "-y -i \"" + Application.StartupPath + "\\out.265\" \"" + box.FileName + "\"";
                 p.Start();                
                 p.StandardInput.AutoFlush = true;
                 p.WaitForExit();
@@ -85,12 +88,12 @@ namespace HEIF_Utility
 
                 if (System.IO.File.Exists(box.FileName))
                 {
-                    MessageBox.Show("成功导出到" + box.FileName);
+                    MessageBox.Show("成功保存到 " + box.FileName);
                     return;
                 }
                 else
                 {
-                    MessageBox.Show("无法导出到" + box.FileName);
+                    MessageBox.Show("无法保存到 " + box.FileName);
                     return;
                 }
             }
@@ -151,18 +154,23 @@ namespace HEIF_Utility
             }
             catch (Exception ex)
             {
-                MessageBox.Show(ex.Message);
+                //MessageBox.Show(ex.Message);
+                MessageBox.Show("无法打开此文件。");
                 return;
             }
         }
 
         private void 详细信息ToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            var fi = new FileInfo(filename);
-            fi.OpenRead();
+            try
+            {
+                var fi = new FileInfo(filename);
+                fi.OpenRead();
 
-            MessageBox.Show("文件名: " + fi.Name + "\r\n创建日期: " + fi.CreationTime.ToLongDateString() + " " + fi.CreationTime.ToLongTimeString() +
-                "\r\n大小: " + fi.Length.ToString() + " byte\r\n分辨率: " + pictureBox1.Image.Width + "x" + pictureBox1.Image.Height);
+                MessageBox.Show("文件名: " + fi.Name + "\r\n创建日期: " + fi.CreationTime.ToLongDateString() + " " + fi.CreationTime.ToLongTimeString() +
+                    "\r\n大小: " + fi.Length.ToString() + " byte\r\n分辨率: " + pictureBox1.Image.Width + "x" + pictureBox1.Image.Height);
+            }
+            catch (Exception) { }
         }
 
         private void MainWindow_DragDrop(object sender, DragEventArgs e)

@@ -60,7 +60,7 @@ namespace HEIF_Utility
         {
             try
             {
-                if (button3.Text == "保存")
+                if (button3.Text == "保存脚本")
                 {
                     var SFD = new SaveFileDialog();
                     SFD.Filter = "Windows 命令行脚本|*.bat";
@@ -69,7 +69,7 @@ namespace HEIF_Utility
                         return;
                     File.WriteAllText(SFD.FileName, textBox1.Text, Encoding.Default);
                     Close();
-                    MessageBox.Show("脚本已保存到" + SFD.FileName + "，双击该文件来开始批量转换。");
+                    MessageBox.Show("脚本已保存到 " + SFD.FileName + "，双击该文件来开始批量转换。");
                     return;
                 }
                 var box = new Confirm();
@@ -84,7 +84,7 @@ namespace HEIF_Utility
                 make_bat();
                 box.Close();
                 textBox1.Visible = true;
-                button3.Text = "保存";
+                button3.Text = "保存脚本";
             }
             catch (Exception) { }
         }

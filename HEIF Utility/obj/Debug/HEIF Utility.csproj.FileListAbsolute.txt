@@ -13,3 +13,4 @@ C:\Users\Administrator\source\repos\HEIF Utility\obj\Debug\HEIF_Utility.sc.resou
 C:\Users\Administrator\source\repos\HEIF Utility\obj\Debug\HEIF_Utility.LICENSE.resources
 C:\Users\Administrator\source\repos\HEIF Utility\obj\Debug\HEIF_Utility.BC.resources
 C:\Users\Administrator\source\repos\HEIF Utility\obj\Debug\HEIF_Utility.Confirm.resources
+C:\Users\Administrator\source\repos\HEIF Utility\obj\Debug\HEIF_Utility.pb.resources

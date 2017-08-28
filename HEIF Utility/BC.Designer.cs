@@ -127,15 +127,15 @@
             this.label4.ForeColor = System.Drawing.Color.DarkGray;
             this.label4.Location = new System.Drawing.Point(12, 138);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(329, 86);
+            this.label4.Size = new System.Drawing.Size(329, 32);
             this.label4.TabIndex = 7;
-            this.label4.Text = "源文件夹中的所有文件会被转换为JPG/PNG格式，然后保存到输出文件夹中。\r\n\r\n设定好上面的选项并确定无误后，请点击“生成脚本”。";
+            this.label4.Text = "设定好上面的选项后，请点击“生成脚本”。";
             this.label4.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // button3
             // 
             this.button3.Enabled = false;
-            this.button3.Location = new System.Drawing.Point(266, 227);
+            this.button3.Location = new System.Drawing.Point(266, 177);
             this.button3.Name = "button3";
             this.button3.Size = new System.Drawing.Size(75, 23);
             this.button3.TabIndex = 8;
@@ -153,7 +153,8 @@
             this.textBox1.Multiline = true;
             this.textBox1.Name = "textBox1";
             this.textBox1.ReadOnly = true;
-            this.textBox1.Size = new System.Drawing.Size(329, 211);
+            this.textBox1.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
+            this.textBox1.Size = new System.Drawing.Size(329, 158);
             this.textBox1.TabIndex = 9;
             this.textBox1.Visible = false;
             this.textBox1.Enter += new System.EventHandler(this.textBox1_Enter);
@@ -162,7 +163,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(353, 264);
+            this.ClientSize = new System.Drawing.Size(353, 212);
             this.Controls.Add(this.textBox1);
             this.Controls.Add(this.button3);
             this.Controls.Add(this.label4);
