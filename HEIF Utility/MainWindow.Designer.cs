@@ -60,6 +60,7 @@
             this.选择HEIFToolStripMenuItem,
             this.详细信息ToolStripMenuItem,
             this.另存为ToolStripMenuItem});
+            this.文件ToolStripMenuItem.ForeColor = System.Drawing.Color.Black;
             this.文件ToolStripMenuItem.Name = "文件ToolStripMenuItem";
             this.文件ToolStripMenuItem.Size = new System.Drawing.Size(44, 21);
             this.文件ToolStripMenuItem.Text = "文件";
@@ -92,6 +93,7 @@
             this.更多ToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.批量转换ToolStripMenuItem,
             this.关于ToolStripMenuItem});
+            this.更多ToolStripMenuItem.ForeColor = System.Drawing.Color.Black;
             this.更多ToolStripMenuItem.Name = "更多ToolStripMenuItem";
             this.更多ToolStripMenuItem.Size = new System.Drawing.Size(44, 21);
             this.更多ToolStripMenuItem.Text = "更多";
@@ -99,14 +101,14 @@
             // 批量转换ToolStripMenuItem
             // 
             this.批量转换ToolStripMenuItem.Name = "批量转换ToolStripMenuItem";
-            this.批量转换ToolStripMenuItem.Size = new System.Drawing.Size(124, 22);
+            this.批量转换ToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
             this.批量转换ToolStripMenuItem.Text = "批量转换";
             this.批量转换ToolStripMenuItem.Click += new System.EventHandler(this.批量转换ToolStripMenuItem_Click);
             // 
             // 关于ToolStripMenuItem
             // 
             this.关于ToolStripMenuItem.Name = "关于ToolStripMenuItem";
-            this.关于ToolStripMenuItem.Size = new System.Drawing.Size(124, 22);
+            this.关于ToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
             this.关于ToolStripMenuItem.Text = "关于";
             this.关于ToolStripMenuItem.Click += new System.EventHandler(this.关于ToolStripMenuItem_Click);
             // 

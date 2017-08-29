@@ -120,12 +120,12 @@
             this.label6.Font = new System.Drawing.Font("Calibri Light", 10.5F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label6.ForeColor = System.Drawing.Color.DarkGray;
             this.label6.ImageAlign = System.Drawing.ContentAlignment.TopLeft;
-            this.label6.Location = new System.Drawing.Point(243, 133);
+            this.label6.Location = new System.Drawing.Point(250, 133);
             this.label6.Name = "label6";
             this.label6.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.label6.Size = new System.Drawing.Size(71, 17);
+            this.label6.Size = new System.Drawing.Size(64, 17);
             this.label6.TabIndex = 5;
-            this.label6.Text = "201708282";
+            this.label6.Text = "20170829";
             this.label6.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // label7
@@ -140,7 +140,7 @@
             this.label7.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.label7.Size = new System.Drawing.Size(81, 17);
             this.label7.TabIndex = 6;
-            this.label7.Text = "Public Beta 4";
+            this.label7.Text = "Public Beta 5";
             this.label7.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // label8
