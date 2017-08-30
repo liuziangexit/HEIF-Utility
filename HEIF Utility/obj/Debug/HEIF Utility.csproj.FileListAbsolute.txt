@@ -17,7 +17,6 @@ C:\Users\Administrator\source\repos\HEIF Utility\obj\Debug\HEIF_Utility.pb.resou
 E:\OneDrive\Dev\Projects\HEIF Utility\bin\Debug\HEIF Utility.exe.config
 E:\OneDrive\Dev\Projects\HEIF Utility\bin\Debug\HEIF Utility.exe
 E:\OneDrive\Dev\Projects\HEIF Utility\bin\Debug\HEIF Utility.pdb
-E:\OneDrive\Dev\Projects\HEIF Utility\obj\Debug\HEIF Utility.csprojResolveAssemblyReference.cache
 E:\OneDrive\Dev\Projects\HEIF Utility\obj\Debug\HEIF_Utility.About.resources
 E:\OneDrive\Dev\Projects\HEIF Utility\obj\Debug\HEIF_Utility.BC.resources
 E:\OneDrive\Dev\Projects\HEIF Utility\obj\Debug\HEIF_Utility.Confirm.resources

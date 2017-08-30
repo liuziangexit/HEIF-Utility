@@ -57,11 +57,15 @@ namespace HEIF_Utility
 
         private void MainWindow_Load(object sender, EventArgs e)
         {
-            if (!(System.IO.File.Exists(Application.StartupPath + "\\HUD.exe") || !System.IO.File.Exists(Application.StartupPath + "ffmpeg.exe")))
+            try
             {
-                MessageBox.Show("缺少核心组件，HEIF 实用工具无法启动。");
-                Environment.Exit(0);
+                if (!System.IO.File.Exists(Application.StartupPath + "\\HUD.exe") || !System.IO.File.Exists(Application.StartupPath + "\\ffmpeg.exe"))
+                {
+                    MessageBox.Show("缺少核心组件，HEIF 实用工具无法启动。");
+                    Environment.Exit(0);
+                }
             }
+            catch (Exception) { }
         }
 
         private void 选择HEIFToolStripMenuItem_Click(object sender, EventArgs e)
