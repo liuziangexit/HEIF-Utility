@@ -14,16 +14,38 @@ namespace HEIF_Utility
     public partial class MainWindow : Form
     {
         private string filename;
-        public MainWindow()
+        public MainWindow(Size s)
         {
             InitializeComponent();
-            this.pictureBox1.AllowDrop = true;
+            var backup = this.Size;
+            try
+            {
+                if (s.Height <= 0 || s.Width <= 0)
+                    throw new Exception();
+                this.Size = s;
+            }
+            catch (Exception)
+            {
+                this.Size = backup;
+            }
+            this.pictureBox1.AllowDrop = true;            
         }
 
-        public MainWindow(string filename)
+        public MainWindow(string filename, Size s)
         {
             InitializeComponent();
-            this.pictureBox1.AllowDrop = true;
+            var backup = this.Size;
+            try
+            {
+                if (s.Height <= 0 || s.Width <= 0)
+                    throw new Exception();
+                this.Size = s;
+            }
+            catch (Exception)
+            {
+                this.Size = backup;
+            }
+            this.pictureBox1.AllowDrop = true;            
             open(filename);
         }
 
@@ -198,6 +220,23 @@ namespace HEIF_Utility
         {
             var box = new BC();
             box.ShowDialog();
+        }
+
+        private void MainWindow_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            try
+            {
+                System.IO.File.WriteAllText(Application.StartupPath + "//MainWindowSize", this.Size.Width.ToString() + "\r\n" + this.Size.Height.ToString());
+            }
+            catch (Exception)
+            {
+                try
+                {
+                    System.IO.File.Delete(Application.StartupPath + "//MainWindowSize");
+                }
+                catch (Exception) {
+                }
+            }
         }
     }
 }

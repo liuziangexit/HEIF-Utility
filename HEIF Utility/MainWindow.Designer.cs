@@ -49,7 +49,7 @@
             this.menuStrip1.LayoutStyle = System.Windows.Forms.ToolStripLayoutStyle.HorizontalStackWithOverflow;
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(504, 25);
+            this.menuStrip1.Size = new System.Drawing.Size(609, 25);
             this.menuStrip1.TabIndex = 0;
             this.menuStrip1.Text = "menuStrip1";
             // 
@@ -68,7 +68,7 @@
             // 选择HEIFToolStripMenuItem
             // 
             this.选择HEIFToolStripMenuItem.Name = "选择HEIFToolStripMenuItem";
-            this.选择HEIFToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.选择HEIFToolStripMenuItem.Size = new System.Drawing.Size(126, 22);
             this.选择HEIFToolStripMenuItem.Text = "打开HEIF";
             this.选择HEIFToolStripMenuItem.Click += new System.EventHandler(this.选择HEIFToolStripMenuItem_Click);
             // 
@@ -76,7 +76,7 @@
             // 
             this.详细信息ToolStripMenuItem.Enabled = false;
             this.详细信息ToolStripMenuItem.Name = "详细信息ToolStripMenuItem";
-            this.详细信息ToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.详细信息ToolStripMenuItem.Size = new System.Drawing.Size(126, 22);
             this.详细信息ToolStripMenuItem.Text = "详细信息";
             this.详细信息ToolStripMenuItem.Click += new System.EventHandler(this.详细信息ToolStripMenuItem_Click);
             // 
@@ -84,7 +84,7 @@
             // 
             this.另存为ToolStripMenuItem.Enabled = false;
             this.另存为ToolStripMenuItem.Name = "另存为ToolStripMenuItem";
-            this.另存为ToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.另存为ToolStripMenuItem.Size = new System.Drawing.Size(126, 22);
             this.另存为ToolStripMenuItem.Text = "转换为";
             this.另存为ToolStripMenuItem.Click += new System.EventHandler(this.另存为ToolStripMenuItem_Click);
             // 
@@ -101,14 +101,14 @@
             // 批量转换ToolStripMenuItem
             // 
             this.批量转换ToolStripMenuItem.Name = "批量转换ToolStripMenuItem";
-            this.批量转换ToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.批量转换ToolStripMenuItem.Size = new System.Drawing.Size(124, 22);
             this.批量转换ToolStripMenuItem.Text = "批量转换";
             this.批量转换ToolStripMenuItem.Click += new System.EventHandler(this.批量转换ToolStripMenuItem_Click);
             // 
             // 关于ToolStripMenuItem
             // 
             this.关于ToolStripMenuItem.Name = "关于ToolStripMenuItem";
-            this.关于ToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.关于ToolStripMenuItem.Size = new System.Drawing.Size(124, 22);
             this.关于ToolStripMenuItem.Text = "关于";
             this.关于ToolStripMenuItem.Click += new System.EventHandler(this.关于ToolStripMenuItem_Click);
             // 
@@ -120,7 +120,7 @@
             this.pictureBox1.InitialImage = null;
             this.pictureBox1.Location = new System.Drawing.Point(0, 25);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(504, 322);
+            this.pictureBox1.Size = new System.Drawing.Size(609, 425);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox1.TabIndex = 1;
             this.pictureBox1.TabStop = false;
@@ -133,16 +133,17 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.LightGray;
-            this.ClientSize = new System.Drawing.Size(504, 347);
+            this.ClientSize = new System.Drawing.Size(609, 450);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.menuStrip1);
             this.ForeColor = System.Drawing.SystemColors.Control;
             this.MainMenuStrip = this.menuStrip1;
-            this.MinimumSize = new System.Drawing.Size(520, 385);
+            this.MinimumSize = new System.Drawing.Size(196, 65);
             this.Name = "MainWindow";
             this.ShowIcon = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "HEIF Utility";
+            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.MainWindow_FormClosed);
             this.Load += new System.EventHandler(this.MainWindow_Load);
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();

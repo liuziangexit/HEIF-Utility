@@ -6,7 +6,7 @@ using System.Runtime.InteropServices;
 // 控制。更改这些特性值可修改
 // 与程序集关联的信息。
 [assembly: AssemblyTitle("HEIF Utility")]
-[assembly: AssemblyDescription("查看HEIC文件并将其转换为兼容格式。")]
+[assembly: AssemblyDescription("在 Windows 上查看/转换 HEIF 文件。")]
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("liuziangexit.com")]
 [assembly: AssemblyProduct("HEIF Utility")]

@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -18,20 +19,38 @@ namespace HEIF_Utility
             Application.SetCompatibleTextRenderingDefault(false);
             try
             {
-                System.IO.File.Delete("peek.jpg");
+                System.IO.File.Delete(Application.StartupPath + "//peek.jpg");
             }
             catch (Exception)
             { }
             try
             {
-                System.IO.File.Delete("out.265");
+                System.IO.File.Delete(Application.StartupPath + "//out.265");
             }
             catch (Exception)
             { }
+
+            var s = new System.Drawing.Size();
+
+            try
+            {
+                var fs = new FileStream(Application.StartupPath + "//MainWindowSize", FileMode.Open);
+                var sr = new StreamReader(fs);
+                s.Width = int.Parse(sr.ReadLine());
+                s.Height = int.Parse(sr.ReadLine());
+                sr.Close();
+                if (s.Width <= 0 || s.Height <= 0)
+                    throw new Exception();
+            }
+            catch (Exception)
+            {
+                s.Width = s.Height = 0;
+            }
+
             if (args.Length != 0)
-                Application.Run(new MainWindow(args[0]));
+                Application.Run(new MainWindow(args[0], s));
             else
-                Application.Run(new MainWindow());
+                Application.Run(new MainWindow(s));
             try
             {
                 System.IO.File.Delete(Application.StartupPath + "//peek.jpg");
