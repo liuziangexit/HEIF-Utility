@@ -20,5 +20,8 @@ HEIF Utility - View/Convert HEIF file on Windows.
 <img src="/img/HEIFUScreenShot3.PNG"><br>
 <img src="/img/HEIFUScreenShot4.PNG">
 <br>
+<h2>了解更多/More Detailed</h2>
+https://liuziangexit.com/HEIF-Utility
+https://liuziangexit.com/HEIF-Utility/EN
 <h2>下载/Download</h2>
 https://liuziangexit.com/resource/HEIF-Utility.zip
