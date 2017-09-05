@@ -5,7 +5,7 @@ HEIF Utility - View/Convert HEIF file on Windows.
 <br>
 <br>
 # Screen Shot
-<img src="/img/HEIFUScreenShot1"><br>
-<img src="/img/HEIFUScreenShot2"><br>
-<img src="/img/HEIFUScreenShot3"><br>
-<img src="/img/HEIFUScreenShot4">
+<img src="/img/HEIFUScreenShot1.PNG"><br>
+<img src="/img/HEIFUScreenShot2.PNG"><br>
+<img src="/img/HEIFUScreenShot3.PNG"><br>
+<img src="/img/HEIFUScreenShot4.PNG">
