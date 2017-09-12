@@ -3,6 +3,8 @@ HEIF 实用工具 - 在 Windows 上查看/转换 HEIF 文件。
 <br>
 HEIF Utility - View/Convert HEIF file on Windows.
 <br>
+(English Version will be available in tomorrow)
+<br>
 <h2>功能/Feature</h2>
 1.查看 HEIC 文件<br>
 2.查看图片详细信息<br>
