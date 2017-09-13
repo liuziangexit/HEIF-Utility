@@ -1,8 +1,9 @@
 ﻿# HEIF 实用工具/HEIF Utility
-HEIF 实用工具 - 在 Windows 上查看/转换 HEIF 文件。
+HEIF 实用工具 - 在 Windows 上查看/转换 HEIF 文件。<br>
+此工具目前暂不支持处理由 iOS 11 设备拍摄的 HEIF 照片，我们正在开发这个功能。<br>
 <br>
-HEIF Utility - View/Convert HEIF file on Windows.
-<br>
+HEIF Utility - View/Convert HEIF file on Windows.<br>
+This program doesn't support HEIF picture from iOS 11 yet, we are working on it.<br>
 <h2>功能/Feature</h2>
 1.查看 HEIC 文件<br>
 2.查看图片详细信息<br>
@@ -23,6 +24,6 @@ HEIF Utility - View/Convert HEIF file on Windows.
 <h2>了解更多/More Detailed</h2>
 中文版本: https://liuziangexit.com/HEIF-Utility<br>
 English Version: https://liuziangexit.com/HEIF-Utility/EN
-<h2>下载/Download</h2>
-中文版本: <br>
-English Version: 
+<h2>下载测试版/Download Beta Version</h2>
+中文版本: https://liuziangexit.com/resource/HEIF-Utility-CN.zip<br>
+English Version: https://liuziangexit.com/resource/HEIF-Utility-EN.zip
