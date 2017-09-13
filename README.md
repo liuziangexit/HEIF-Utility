@@ -21,8 +21,8 @@ HEIF Utility - View/Convert HEIF file on Windows.
 <img src="/img/HEIFUScreenShot4.PNG">
 <br>
 <h2>了解更多/More Detailed</h2>
-https://liuziangexit.com/HEIF-Utility<br>
-https://liuziangexit.com/HEIF-Utility/EN
+中文版本: https://liuziangexit.com/HEIF-Utility<br>
+English Version: https://liuziangexit.com/HEIF-Utility/EN
 <h2>下载/Download</h2>
-Chinese Language Beta: https://liuziangexit.com/resource/HEIF-Utility.zip <br>
-English Language: 2017/9/14
+中文版本: https://liuziangexit.com/resource/HEIF-Utility-CN.zip<br>
+English Version: https://liuziangexit.com/resource/HEIF-Utility-EN.zip
