@@ -21,6 +21,11 @@ The release version will support HEIF images taken by iOS 11 devices, and the fi
 <img src="/img/HEIFUScreenShot3.PNG"><br>
 <img src="/img/HEIFUScreenShot4.PNG">
 <br>
+<h2>依赖/Dependencies</h2>
+<a href="https://github.com/liuziangexit/HEIF-Utility-CommandLineTool">HUD.exe</a><br>
+<a href="https://github.com/liuziangexit/HEIF-Utility-Blend-Tool">HBT.exe</a><br>
+<a href="https://www.ffmpeg.org/">FFmpeg.exe</a><br>
+<a href="http://opencv.org/">opencv_world330.dll</a><br>
 <h2>了解更多/More Detailed</h2>
 中文版本: https://liuziangexit.com/HEIF-Utility<br>
 English Version: https://liuziangexit.com/HEIF-Utility/EN
