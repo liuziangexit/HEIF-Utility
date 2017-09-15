@@ -39,7 +39,8 @@
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(215, 135);
             this.label1.TabIndex = 0;
-            this.label1.Text = "NokiaTechnologies - HEIF\r\nMicrosoft - .NET\r\nliuziangexit.com - liuzianglib";
+            this.label1.Text = "NokiaTechnologies - HEIF\r\nOpenCV Team - OpenCV\r\nMicrosoft - .NET\r\nliuziangexit.co" +
+    "m - liuzianglib";
             this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // pb

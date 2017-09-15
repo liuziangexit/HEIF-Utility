@@ -39,7 +39,7 @@
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(215, 135);
             this.label1.TabIndex = 0;
-            this.label1.Text = "DiNgO_ZY\r\nGiGA_F\r\niXerol\r\nlinwangjia\r\nnymaxmo\r\nyohhoy";
+            this.label1.Text = "DiNgO_ZY\r\nGiGA_F\r\niXerol\r\nlinwangjia\r\nnymaxmo";
             this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // Credit

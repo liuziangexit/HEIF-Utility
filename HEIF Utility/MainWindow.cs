@@ -6,6 +6,7 @@ using System.Drawing;
 using System.IO;
 using System.Linq;
 using System.Text;
+using System.Threading;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
@@ -31,6 +32,7 @@ namespace HEIF_Utility
             this.pictureBox1.AllowDrop = true;            
         }
 
+        /*
         public MainWindow(string filename, Size s)
         {
             InitializeComponent();
@@ -45,9 +47,26 @@ namespace HEIF_Utility
             {
                 this.Size = backup;
             }
-            this.pictureBox1.AllowDrop = true;            
-            open(filename);
+            this.pictureBox1.AllowDrop = true;
+
+            var box = new processing();
+            Thread T;
+            T = new Thread(new ThreadStart(new Action(() =>
+            {
+                box.ShowDialog();
+            })));
+            T.IsBackground = true;
+            T.Start();
+
+            open(filename, 50);
+
+            box.Invoke(new Action(() =>
+            {
+                box.Close();
+            }));
+            this.Focus();
         }
+        */
 
         private void 关于ToolStripMenuItem_Click(object sender, EventArgs e)
         {
@@ -73,13 +92,29 @@ namespace HEIF_Utility
             try
             {
                 var filepicker = new OpenFileDialog();
-                filepicker.Title = "打开HEIF";
+                filepicker.Title = "打开";
                 filepicker.Multiselect = false;
+                filepicker.Filter = "HEIF(.heic)|*.heic|任意文件|*.*";
                 filepicker.ShowDialog();
                 if (filepicker.FileName == "") return;
                 filename = filepicker.FileName;
 
-                open(filename);
+                var box = new processing();
+                Thread T;
+                T = new Thread(new ThreadStart(new Action(() =>
+                {
+                    box.ShowDialog();
+                })));
+                T.IsBackground = true;
+                T.Start();
+
+                open(filename, 50);
+
+                box.Invoke(new Action(() =>
+                {
+                    box.Close();                    
+                }));
+                this.Focus();
             }
             catch (Exception ex)
             {
@@ -95,22 +130,28 @@ namespace HEIF_Utility
             {
                 var box = new SaveFileDialog();
                 box.Title = "保存";
-                box.Filter = "PNG|*.png|JPG|*.jpg";
+                box.Filter = "JPG|*.jpg";
                 box.ShowDialog();
                 if (box.FileName == "") return;
 
-                System.Diagnostics.Process p = new System.Diagnostics.Process();
-                p.StartInfo.FileName = Application.StartupPath + "\\ffmpeg.exe";
-                p.StartInfo.UseShellExecute = false;
-                p.StartInfo.RedirectStandardInput = true;
-                p.StartInfo.RedirectStandardOutput = true;
-                p.StartInfo.RedirectStandardError = true;
-                p.StartInfo.CreateNoWindow = true;
-                p.StartInfo.Arguments = "-y -i \"" + Application.StartupPath + "\\out.265\" \"" + box.FileName + "\"";
-                p.Start();                
-                p.StandardInput.AutoFlush = true;
-                p.WaitForExit();
-                p.Close();
+                var box2 = new processing();
+                Thread T;
+                T = new Thread(new ThreadStart(new Action(() =>
+                {
+                    box2.ShowDialog();
+                })));
+                T.IsBackground = true;
+                T.Start();
+
+                createpeek(filename, 100);
+
+                System.IO.File.Move("peek.jpg", box.FileName);
+
+                box2.Invoke(new Action(() =>
+                {
+                    box2.Close();
+                }));
+                this.Focus();
 
                 if (System.IO.File.Exists(box.FileName))
                 {
@@ -130,45 +171,37 @@ namespace HEIF_Utility
             }
         }
 
-        void open(string openthis)
+        void createpeek(string openthis, int jpgquality)
+        {
+            try
+            {
+                System.IO.File.Delete(Application.StartupPath + "\\peek.jpg");
+            }
+            catch (Exception)
+            { }
+
+            System.Diagnostics.Process p = new System.Diagnostics.Process();
+            p.StartInfo.FileName = Application.StartupPath + "\\HUD.exe";
+            p.StartInfo.UseShellExecute = false;
+            p.StartInfo.RedirectStandardInput = true;
+            p.StartInfo.RedirectStandardOutput = true;
+            p.StartInfo.RedirectStandardError = true;
+            p.StartInfo.CreateNoWindow = true;
+            p.StartInfo.Arguments = "iOS-11 " + "\"" + openthis + "\" " + "peek" + " jpg imageinfo.json " + jpgquality.ToString();
+            p.Start();
+            p.StandardInput.AutoFlush = true;
+            p.WaitForExit();
+            p.Close();
+        }
+
+        void open(string openthis, int jpgquality)
         {
             try
             {
                 if (openthis == "") return;
                 filename = openthis;
-                
-                try
-                {
-                    System.IO.File.Delete(Application.StartupPath + "\\peek.jpg");
-                }
-                catch (Exception)
-                { }
-                try
-                {
-                    System.IO.File.Delete(Application.StartupPath + "\\out.265");
-                }
-                catch (Exception)
-                { }
-                
-                System.Diagnostics.Process p = new System.Diagnostics.Process();
-                p.StartInfo.FileName = Application.StartupPath + "\\HUD.exe";
-                p.StartInfo.UseShellExecute = false;
-                p.StartInfo.RedirectStandardInput = true;
-                p.StartInfo.RedirectStandardOutput = true;
-                p.StartInfo.RedirectStandardError = true;
-                p.StartInfo.CreateNoWindow = true;
-                p.StartInfo.Arguments = "\"" + openthis + "\" " + "\"" + Application.StartupPath + "\\out.265" + "\"";
-                p.Start();
-                p.StandardInput.AutoFlush = true;
-                p.WaitForExit();
-                p.Close();
 
-                p.StartInfo.FileName = Application.StartupPath + "\\ffmpeg.exe";
-                p.StartInfo.Arguments = "-y -i " + "\"" + Application.StartupPath + "\\out.265\" " + "\"" + Application.StartupPath + "\\peek.jpg\"";
-                p.Start();
-                p.StandardInput.AutoFlush = true;
-                p.WaitForExit();
-                p.Close();
+                createpeek(openthis, jpgquality);
 
                 Stream s = new FileStream(Application.StartupPath + "\\peek.jpg", FileMode.Open, FileAccess.Read, FileShare.Read);
                 Image img = new Bitmap(s);
@@ -203,7 +236,22 @@ namespace HEIF_Utility
         {
             try
             {
-                open(((string[])e.Data.GetData(DataFormats.FileDrop, false))[0]);
+                var box = new processing();
+                Thread T;
+                T = new Thread(new ThreadStart(new Action(() =>
+                {
+                    box.ShowDialog();
+                })));
+                T.IsBackground = true;
+                T.Start();
+
+                open(((string[])e.Data.GetData(DataFormats.FileDrop, false))[0], 50);
+
+                box.Invoke(new Action(() =>
+                {
+                    box.Close();
+                }));
+                this.Focus();
             }
             catch (Exception) { }
         }

@@ -68,15 +68,15 @@
             // 选择HEIFToolStripMenuItem
             // 
             this.选择HEIFToolStripMenuItem.Name = "选择HEIFToolStripMenuItem";
-            this.选择HEIFToolStripMenuItem.Size = new System.Drawing.Size(126, 22);
-            this.选择HEIFToolStripMenuItem.Text = "打开HEIF";
+            this.选择HEIFToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.选择HEIFToolStripMenuItem.Text = "打开";
             this.选择HEIFToolStripMenuItem.Click += new System.EventHandler(this.选择HEIFToolStripMenuItem_Click);
             // 
             // 详细信息ToolStripMenuItem
             // 
             this.详细信息ToolStripMenuItem.Enabled = false;
             this.详细信息ToolStripMenuItem.Name = "详细信息ToolStripMenuItem";
-            this.详细信息ToolStripMenuItem.Size = new System.Drawing.Size(126, 22);
+            this.详细信息ToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
             this.详细信息ToolStripMenuItem.Text = "详细信息";
             this.详细信息ToolStripMenuItem.Click += new System.EventHandler(this.详细信息ToolStripMenuItem_Click);
             // 
@@ -84,7 +84,7 @@
             // 
             this.另存为ToolStripMenuItem.Enabled = false;
             this.另存为ToolStripMenuItem.Name = "另存为ToolStripMenuItem";
-            this.另存为ToolStripMenuItem.Size = new System.Drawing.Size(126, 22);
+            this.另存为ToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
             this.另存为ToolStripMenuItem.Text = "转换为";
             this.另存为ToolStripMenuItem.Click += new System.EventHandler(this.另存为ToolStripMenuItem_Click);
             // 
@@ -100,15 +100,16 @@
             // 
             // 批量转换ToolStripMenuItem
             // 
+            this.批量转换ToolStripMenuItem.Enabled = false;
             this.批量转换ToolStripMenuItem.Name = "批量转换ToolStripMenuItem";
-            this.批量转换ToolStripMenuItem.Size = new System.Drawing.Size(124, 22);
-            this.批量转换ToolStripMenuItem.Text = "批量转换";
+            this.批量转换ToolStripMenuItem.Size = new System.Drawing.Size(211, 22);
+            this.批量转换ToolStripMenuItem.Text = "批量转换(Coming Soon)";
             this.批量转换ToolStripMenuItem.Click += new System.EventHandler(this.批量转换ToolStripMenuItem_Click);
             // 
             // 关于ToolStripMenuItem
             // 
             this.关于ToolStripMenuItem.Name = "关于ToolStripMenuItem";
-            this.关于ToolStripMenuItem.Size = new System.Drawing.Size(124, 22);
+            this.关于ToolStripMenuItem.Size = new System.Drawing.Size(211, 22);
             this.关于ToolStripMenuItem.Text = "关于";
             this.关于ToolStripMenuItem.Click += new System.EventHandler(this.关于ToolStripMenuItem_Click);
             // 
@@ -142,7 +143,7 @@
             this.Name = "MainWindow";
             this.ShowIcon = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "HEIF Utility";
+            this.Text = "HEIF 实用工具";
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.MainWindow_FormClosed);
             this.Load += new System.EventHandler(this.MainWindow_Load);
             this.menuStrip1.ResumeLayout(false);

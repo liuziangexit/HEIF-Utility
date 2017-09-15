@@ -47,9 +47,9 @@ namespace HEIF_Utility
                 s.Width = s.Height = 0;
             }
 
-            if (args.Length != 0)
-                Application.Run(new MainWindow(args[0], s));
-            else
+            //if (args.Length != 0)
+            //   Application.Run(new MainWindow(args[0], s));
+            //else
                 Application.Run(new MainWindow(s));
             try
             {

@@ -29,3 +29,4 @@ E:\OneDrive\Dev\Projects\HEIF Utility\obj\Release\HEIF_Utility.MainWindow.resour
 E:\OneDrive\Dev\Projects\HEIF Utility\obj\Release\HEIF_Utility.Properties.Resources.resources
 E:\OneDrive\Dev\Projects\HEIF Utility\obj\Release\HEIF_Utility.sc.resources
 E:\OneDrive\Dev\Projects\HEIF Utility\obj\Release\HEIF Utility.csproj.GenerateResource.Cache
+E:\OneDrive\Dev\Projects\HEIF Utility\obj\Release\HEIF_Utility.processing.resources

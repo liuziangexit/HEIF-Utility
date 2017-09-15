@@ -29,3 +29,5 @@ E:\OneDrive\Dev\Projects\HEIF Utility\obj\Debug\HEIF_Utility.sc.resources
 E:\OneDrive\Dev\Projects\HEIF Utility\obj\Debug\HEIF Utility.csproj.GenerateResource.Cache
 E:\OneDrive\Dev\Projects\HEIF Utility\obj\Debug\HEIF Utility.exe
 E:\OneDrive\Dev\Projects\HEIF Utility\obj\Debug\HEIF Utility.pdb
+E:\OneDrive\Dev\Projects\HEIF Utility\obj\Debug\HEIF Utility.csprojResolveAssemblyReference.cache
+E:\OneDrive\Dev\Projects\HEIF Utility\obj\Debug\HEIF_Utility.processing.resources
