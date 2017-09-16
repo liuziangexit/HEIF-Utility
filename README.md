@@ -1,18 +1,18 @@
 ﻿# HEIF 实用工具/HEIF Utility
-HEIF 实用工具 - 在 Windows 上查看/转换来自 iOS 11 的 HEIF 文件。<br>
-发行版将会支持由 iOS 11 设备拍摄的 HEIF 图片，第一个发行版会在10月前完成。<br>
+HEIF 实用工具 - 在 Windows 上查看/转换 Apple HEIF 文件。<br>
+发行版将会支持由 Apple 生成的 HEIF 图像，第一个发行版会在10月前完成。<br>
 <br>
 HEIF Utility - View/Convert HEIF files from iOS 11 on Windows.<br>
-The release version will support HEIF images taken by iOS 11 devices, and the first release will be completed before October.<br>
+The release version will support Apple-generated HEIF images, and the first release will be completed before October.<br>
 <h2>功能/Feature</h2>
-1.查看由 iOS 11 设备拍摄的 HEIF 图片<br>
+1.查看由 Apple 生成的的 HEIF 图片<br>
 2.查看图片详细信息<br>
-3.将 HEIF 图片转换为 JPG 图片<br>
+3.将 Apple HEIF 图片转换为 JPG 图片<br>
 4.批量转换<br>
 <br>
-1. View the HEIF images taken by iOS 11 devices<br>
+1. View the Apple-generated HEIF images<br>
 2. View the picture details<br>
-3. Convert HEIC files to JPG format images<br>
+3. Convert Apple HEIF images to JPG format images<br>
 4. Batch conversion
 <br>
 <h2>截图/Screen Shot</h2>
