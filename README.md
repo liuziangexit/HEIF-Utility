@@ -22,10 +22,13 @@ The release version will support Apple-generated HEIF images, and the first rele
 <img src="/img/HEIFUScreenShot3.PNG"><br>
 <img src="/img/HEIFUScreenShot4.PNG">
 <br>
-<h2>依赖/Dependencies</h2>
-<a href="https://github.com/liuziangexit/HEIF-Utility-Native-DLL">HUD.dll</a><br>
-<a href="http://opencv.org/">opencv_ffmpeg330_64.dll</a><br>
-<a href="http://opencv.org/">opencv_world330.dll</a><br>
+<h2>提供支持/Powered by</h2>
+<a href="https://github.com/nokiatech/heif">NokiaTechnologies - HEIF</a><br>
+<a href="http://x265.org/">MulticoreWare Inc. - libx265</a><br>
+<a href="https://www.ffmpeg.org/">FFmpeg Team - FFmpeg</a><br>
+<a href="http://opencv.org/">OpenCV Team - OpenCV</a><br>
+<a href="https://www.microsoft.com/net">Microsoft - .NET</a><br>
+<a href="https://github.com/liuziangexit/liuzianglib">liuziangexit - liuzianglib</a><br>
 <h2>了解更多/More Detailed</h2>
 中文版本: https://liuziangexit.com/HEIF-Utility<br>
 English Version: https://liuziangexit.com/HEIF-Utility/EN
