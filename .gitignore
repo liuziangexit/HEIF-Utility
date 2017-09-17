@@ -4,6 +4,7 @@ bin/
 obj/
 HEIF Utility.csproj.user
 *.suo
+*.ide
 
 packages/*
 
