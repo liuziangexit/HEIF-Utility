@@ -188,7 +188,7 @@ namespace HEIF_Utility
 
         private void set_output_quality_Click(object sender, EventArgs e)
         {
-            var box = new setjpgquality();
+            var box = new setjpgquality(output_quality);
             box.ShowDialog();
             output_quality = box.value;
         }
@@ -344,8 +344,9 @@ namespace HEIF_Utility
                 }
                 this.isStart = false;
                 this.Invoke(new Action(() =>
-                {
+                {                    
                     this.Title.Text = "已完成批量转换";
+                    MainPrograssBar.Value = MainPrograssBar.Maximum;
                 }));
             }
             catch (Exception)
@@ -354,10 +355,11 @@ namespace HEIF_Utility
                 {
                     this.isStart = false;
                     this.Invoke(new Action(() =>
-                    {                        
+                    {
                         try
-                        {
+                        {                            
                             Title.Text = "无法完成批量转换";
+                            MainPrograssBar.Value = MainPrograssBar.Maximum;
                             for (int i = 0; i < filelist.Items.Count; i++)
                             {
                                 if (filelist.Items[i].BackColor != Color.ForestGreen)

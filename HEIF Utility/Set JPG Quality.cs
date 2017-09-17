@@ -18,6 +18,15 @@ namespace HEIF_Utility
             InitializeComponent();
         }
 
+        public setjpgquality(int setvalue)
+        {
+            InitializeComponent();
+
+            value = setvalue;
+            label1.Text = value.ToString();
+            trackBar1.Value = setvalue;
+        }
+
         private void trackBar1_ValueChanged(object sender, EventArgs e)
         {
             label1.Text = trackBar1.Value.ToString();
