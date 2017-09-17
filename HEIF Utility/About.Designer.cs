@@ -43,7 +43,7 @@
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("微软雅黑", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.label1.ForeColor = System.Drawing.Color.OrangeRed;
+            this.label1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(81)))), ((int)(((byte)(143)))), ((int)(((byte)(252)))));
             this.label1.Location = new System.Drawing.Point(0, -1);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(169, 31);
@@ -124,7 +124,7 @@
             this.label6.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.label6.Size = new System.Drawing.Size(64, 17);
             this.label6.TabIndex = 5;
-            this.label6.Text = "20170915";
+            this.label6.Text = "20170917";
             this.label6.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // label9
@@ -160,16 +160,16 @@
             // label7
             // 
             this.label7.AutoSize = true;
-            this.label7.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.label7.Cursor = System.Windows.Forms.Cursors.Default;
             this.label7.Font = new System.Drawing.Font("Microsoft YaHei UI", 9F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.label7.ForeColor = System.Drawing.Color.Orange;
+            this.label7.ForeColor = System.Drawing.Color.DarkGray;
             this.label7.ImageAlign = System.Drawing.ContentAlignment.TopLeft;
             this.label7.Location = new System.Drawing.Point(231, 116);
             this.label7.Name = "label7";
             this.label7.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.label7.Size = new System.Drawing.Size(83, 17);
             this.label7.TabIndex = 11;
-            this.label7.Text = "Public Beta 7";
+            this.label7.Text = "Public Beta 9";
             // 
             // About
             // 

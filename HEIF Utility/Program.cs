@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Drawing.Imaging;
 using System.IO;
 using System.Linq;
 using System.Threading.Tasks;
@@ -17,18 +18,6 @@ namespace HEIF_Utility
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            try
-            {
-                System.IO.File.Delete(Application.StartupPath + "//peek.jpg");
-            }
-            catch (Exception)
-            { }
-            try
-            {
-                System.IO.File.Delete(Application.StartupPath + "//out.265");
-            }
-            catch (Exception)
-            { }
 
             var s = new System.Drawing.Size();
 
@@ -47,22 +36,12 @@ namespace HEIF_Utility
                 s.Width = s.Height = 0;
             }
 
-            //if (args.Length != 0)
-            //   Application.Run(new MainWindow(args[0], s));
-            //else
+            System.IO.Directory.SetCurrentDirectory(Application.StartupPath);
+
+            if (args.Length != 0)
+                Application.Run(new MainWindow(args[0], s));
+            else
                 Application.Run(new MainWindow(s));
-            try
-            {
-                System.IO.File.Delete(Application.StartupPath + "//peek.jpg");
-            }
-            catch (Exception)
-            { }
-            try
-            {
-                System.IO.File.Delete(Application.StartupPath + "//out.265");
-            }
-            catch (Exception)
-            { }
         }
     }
 }

@@ -30,3 +30,5 @@ E:\OneDrive\Dev\Projects\HEIF Utility\obj\Release\HEIF_Utility.Properties.Resour
 E:\OneDrive\Dev\Projects\HEIF Utility\obj\Release\HEIF_Utility.sc.resources
 E:\OneDrive\Dev\Projects\HEIF Utility\obj\Release\HEIF Utility.csproj.GenerateResource.Cache
 E:\OneDrive\Dev\Projects\HEIF Utility\obj\Release\HEIF_Utility.processing.resources
+E:\OneDrive\Dev\Projects\HEIF Utility\obj\Release\HEIF_Utility.setjpgquality.resources
+E:\OneDrive\Dev\Projects\HEIF Utility\obj\Release\HEIF_Utility.TitleBar.resources

@@ -31,3 +31,5 @@ E:\OneDrive\Dev\Projects\HEIF Utility\obj\Debug\HEIF Utility.exe
 E:\OneDrive\Dev\Projects\HEIF Utility\obj\Debug\HEIF Utility.pdb
 E:\OneDrive\Dev\Projects\HEIF Utility\obj\Debug\HEIF Utility.csprojResolveAssemblyReference.cache
 E:\OneDrive\Dev\Projects\HEIF Utility\obj\Debug\HEIF_Utility.processing.resources
+E:\OneDrive\Dev\Projects\HEIF Utility\obj\Debug\HEIF_Utility.setjpgquality.resources
+E:\OneDrive\Dev\Projects\HEIF Utility\obj\Debug\HEIF_Utility.TitleBar.resources

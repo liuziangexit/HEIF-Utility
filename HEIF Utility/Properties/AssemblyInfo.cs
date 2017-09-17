@@ -5,11 +5,11 @@ using System.Runtime.InteropServices;
 // 有关程序集的一般信息由以下
 // 控制。更改这些特性值可修改
 // 与程序集关联的信息。
-[assembly: AssemblyTitle("HEIF Utility")]
-[assembly: AssemblyDescription("在 Windows 上查看/转换 HEIF 文件。")]
+[assembly: AssemblyTitle("HEIF 实用工具")]
+[assembly: AssemblyDescription("liuziangexit.com/HEIF-Utility")]
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("liuziangexit.com")]
-[assembly: AssemblyProduct("HEIF Utility")]
+[assembly: AssemblyProduct("HEIF 实用工具")]
 [assembly: AssemblyCopyright("Copyright © liuziangexit.com 2017.")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]

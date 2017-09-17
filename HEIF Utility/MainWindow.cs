@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.Drawing.Imaging;
 using System.IO;
 using System.Linq;
 using System.Text;
@@ -15,6 +16,11 @@ namespace HEIF_Utility
     public partial class MainWindow : Form
     {
         private string filename;
+        private byte[] heicfile;
+        private Point mouseOff;
+
+        private bool isMouseDown = false;
+
         public MainWindow(Size s)
         {
             InitializeComponent();
@@ -29,10 +35,9 @@ namespace HEIF_Utility
             {
                 this.Size = backup;
             }
-            this.pictureBox1.AllowDrop = true;            
+            this.MainPictureBox.AllowDrop = true;
         }
 
-        /*
         public MainWindow(string filename, Size s)
         {
             InitializeComponent();
@@ -47,26 +52,41 @@ namespace HEIF_Utility
             {
                 this.Size = backup;
             }
-            this.pictureBox1.AllowDrop = true;
+            this.MainPictureBox.AllowDrop = true;
+
+            this.Show();
 
             var box = new processing();
-            Thread T;
-            T = new Thread(new ThreadStart(new Action(() =>
+            try
             {
-                box.ShowDialog();
-            })));
-            T.IsBackground = true;
-            T.Start();
-
-            open(filename, 50);
-
-            box.Invoke(new Action(() =>
+                Thread T;
+                T = new Thread(new ThreadStart(new Action(() =>
+                {
+                    box.ShowDialog();
+                })));
+                T.IsBackground = true;
+                T.Start();
+                
+                open(filename);
+                
+                box.Invoke(new Action(() =>
+                {
+                    box.Close();
+                }));
+                this.Focus();
+            }
+            catch (Exception ex)
             {
-                box.Close();
-            }));
-            this.Focus();
+                MessageBox.Show(ex.Message);
+                box.Invoke(new Action(() =>
+                {
+                    box.Close();
+                }));
+                this.Focus();
+                MessageBox.Show("无法打开此文件。");
+                return;
+            }
         }
-        */
 
         private void 关于ToolStripMenuItem_Click(object sender, EventArgs e)
         {
@@ -78,17 +98,93 @@ namespace HEIF_Utility
         {
             try
             {
-                if (!System.IO.File.Exists(Application.StartupPath + "\\HUD.exe") || !System.IO.File.Exists(Application.StartupPath + "\\ffmpeg.exe"))
+                if (!System.IO.File.Exists(Application.StartupPath + "\\HUD.dll") || !System.IO.File.Exists(Application.StartupPath + "\\opencv_ffmpeg330_64.dll") || !System.IO.File.Exists(Application.StartupPath + "\\opencv_world330.dll"))
                 {
                     MessageBox.Show("缺少核心组件，HEIF 实用工具无法启动。");
                     Environment.Exit(0);
                 }
+
+                var bar = new TitleBar();
+                bar.Dock = DockStyle.Right;
+                bar.Name = "LASControlBox";
+                bar.OnClickExitButton += new TitleBar.ClickHandler(TitleClicked);
+                TopPanel.Controls.Add(bar);
             }
             catch (Exception) { }
         }
 
+        private void TitleClicked(object sender, TitleClickArgs e)
+        {
+            switch (e.which)
+            {
+                case 1: { Close(); Environment.Exit(0); } break;
+                case 2:
+                    {
+                        if (WindowState == FormWindowState.Normal)
+                            WindowState = FormWindowState.Maximized;
+                        else WindowState = FormWindowState.Normal;
+                    }
+                    break;
+                case 3:
+                    {
+                        WindowState = FormWindowState.Minimized;
+                    }
+                    break;
+                default: { throw new Exception(); };
+            }
+        }
+
+        private void menuStrip1_MouseDown(object sender, MouseEventArgs e)
+        {
+            if (e.Button != MouseButtons.Left || WindowState == FormWindowState.Maximized) return;
+            mouseOff = new Point(-e.X, -e.Y);
+            isMouseDown = true;
+        }
+
+        private void menuStrip1_MouseUp(object sender, MouseEventArgs e)
+        {
+            if (isMouseDown)
+                isMouseDown = false;
+        }
+
+        private void menuStrip1_MouseMove(object sender, MouseEventArgs e)
+        {
+            if (!isMouseDown) return;
+            Point temp = Control.MousePosition;
+            temp.Offset(mouseOff.X, mouseOff.Y);
+            Location = temp;
+        }
+
+        private void menuStrip1_MouseLeave(object sender, EventArgs e)
+        {
+            if (this.isMouseDown)
+                isMouseDown = false;
+        }
+
+        private void dragPicture_MouseDown(object sender, MouseEventArgs e)
+        {
+            if (e.Button != MouseButtons.Left) return;
+            mouseOff = new Point(e.X, e.Y);
+            isMouseDown = true;
+        }
+
+        private void dragPicture_MouseMove(object sender, MouseEventArgs e)
+        {
+            if (!isMouseDown) return;
+            Size temp = new Size(Control.MousePosition.X - mouseOff.X - Location.X + 22, Control.MousePosition.Y - mouseOff.Y - Location.Y + 22);
+            if (temp.Width < MinimumSize.Width || temp.Height < MinimumSize.Height) return;
+            Size = temp;
+        }
+
+        private void dragPicture_MouseUp(object sender, MouseEventArgs e)
+        {
+            if (!isMouseDown) return;
+            isMouseDown = false;
+        }
+
         private void 选择HEIFToolStripMenuItem_Click(object sender, EventArgs e)
         {
+            var box = new processing();
             try
             {
                 var filepicker = new OpenFileDialog();
@@ -99,7 +195,7 @@ namespace HEIF_Utility
                 if (filepicker.FileName == "") return;
                 filename = filepicker.FileName;
 
-                var box = new processing();
+                
                 Thread T;
                 T = new Thread(new ThreadStart(new Action(() =>
                 {
@@ -108,7 +204,7 @@ namespace HEIF_Utility
                 T.IsBackground = true;
                 T.Start();
 
-                open(filename, 50);
+                open(filename);
 
                 box.Invoke(new Action(() =>
                 {
@@ -119,6 +215,11 @@ namespace HEIF_Utility
             catch (Exception ex)
             {
                 //MessageBox.Show(ex.Message);
+                box.Invoke(new Action(() =>
+                {
+                    box.Close();
+                }));
+                this.Focus();
                 MessageBox.Show("无法打开此文件。");
                 return;
             }
@@ -126,6 +227,7 @@ namespace HEIF_Utility
 
         private void 另存为ToolStripMenuItem_Click(object sender, EventArgs e)
         {
+            var box2 = new processing();
             try
             {
                 var box = new SaveFileDialog();
@@ -134,7 +236,9 @@ namespace HEIF_Utility
                 box.ShowDialog();
                 if (box.FileName == "") return;
 
-                var box2 = new processing();
+                var sq = new setjpgquality();
+                sq.ShowDialog();
+
                 Thread T;
                 T = new Thread(new ThreadStart(new Action(() =>
                 {
@@ -143,9 +247,15 @@ namespace HEIF_Utility
                 T.IsBackground = true;
                 T.Start();
 
-                createpeek(filename, 100);
-
-                System.IO.File.Move("peek.jpg", box.FileName);
+                try
+                {
+                    invoke_dll.invoke_heif_to_jpg(heicfile, sq.value).Save(box.FileName, ImageFormat.Jpeg);
+                }
+                catch (Exception)
+                {
+                    MessageBox.Show("无法保存到 " + box.FileName);
+                    return;
+                }
 
                 box2.Invoke(new Action(() =>
                 {
@@ -153,70 +263,32 @@ namespace HEIF_Utility
                 }));
                 this.Focus();
 
-                if (System.IO.File.Exists(box.FileName))
-                {
-                    MessageBox.Show("成功保存到 " + box.FileName);
-                    return;
-                }
-                else
-                {
-                    MessageBox.Show("无法保存到 " + box.FileName);
-                    return;
-                }
+                MessageBox.Show("成功保存到 " + box.FileName);
+                return;
             }
             catch (Exception ex)
             {
+                box2.Invoke(new Action(() =>
+                {
+                    box2.Close();
+                }));
+                this.Focus();
                 MessageBox.Show(ex.Message);
                 return;
             }
         }
 
-        void createpeek(string openthis, int jpgquality)
+        void open(string openthis)
         {
-            try
-            {
-                System.IO.File.Delete(Application.StartupPath + "\\peek.jpg");
-            }
-            catch (Exception)
-            { }
-
-            System.Diagnostics.Process p = new System.Diagnostics.Process();
-            p.StartInfo.FileName = Application.StartupPath + "\\HUD.exe";
-            p.StartInfo.UseShellExecute = false;
-            p.StartInfo.RedirectStandardInput = true;
-            p.StartInfo.RedirectStandardOutput = true;
-            p.StartInfo.RedirectStandardError = true;
-            p.StartInfo.CreateNoWindow = true;
-            p.StartInfo.Arguments = "iOS-11 " + "\"" + openthis + "\" " + "peek" + " jpg imageinfo.json " + jpgquality.ToString();
-            p.Start();
-            p.StandardInput.AutoFlush = true;
-            p.WaitForExit();
-            p.Close();
-        }
-
-        void open(string openthis, int jpgquality)
-        {
-            try
-            {
-                if (openthis == "") return;
-                filename = openthis;
-
-                createpeek(openthis, jpgquality);
-
-                Stream s = new FileStream(Application.StartupPath + "\\peek.jpg", FileMode.Open, FileAccess.Read, FileShare.Read);
-                Image img = new Bitmap(s);
-                pictureBox1.Image = img;
-                s.Close();
-                pictureBox1.Visible = true;
-                详细信息ToolStripMenuItem.Enabled = true;
-                另存为ToolStripMenuItem.Enabled = true;
-            }
-            catch (Exception ex)
-            {
-                //MessageBox.Show(ex.Message);
-                MessageBox.Show("无法打开此文件。");
-                return;
-            }
+            if (openthis == "") return;
+            filename = openthis;
+            heicfile = invoke_dll.read_heif(openthis);
+            MainPictureBox.Image = invoke_dll.invoke_heif_to_jpg(heicfile, 50);
+            MainPictureBox.Visible = true;
+            DetailedButton.Visible = true;
+            SoftwareName.Visible = false;
+            拷贝ToolStripMenuItem.Enabled = true;
+            另存为ToolStripMenuItem.Enabled = true;
         }
 
         private void 详细信息ToolStripMenuItem_Click(object sender, EventArgs e)
@@ -227,9 +299,13 @@ namespace HEIF_Utility
                 fi.OpenRead();
 
                 MessageBox.Show("文件名: " + fi.Name + "\r\n创建日期: " + fi.CreationTime.ToLongDateString() + " " + fi.CreationTime.ToLongTimeString() +
-                    "\r\n大小: " + fi.Length.ToString() + " byte\r\n分辨率: " + pictureBox1.Image.Width + "x" + pictureBox1.Image.Height);
+                    "\r\n大小: " + fi.Length.ToString() + " byte\r\n分辨率: " + MainPictureBox.Image.Width + "x" + MainPictureBox.Image.Height);
+
+                DragPicture.Focus();
             }
-            catch (Exception) { }
+            catch (Exception) {
+                DragPicture.Focus();
+            }
         }
 
         private void MainWindow_DragDrop(object sender, DragEventArgs e)
@@ -245,7 +321,7 @@ namespace HEIF_Utility
                 T.IsBackground = true;
                 T.Start();
 
-                open(((string[])e.Data.GetData(DataFormats.FileDrop, false))[0], 50);
+                open(((string[])e.Data.GetData(DataFormats.FileDrop, false))[0]);
 
                 box.Invoke(new Action(() =>
                 {
@@ -289,6 +365,15 @@ namespace HEIF_Utility
                 catch (Exception) {
                 }
             }
+        }
+
+        private void 拷贝ToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                Clipboard.SetImage(MainPictureBox.Image);
+            }
+            catch (Exception) { }
         }
     }
 }

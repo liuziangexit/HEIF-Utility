@@ -37,6 +37,7 @@
     <DefineConstants>DEBUG;TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
+    <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
     <PlatformTarget>AnyCPU</PlatformTarget>
@@ -46,6 +47,7 @@
     <DefineConstants>TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
+    <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
   </PropertyGroup>
   <PropertyGroup>
     <ApplicationIcon>icon.ico</ApplicationIcon>
@@ -88,6 +90,7 @@
     <Compile Include="Confirm.Designer.cs">
       <DependentUpon>Confirm.cs</DependentUpon>
     </Compile>
+    <Compile Include="invoke_dll.cs" />
     <Compile Include="pb.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -126,6 +129,18 @@
     <Compile Include="sc.Designer.cs">
       <DependentUpon>sc.cs</DependentUpon>
     </Compile>
+    <Compile Include="setjpgquality.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="setjpgquality.Designer.cs">
+      <DependentUpon>setjpgquality.cs</DependentUpon>
+    </Compile>
+    <Compile Include="TitleBar.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="TitleBar.designer.cs">
+      <DependentUpon>TitleBar.cs</DependentUpon>
+    </Compile>
     <EmbeddedResource Include="About.resx">
       <DependentUpon>About.cs</DependentUpon>
     </EmbeddedResource>
@@ -163,6 +178,12 @@
     <EmbeddedResource Include="sc.resx">
       <DependentUpon>sc.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="setjpgquality.resx">
+      <DependentUpon>setjpgquality.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="TitleBar.resx">
+      <DependentUpon>TitleBar.cs</DependentUpon>
+    </EmbeddedResource>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -178,6 +199,13 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="icon.ico" />
+    <None Include="Resources\MinimizeWhite.png" />
+    <None Include="Resources\Minimize.png" />
+    <None Include="Resources\MaximizeWhite.png" />
+    <None Include="Resources\Maximize.png" />
+    <None Include="Resources\CloseWhite.png" />
+    <None Include="Resources\Close.png" />
+    <None Include="Resources\Close.bmp" />
   </ItemGroup>
   <ItemGroup>
     <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
