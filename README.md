@@ -7,20 +7,13 @@ HEIF Utility - View/Convert HEIF files from iOS 11 on Windows.<br>
 2.查看图片详细信息<br>
 3.将 Apple HEIF 图片转换为 JPG 图片<br>
 4.批量转换<br>
+*支持的 iOS 相机模式：照片、正方形、全景<br>
 <br>
 1. View the Apple-generated HEIF images<br>
 2. View the picture details<br>
 3. Convert Apple HEIF images to JPG format images<br>
-4. Batch conversion
-<br>
-<h2>支持的 iOS 相机模式/Supported iOS camera modes</h2>
-1.照片<br>
-2.正方形<br>
-3.全景<br>
-<br>
-1. Photo<br>
-2. Square<br>
-3. Panorama<br>
+4. Batch conversion<br>
+*Supported iOS camera modes: Photo, Square, Panorama
 <br>
 <h2>截图/Screen Shot</h2>
 <img src="/img/HEIFUScreenShot1.png"><br>
