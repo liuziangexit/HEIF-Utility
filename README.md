@@ -27,6 +27,7 @@ DiNgO_ZY<br>
 GiGA_F<br>
 iXerol<br>
 linwangjia<br>
+Qich<br>
 nymaxmo<br>
 <h2>提供支持/Powered by</h2>
 <a href="https://github.com/nokiatech/heif">NokiaTechnologies - HEIF</a><br>
