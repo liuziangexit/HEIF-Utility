@@ -1,0 +1,10 @@
+
+/.vs/
+bin/
+obj/
+HEIF Utility.csproj.user
+*.suo
+
+packages/*
+
+HEIF Utility.sln.DotSettings.user
