@@ -133,7 +133,7 @@ namespace HEIF_Utility
                 default: { throw new Exception(); };
             }
         }
-
+        
         private void menuStrip1_MouseDown(object sender, MouseEventArgs e)
         {
             if (e.Button != MouseButtons.Left || WindowState == FormWindowState.Maximized) return;
@@ -300,6 +300,7 @@ namespace HEIF_Utility
 
                 MessageBox.Show("文件名: " + fi.Name + "\r\n创建日期: " + fi.CreationTime.ToLongDateString() + " " + fi.CreationTime.ToLongTimeString() +
                     "\r\n大小: " + fi.Length.ToString() + " byte\r\n分辨率: " + MainPictureBox.Image.Width + "x" + MainPictureBox.Image.Height);
+                
 
                 DragPicture.Focus();
             }

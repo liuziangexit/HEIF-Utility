@@ -28,6 +28,7 @@ namespace HEIF_Utility
         private void button1_MouseLeave(object sender, EventArgs e)
         {
             button1.BackgroundImage = global::HEIF_Utility.Properties.Resources.Close;
+            this.FocusLabel.Focus();
         }
 
         private void button1_Click(object sender, EventArgs e)
@@ -44,6 +45,7 @@ namespace HEIF_Utility
         private void button2_MouseLeave(object sender, EventArgs e)
         {
             button2.BackgroundImage = global::HEIF_Utility.Properties.Resources.Maximize;
+            this.FocusLabel.Focus();
         }
 
         private void button2_Click(object sender, EventArgs e)
@@ -60,6 +62,7 @@ namespace HEIF_Utility
         private void button3_MouseLeave(object sender, EventArgs e)
         {
             button3.BackgroundImage = global::HEIF_Utility.Properties.Resources.Minimize;
+            this.FocusLabel.Focus();
         }
 
         private void button3_Click(object sender, EventArgs e)

@@ -164,12 +164,12 @@
             this.label7.Font = new System.Drawing.Font("Microsoft YaHei UI", 9F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.label7.ForeColor = System.Drawing.Color.DarkGray;
             this.label7.ImageAlign = System.Drawing.ContentAlignment.TopLeft;
-            this.label7.Location = new System.Drawing.Point(231, 116);
+            this.label7.Location = new System.Drawing.Point(261, 116);
             this.label7.Name = "label7";
             this.label7.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.label7.Size = new System.Drawing.Size(83, 17);
+            this.label7.Size = new System.Drawing.Size(53, 17);
             this.label7.TabIndex = 11;
-            this.label7.Text = "Public Beta 9";
+            this.label7.Text = "Release";
             // 
             // About
             // 
