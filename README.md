@@ -22,6 +22,12 @@ HEIF Utility - View/Convert Apple HEIF files on Windows.<br>
 <img src="/img/HEIFUScreenShot4.png"><br>
 <img src="/img/HEIFUScreenShot5.png">
 <br>
+<h2>鸣谢/Credit</h2>
+DiNgO_ZY<br>
+GiGA_F<br>
+iXerol<br>
+linwangjia<br>
+nymaxmo<br>
 <h2>提供支持/Powered by</h2>
 <a href="https://github.com/nokiatech/heif">NokiaTechnologies - HEIF</a><br>
 <a href="http://x265.org/">MulticoreWare Inc. - libx265</a><br>
