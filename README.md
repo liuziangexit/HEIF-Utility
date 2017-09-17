@@ -36,8 +36,7 @@ nymaxmo<br>
 <a href="https://www.microsoft.com/net">Microsoft - .NET</a><br>
 <a href="https://github.com/liuziangexit/liuzianglib">liuziangexit - liuzianglib</a><br>
 <h2>了解更多/More Detailed</h2>
-中文版本: https://liuziangexit.com/HEIF-Utility<br>
-English Version: https://liuziangexit.com/HEIF-Utility/EN
+https://liuziangexit.com/HEIF-Utility
 <h2>下载测试版/Download Beta Version</h2>
 中文版本(Public Beta 9): https://liuziangexit.com/resource/HEIF-Utility-CN.zip<br>
 English Version(Public Beta 7): https://liuziangexit.com/resource/HEIF-Utility-EN.zip
