@@ -17,10 +17,10 @@ The release version will support Apple-generated HEIF images, and the first rele
 4. Batch conversion
 <br>
 <h2>截图/Screen Shot</h2>
-<img src="/img/HEIFUScreenShot1.png"><br>
-<img src="/img/HEIFUScreenShot2.png"><br>
-<img src="/img/HEIFUScreenShot3.png"><br>
-<img src="/img/HEIFUScreenShot4.png"><br>
+<img src="/img/HEIFUScreenShot1.PNG"><br>
+<img src="/img/HEIFUScreenShot2.PNG"><br>
+<img src="/img/HEIFUScreenShot3.PNG"><br>
+<img src="/img/HEIFUScreenShot4.PNG"><br>
 <img src="/img/HEIFUScreenShot5.png">
 <br>
 <h2>提供支持/Powered by</h2>
