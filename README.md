@@ -34,5 +34,5 @@ The release version will support Apple-generated HEIF images, and the first rele
 中文版本: https://liuziangexit.com/HEIF-Utility<br>
 English Version: https://liuziangexit.com/HEIF-Utility/EN
 <h2>下载测试版/Download Beta Version</h2>
-中文版本(Public Beta 8): https://liuziangexit.com/resource/HEIF-Utility-CN.zip<br>
+中文版本(Public Beta 9): https://liuziangexit.com/resource/HEIF-Utility-CN.zip<br>
 English Version(Public Beta 7): https://liuziangexit.com/resource/HEIF-Utility-EN.zip
