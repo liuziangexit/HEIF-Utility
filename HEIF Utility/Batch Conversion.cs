@@ -337,6 +337,8 @@ namespace HEIF_Utility
                         this.Invoke(new Action(() =>
                         {
                             filelist.Items[i].BackColor = Color.DarkRed;
+                            if (MainPrograssBar.Value < ((float)(i + 1) / (float)list_copy.Length) * 100)
+                                MainPrograssBar.Value = (int)(((float)(i + 1) / (float)list_copy.Length) * 100);
                         }));
                     }
                 }
