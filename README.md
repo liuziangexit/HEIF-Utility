@@ -11,7 +11,7 @@ HEIF Utility - View/Convert Apple HEIF files on Windows.<br>
 <br>
 1. View the Apple-generated HEIF images<br>
 2. View the picture details<br>
-3. Convert Apple HEIF images to JPG format images<br>
+3. Convert Apple HEIF images to JPG images<br>
 4. Batch conversion<br>
 *Supported iOS camera modes: Photo, Square, Panorama
 <br>
