@@ -9,9 +9,9 @@ using System.Windows.Forms;
 
 namespace HEIF_Utility
 {
-    public partial class processing : Form
+    public partial class Processing : Form
     {
-        public processing()
+        public Processing()
         {
             InitializeComponent();
         }

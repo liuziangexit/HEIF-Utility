@@ -33,6 +33,7 @@
             this.文件ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.选择HEIFToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.另存为ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.拷贝ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.更多ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.批量转换ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.关于ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -42,7 +43,6 @@
             this.DetailedButton = new System.Windows.Forms.Button();
             this.DragPicture = new System.Windows.Forms.PictureBox();
             this.SoftwareName = new System.Windows.Forms.Label();
-            this.拷贝ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.TopMenuStrip.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.MainPictureBox)).BeginInit();
             this.TopPanel.SuspendLayout();
@@ -101,6 +101,15 @@
             this.另存为ToolStripMenuItem.Text = "保存(.jpg)";
             this.另存为ToolStripMenuItem.Click += new System.EventHandler(this.另存为ToolStripMenuItem_Click);
             // 
+            // 拷贝ToolStripMenuItem
+            // 
+            this.拷贝ToolStripMenuItem.Enabled = false;
+            this.拷贝ToolStripMenuItem.Name = "拷贝ToolStripMenuItem";
+            this.拷贝ToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.C)));
+            this.拷贝ToolStripMenuItem.Size = new System.Drawing.Size(181, 22);
+            this.拷贝ToolStripMenuItem.Text = "拷贝";
+            this.拷贝ToolStripMenuItem.Click += new System.EventHandler(this.拷贝ToolStripMenuItem_Click);
+            // 
             // 更多ToolStripMenuItem
             // 
             this.更多ToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
@@ -113,16 +122,15 @@
             // 
             // 批量转换ToolStripMenuItem
             // 
-            this.批量转换ToolStripMenuItem.Enabled = false;
             this.批量转换ToolStripMenuItem.Name = "批量转换ToolStripMenuItem";
-            this.批量转换ToolStripMenuItem.Size = new System.Drawing.Size(211, 22);
-            this.批量转换ToolStripMenuItem.Text = "批量转换(Coming Soon)";
+            this.批量转换ToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.批量转换ToolStripMenuItem.Text = "批量转换";
             this.批量转换ToolStripMenuItem.Click += new System.EventHandler(this.批量转换ToolStripMenuItem_Click);
             // 
             // 关于ToolStripMenuItem
             // 
             this.关于ToolStripMenuItem.Name = "关于ToolStripMenuItem";
-            this.关于ToolStripMenuItem.Size = new System.Drawing.Size(211, 22);
+            this.关于ToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
             this.关于ToolStripMenuItem.Text = "关于";
             this.关于ToolStripMenuItem.Click += new System.EventHandler(this.关于ToolStripMenuItem_Click);
             // 
@@ -204,15 +212,6 @@
             this.SoftwareName.TabIndex = 6;
             this.SoftwareName.Text = "HEIF Utility";
             this.SoftwareName.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // 拷贝ToolStripMenuItem
-            // 
-            this.拷贝ToolStripMenuItem.Enabled = false;
-            this.拷贝ToolStripMenuItem.Name = "拷贝ToolStripMenuItem";
-            this.拷贝ToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.C)));
-            this.拷贝ToolStripMenuItem.Size = new System.Drawing.Size(181, 22);
-            this.拷贝ToolStripMenuItem.Text = "拷贝";
-            this.拷贝ToolStripMenuItem.Click += new System.EventHandler(this.拷贝ToolStripMenuItem_Click);
             // 
             // MainWindow
             // 

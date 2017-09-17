@@ -1,6 +1,6 @@
 ﻿namespace HEIF_Utility
 {
-    partial class processing
+    partial class Processing
     {
         /// <summary>
         /// Required designer variable.
@@ -40,7 +40,7 @@
             this.progressBar1.Style = System.Windows.Forms.ProgressBarStyle.Marquee;
             this.progressBar1.TabIndex = 1;
             // 
-            // processing
+            // Processing
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -52,7 +52,7 @@
             this.MaximumSize = new System.Drawing.Size(296, 65);
             this.MinimizeBox = false;
             this.MinimumSize = new System.Drawing.Size(296, 65);
-            this.Name = "processing";
+            this.Name = "Processing";
             this.ShowIcon = false;
             this.ShowInTaskbar = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;

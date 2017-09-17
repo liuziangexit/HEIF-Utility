@@ -56,7 +56,7 @@ namespace HEIF_Utility
 
             this.Show();
 
-            var box = new processing();
+            var box = new Processing();
             try
             {
                 Thread T;
@@ -184,7 +184,7 @@ namespace HEIF_Utility
 
         private void 选择HEIFToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            var box = new processing();
+            var box = new Processing();
             try
             {
                 var filepicker = new OpenFileDialog();
@@ -227,7 +227,7 @@ namespace HEIF_Utility
 
         private void 另存为ToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            var box2 = new processing();
+            var box2 = new Processing();
             try
             {
                 var box = new SaveFileDialog();
@@ -312,7 +312,7 @@ namespace HEIF_Utility
         {
             try
             {
-                var box = new processing();
+                var box = new Processing();
                 Thread T;
                 T = new Thread(new ThreadStart(new Action(() =>
                 {
@@ -346,7 +346,7 @@ namespace HEIF_Utility
 
         private void 批量转换ToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            var box = new BC();
+            var box = new Batch_Conversion();
             box.ShowDialog();
         }
 
