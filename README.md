@@ -39,5 +39,5 @@ nymaxmo<br>
 <h2>了解更多 / More Detailed</h2>
 https://liuziangexit.com/HEIF-Utility
 <h2>下载测试版/Download Beta Version</h2>
-中文版本(Public Beta 9): https://liuziangexit.com/resource/HEIF-Utility-CN.zip<br>
-English Version(Public Beta 7): https://liuziangexit.com/resource/HEIF-Utility-EN.zip
+中文版本(Release, 20170918): https://liuziangexit.com/resource/HEIF-Utility-CN.zip<br>
+English Version(Release-English, 20170918): https://liuziangexit.com/resource/HEIF-Utility-EN.zip
