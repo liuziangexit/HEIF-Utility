@@ -40,3 +40,5 @@ nymaxmo<br>
 https://liuziangexit.com/HEIF-Utility
 <h2>下载/Download</h2>
 https://liuziangexit.com/HEIF-Utility/download.html
+<h2>技术细节</h2>
+https://zhuanlan.zhihu.com/p/29439313
