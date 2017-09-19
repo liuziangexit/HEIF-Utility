@@ -38,7 +38,12 @@ nymaxmo<br>
 <a href="https://github.com/liuziangexit/liuzianglib">liuziangexit - liuzianglib</a><br>
 <h2>了解更多 / More Detailed</h2>
 https://liuziangexit.com/HEIF-Utility
-<h2>下载/Download</h2>
+<h2>下载 / Download</h2>
 https://liuziangexit.com/HEIF-Utility/download.html
+<h2>HUD.dll</h2>
+HUD.dll 是 HEIF 实用工具的核心组件，它提供将 Apple HEIF 转换为 JPEG 的接口。<br>
+HUD.dll is the core component of the HEIF utility, which provides an interface for converting Apple HEIF to JPEG.<br>
+
+https://github.com/liuziangexit/HEIF-Utility-Native-DLL
 <h2>技术细节</h2>
 https://zhuanlan.zhihu.com/p/29439313
