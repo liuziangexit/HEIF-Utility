@@ -123,14 +123,14 @@
             // 批量转换ToolStripMenuItem
             // 
             this.批量转换ToolStripMenuItem.Name = "批量转换ToolStripMenuItem";
-            this.批量转换ToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.批量转换ToolStripMenuItem.Size = new System.Drawing.Size(124, 22);
             this.批量转换ToolStripMenuItem.Text = "批量转换";
             this.批量转换ToolStripMenuItem.Click += new System.EventHandler(this.批量转换ToolStripMenuItem_Click);
             // 
             // 关于ToolStripMenuItem
             // 
             this.关于ToolStripMenuItem.Name = "关于ToolStripMenuItem";
-            this.关于ToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.关于ToolStripMenuItem.Size = new System.Drawing.Size(124, 22);
             this.关于ToolStripMenuItem.Text = "关于";
             this.关于ToolStripMenuItem.Click += new System.EventHandler(this.关于ToolStripMenuItem_Click);
             // 
@@ -146,8 +146,8 @@
             this.MainPictureBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.MainPictureBox.TabIndex = 1;
             this.MainPictureBox.TabStop = false;
-            this.MainPictureBox.DragDrop += new System.Windows.Forms.DragEventHandler(this.MainWindow_DragDrop);
-            this.MainPictureBox.DragEnter += new System.Windows.Forms.DragEventHandler(this.pictureBox1_DragEnter);
+            this.MainPictureBox.DragDrop += new System.Windows.Forms.DragEventHandler(this.HU_DragDrop);
+            this.MainPictureBox.DragEnter += new System.Windows.Forms.DragEventHandler(this.HU_DragEnter);
             // 
             // TopPanel
             // 
@@ -203,7 +203,9 @@
             // 
             // SoftwareName
             // 
+            this.SoftwareName.AllowDrop = true;
             this.SoftwareName.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.SoftwareName.Enabled = false;
             this.SoftwareName.Font = new System.Drawing.Font("微软雅黑", 26.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.SoftwareName.ForeColor = System.Drawing.Color.Silver;
             this.SoftwareName.Location = new System.Drawing.Point(0, 35);
@@ -212,6 +214,8 @@
             this.SoftwareName.TabIndex = 6;
             this.SoftwareName.Text = "HEIF Utility";
             this.SoftwareName.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.SoftwareName.DragDrop += new System.Windows.Forms.DragEventHandler(this.HU_DragDrop);
+            this.SoftwareName.DragEnter += new System.Windows.Forms.DragEventHandler(this.HU_DragEnter);
             // 
             // MainWindow
             // 

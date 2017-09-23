@@ -323,7 +323,7 @@ namespace HEIF_Utility
                     try
                     {
                         var heif_data = invoke_dll.read_heif(list_copy[i]);
-                        invoke_dll.invoke_heif_to_jpg(heif_data, this.output_quality).Save(this.output_folder + "\\" + make_output_filename(list_copy[i]));
+                        invoke_dll.invoke_heif_to_jpg(heif_data, this.output_quality, "temp_bitstream.hevc").Save(this.output_folder + "\\" + make_output_filename(list_copy[i]));
 
                         this.Invoke(new Action(() =>
                         {

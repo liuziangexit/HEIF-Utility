@@ -249,7 +249,7 @@ namespace HEIF_Utility
 
                 try
                 {
-                    invoke_dll.invoke_heif_to_jpg(heicfile, sq.value).Save(box.FileName, ImageFormat.Jpeg);
+                    invoke_dll.invoke_heif_to_jpg(heicfile, sq.value, "temp_bitstream.hevc").Save(box.FileName, ImageFormat.Jpeg);
                 }
                 catch (Exception)
                 {
@@ -283,7 +283,7 @@ namespace HEIF_Utility
             if (openthis == "") return;
             filename = openthis;
             heicfile = invoke_dll.read_heif(openthis);
-            MainPictureBox.Image = invoke_dll.invoke_heif_to_jpg(heicfile, 50);
+            MainPictureBox.Image = invoke_dll.invoke_heif_to_jpg(heicfile, 50, "temp_bitstream.hevc");
             MainPictureBox.Visible = true;
             DetailedButton.Visible = true;
             SoftwareName.Visible = false;
@@ -309,7 +309,7 @@ namespace HEIF_Utility
             }
         }
 
-        private void MainWindow_DragDrop(object sender, DragEventArgs e)
+        private void HU_DragDrop(object sender, DragEventArgs e)
         {
             try
             {
@@ -333,7 +333,7 @@ namespace HEIF_Utility
             catch (Exception) { }
         }
         
-        private void pictureBox1_DragEnter(object sender, DragEventArgs e)
+        private void HU_DragEnter(object sender, DragEventArgs e)
         {
             if (e.Data.GetDataPresent(DataFormats.FileDrop))
             {
@@ -376,5 +376,6 @@ namespace HEIF_Utility
             }
             catch (Exception) { }
         }
+        
     }
 }
