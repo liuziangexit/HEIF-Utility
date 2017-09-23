@@ -18,7 +18,8 @@ namespace HEIF_Utility
         private int output_quality = 50;
         private ProgressBar MainPrograssBar;
         private volatile bool isStart = false;
-        private Thread process_thread;
+        private volatile int index = 0;
+        static readonly object index_locker = new object();
 
         public Batch_Conversion()
         {
@@ -26,7 +27,7 @@ namespace HEIF_Utility
 
             filelist = new HEIF_Utility.Batch_Conversion.ListViewWithoutScrollBar();
             FilelistPanel.Controls.Add(filelist);
-            
+
             //set filelist property
             filelist.Dock = DockStyle.Fill;
             filelist.AllowColumnReorder = false;
@@ -215,29 +216,60 @@ namespace HEIF_Utility
                 if (box.ShowDialog() != DialogResult.OK)
                     return;
 
-
-                set_processing_ui();
-                Thread T;
-                T = new Thread(new ThreadStart(new Action(() =>
+                int ThreadCount = 0;
+                try
                 {
-                    process();
-                })));
-                T.IsBackground = true;
-                process_thread = T;
+                    ThreadCount = Environment.ProcessorCount / 2;
+                    if (ThreadCount < 1)
+                        ThreadCount = 1;
+                }
+                catch (Exception)
+                {
+                    ThreadCount = 1;
+                }
+
+                set_processing_ui(ThreadCount);
+                for (int i = 0; i < ThreadCount; i++)
+                {
+                    Thread T;
+                    T = new Thread(new ParameterizedThreadStart(process));
+                    T.IsBackground = true;
+                    T.Start(make_temp_filename("batch_temp", i));
+                }
                 this.isStart = true;
-                T.Start();
             }
             catch (Exception)
             {
+                this.isStart = false;
                 MessageBox.Show("发生未知错误。", "无法开始批量转换");
                 return;
             }
         }
 
-        private void set_processing_ui()
+        private int get_index()
+        {
+            lock (index_locker)
+            {
+                int returnthis = index;
+                index++;
+                return returnthis;
+            }
+        }
+
+        private string make_temp_filename(string filename, int number)
+        {
+            return filename + number.ToString();
+        }
+
+        private void set_processing_ui(int coreCount)
         {
             Title.Text = "转换中";
             set_output_quality.Visible = start.Visible = set_output_folder.Visible = ClearFileList.Visible = add_file.Visible = pop_file.Visible = false;
+
+            if (coreCount > 1)
+                this.Text += " - 已启用" + coreCount.ToString() + "线程";
+            else
+                this.Text += " - 未启用多线程";
 
             for (int i = 0; i < filelist.Items.Count; i++)
                 filelist.Items[i].BackColor = Color.Orange;
@@ -252,6 +284,7 @@ namespace HEIF_Utility
             prograssbar.Location = new Point(FilelistPanel.Location.X, FilelistPanel.Location.Y + FilelistPanel.Size.Height + 11);
             prograssbar.Anchor = AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
             MainPrograssBar = prograssbar;
+
             this.Controls.Add(prograssbar);
         }
 
@@ -305,71 +338,95 @@ namespace HEIF_Utility
             }
         }
 
-        private void process()
+        private void process(object input_temp_filename)
         {
+            //获取临时文件名
+            string temp_filename;
             try
             {
-                string[] list_copy = new string[filelist.Items.Count];
-                this.Invoke(new Action(() =>
-                {
-                    for (int i = 0; i < filelist.Items.Count; i++)
-                    {
-                        list_copy[i] = filelist.Items[i].Text;
-                    }
-                }));
-
-                for (int i = 0; i < list_copy.Length; i++)
-                {
-                    try
-                    {
-                        var heif_data = invoke_dll.read_heif(list_copy[i]);
-                        invoke_dll.invoke_heif_to_jpg(heif_data, this.output_quality, "temp_bitstream.hevc").Save(this.output_folder + "\\" + make_output_filename(list_copy[i]));
-
-                        this.Invoke(new Action(() =>
-                        {
-                            filelist.Items[i].BackColor = Color.ForestGreen;
-                            if (MainPrograssBar.Value < ((float)(i + 1) / (float)list_copy.Length) * 100)
-                                MainPrograssBar.Value = (int)(((float)(i + 1) / (float)list_copy.Length) * 100);
-                        }));
-                    }
-                    catch (Exception ex)
-                    {
-                        this.Invoke(new Action(() =>
-                        {
-                            filelist.Items[i].BackColor = Color.DarkRed;
-                            if (MainPrograssBar.Value < ((float)(i + 1) / (float)list_copy.Length) * 100)
-                                MainPrograssBar.Value = (int)(((float)(i + 1) / (float)list_copy.Length) * 100);
-                        }));
-                    }
-                }
-                this.isStart = false;
-                this.Invoke(new Action(() =>
-                {                    
-                    this.Title.Text = "已完成批量转换";
-                    MainPrograssBar.Value = MainPrograssBar.Maximum;
-                }));
+                temp_filename = input_temp_filename as string;
+                if (string.IsNullOrWhiteSpace(temp_filename))
+                    return;
             }
             catch (Exception)
             {
+                return;
+            }
+            //拷贝文件列表
+            string[] list_copy = new string[filelist.Items.Count];
+            this.Invoke(new Action(() =>
+            {
+                for (int i = 0; i < filelist.Items.Count; i++)
+                {
+                    list_copy[i] = filelist.Items[i].Text;
+                }
+            }));
+
+            //开始
+            try
+            {
                 try
                 {
+                    int index_while = get_index();
+                    while (index_while < filelist.Items.Count)
+                    {
+                        try
+                        {
+                            var heif_data = invoke_dll.read_heif(list_copy[index_while]);
+                            invoke_dll.invoke_heif_to_jpg(heif_data, this.output_quality, temp_filename).Save(this.output_folder + "\\" + make_output_filename(list_copy[index_while]));
+
+                            this.Invoke(new Action(() =>
+                            {
+                                filelist.Items[index_while].BackColor = Color.ForestGreen;
+                                if (MainPrograssBar.Value < ((float)(index_while + 1) / (float)list_copy.Length) * 100)
+                                    MainPrograssBar.Value = (int)(((float)(index_while + 1) / (float)list_copy.Length) * 100);
+                            }));
+                        }
+                        catch (Exception)
+                        {
+                            this.Invoke(new Action(() =>
+                            {
+                                filelist.Items[index_while].BackColor = Color.DarkRed;
+                                if (MainPrograssBar.Value < ((float)(index_while + 1) / (float)list_copy.Length) * 100)
+                                    MainPrograssBar.Value = (int)(((float)(index_while + 1) / (float)list_copy.Length) * 100);
+                            }));
+                        }
+                        index_while = get_index();
+                        if (isStart != true)
+                            return;
+                    }
                     this.isStart = false;
                     this.Invoke(new Action(() =>
                     {
-                        try
-                        {                            
-                            Title.Text = "无法完成批量转换";
-                            MainPrograssBar.Value = MainPrograssBar.Maximum;
-                            for (int i = 0; i < filelist.Items.Count; i++)
-                            {
-                                if (filelist.Items[i].BackColor != Color.ForestGreen)
-                                    filelist.Items[i].BackColor = Color.DarkRed;
-                            }
-                        }
-                        catch (Exception) { }
+                        this.Title.Text = "已完成批量转换";
+                        MainPrograssBar.Value = MainPrograssBar.Maximum;
                     }));
                 }
-                catch (Exception) { }
+                catch (Exception)
+                {
+                    try
+                    {
+                        this.isStart = false;
+                        this.Invoke(new Action(() =>
+                        {
+                            try
+                            {
+                                Title.Text = "无法完成批量转换";
+                                MainPrograssBar.Value = MainPrograssBar.Maximum;
+                                for (int i = 0; i < filelist.Items.Count; i++)
+                                {
+                                    if (filelist.Items[i].BackColor != Color.ForestGreen)
+                                        filelist.Items[i].BackColor = Color.DarkRed;
+                                }
+                            }
+                            catch (Exception) { }
+                        }));
+                    }
+                    catch (Exception) { }
+                }
+            }
+            catch (Exception)
+            {
                 return;
             }
         }
