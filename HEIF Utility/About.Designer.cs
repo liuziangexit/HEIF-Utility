@@ -124,7 +124,7 @@
             this.label6.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.label6.Size = new System.Drawing.Size(64, 17);
             this.label6.TabIndex = 5;
-            this.label6.Text = "20170923";
+            this.label6.Text = "20170924";
             this.label6.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // label9
@@ -164,12 +164,12 @@
             this.label7.Font = new System.Drawing.Font("Microsoft YaHei UI", 9F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.label7.ForeColor = System.Drawing.Color.DarkGray;
             this.label7.ImageAlign = System.Drawing.ContentAlignment.TopLeft;
-            this.label7.Location = new System.Drawing.Point(280, 116);
+            this.label7.Location = new System.Drawing.Point(250, 116);
             this.label7.Name = "label7";
             this.label7.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.label7.Size = new System.Drawing.Size(34, 17);
+            this.label7.Size = new System.Drawing.Size(64, 17);
             this.label7.TabIndex = 11;
-            this.label7.Text = "Beta";
+            this.label7.Text = "Release 2";
             // 
             // About
             // 
