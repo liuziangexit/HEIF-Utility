@@ -36,13 +36,10 @@ nymaxmo<br>
 <a href="http://opencv.org/">OpenCV Team - OpenCV</a><br>
 <a href="https://www.microsoft.com/net">Microsoft - .NET</a><br>
 <a href="https://github.com/liuziangexit/liuzianglib">liuziangexit - liuzianglib</a><br>
-<h2>了解更多 / More Detailed</h2>
-https://liuziangexit.com/HEIF-Utility
 <h2>下载 / Download</h2>
-https://liuziangexit.com/HEIF-Utility/download.html
-<h2>HUD.dll</h2>
-HUD.dll 是 HEIF 实用工具的核心组件，它提供将 Apple HEIF 转换为 JPEG 的接口。<br>
-HUD.dll is the core component of HEIF Utility, which provides an interface for converting Apple HEIF to JPEG.<br>
-https://github.com/liuziangexit/HEIF-Utility-Native-DLL
-<h2>技术细节</h2>
-https://zhuanlan.zhihu.com/p/29439313
+https://liuziangexit.com/HEIF-Utility/download.html <br>
+<h2>相关链接 / Related Links</h2>
+官方网站 / Official Website: https://liuziangexit.com/HEIF-Utility <br>
+HEIF Utility Online: https://liuziangexit.com/HEIF-Utility <br>
+HEIF Utility Native DLL: https://github.com/liuziangexit/HEIF-Utility-Native-DLL <br>
+知乎专栏: https://zhuanlan.zhihu.com/p/29439313
