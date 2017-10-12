@@ -172,7 +172,6 @@
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "批量转换";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.HandleFormClosing);
-            this.Load += new System.EventHandler(this.Batch_Conversion_Load);
             this.Resize += new System.EventHandler(this.Batch_Conversion_Resize);
             this.ResumeLayout(false);
             this.PerformLayout();

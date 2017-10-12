@@ -11,7 +11,7 @@ namespace HEIF_Utility
 {
     public partial class setjpgquality : Form
     {
-        public int value;
+        public int value = 50;
 
         public setjpgquality()
         {
