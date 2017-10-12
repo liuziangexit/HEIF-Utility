@@ -23,9 +23,10 @@ namespace HEIF_Utility
 
         public Batch_Conversion()
         {
-            InitializeComponent();
-
             filelist = new HEIF_Utility.Batch_Conversion.ListViewWithoutScrollBar();
+
+            InitializeComponent();
+            
             FilelistPanel.Controls.Add(filelist);
 
             //set filelist property
