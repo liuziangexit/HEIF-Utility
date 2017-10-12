@@ -23,11 +23,12 @@ namespace HEIF_Utility
 
         public Batch_Conversion()
         {
+            filelist = new HEIF_Utility.Batch_Conversion.ListViewWithoutScrollBar();
+
             InitializeComponent();
 
-            filelist = new HEIF_Utility.Batch_Conversion.ListViewWithoutScrollBar();
             FilelistPanel.Controls.Add(filelist);
-            
+
             //set filelist property
             filelist.Dock = DockStyle.Fill;
             filelist.AllowColumnReorder = false;
