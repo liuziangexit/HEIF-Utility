@@ -24,9 +24,9 @@ namespace HEIF_Utility
         public Batch_Conversion()
         {
             filelist = new HEIF_Utility.Batch_Conversion.ListViewWithoutScrollBar();
-
-            InitializeComponent();
             
+            InitializeComponent();
+
             FilelistPanel.Controls.Add(filelist);
 
             //set filelist property
@@ -39,6 +39,12 @@ namespace HEIF_Utility
             filelist.View = View.Details;
             filelist.GridLines = true;
             filelist.FullRowSelect = true;
+
+            try
+            {
+                filelist.AutoResizeColumns(ColumnHeaderAutoResizeStyle.HeaderSize);
+            }
+            catch (Exception) { }
 
             //set line spacing
             ImageList imageList = new ImageList();
@@ -86,20 +92,14 @@ namespace HEIF_Utility
             }
             catch (Exception) { }
         }
-
-        private void dataGridView1_Enter(object sender, EventArgs e)
-        {
-            start.Focus();
-        }
-
-        private void Batch_Conversion_Load(object sender, EventArgs e)
-        {
-            filelist.AutoResizeColumns(ColumnHeaderAutoResizeStyle.HeaderSize);
-        }
-
+        
         private void Batch_Conversion_Resize(object sender, EventArgs e)
         {
-            filelist.AutoResizeColumns(ColumnHeaderAutoResizeStyle.HeaderSize);
+            try
+            {
+                filelist.AutoResizeColumns(ColumnHeaderAutoResizeStyle.HeaderSize);
+            }
+            catch (Exception) { }
         }
 
         private class ListViewWithoutScrollBar : ListView

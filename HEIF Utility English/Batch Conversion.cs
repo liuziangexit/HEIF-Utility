@@ -40,6 +40,12 @@ namespace HEIF_Utility
             filelist.GridLines = true;
             filelist.FullRowSelect = true;
 
+            try
+            {
+                filelist.AutoResizeColumns(ColumnHeaderAutoResizeStyle.HeaderSize);
+            }
+            catch (Exception) { }
+
             //set line spacing
             ImageList imageList = new ImageList();
             imageList.ImageSize = new Size(1, 20);//1-256
@@ -86,20 +92,14 @@ namespace HEIF_Utility
             }
             catch (Exception) { }
         }
-
-        private void dataGridView1_Enter(object sender, EventArgs e)
-        {
-            start.Focus();
-        }
-
-        private void Batch_Conversion_Load(object sender, EventArgs e)
-        {
-            filelist.AutoResizeColumns(ColumnHeaderAutoResizeStyle.HeaderSize);
-        }
-
+        
         private void Batch_Conversion_Resize(object sender, EventArgs e)
         {
-            filelist.AutoResizeColumns(ColumnHeaderAutoResizeStyle.HeaderSize);
+            try
+            {
+                filelist.AutoResizeColumns(ColumnHeaderAutoResizeStyle.HeaderSize);
+            }
+            catch (Exception) { }
         }
 
         private class ListViewWithoutScrollBar : ListView
