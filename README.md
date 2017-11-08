@@ -4,7 +4,7 @@ HEIF 实用工具 - 在 Windows 上查看/转换 Apple HEIF 文件。<br>
 HEIF Utility - View/Convert Apple HEIF files on Windows.<br>
 <h2>功能 / Features</h2>
 1.查看由 Apple 设备生成的 HEIF 图片<br>
-2.查看图片EXIF信息<br>
+2.查看图片 EXIF 信息<br>
 3.将 Apple HEIF 图片转换为 JPEG 图片<br>
 4.批量转换<br>
 *支持的 iOS 相机模式：照片、正方形、全景<br>
