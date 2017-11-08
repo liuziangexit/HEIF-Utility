@@ -15,6 +15,17 @@ HEIF Utility - View/Convert Apple HEIF files on Windows.<br>
 4. Batch Conversion<br>
 *Supported iOS camera modes: Photo, Square, Panorama
 <br>
+<h2>系统需求 / System Requirement</h2>
+1. Windows 7 或更新版本的操作系统<br>
+2. 64 位操作系统<br>
+3. Visual C++ 可再发行组件包(x64, for Visual Studio 2015)<br>
+4. .NET 4<br>
+<br>
+1. Windows 7 or higher<br>
+2. x64<br>
+3. Visual C++ Redistributable Package(x64, for Visual Studio 2015)<br>
+4. .NET 4
+<br>
 <h2>截图 / Screen Shot</h2>
 <img src="/img/HEIFUScreenShot1.png"><br>
 <img src="/img/HEIFUScreenShot2.png"><br>
