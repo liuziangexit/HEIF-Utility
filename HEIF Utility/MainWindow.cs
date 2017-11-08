@@ -15,7 +15,7 @@ namespace HEIF_Utility
 {
     public partial class MainWindow : Form
     {
-        private string filename;
+        private string filename, exifinfo;
         private byte[] heicfile;
         private Point mouseOff;
 
@@ -77,7 +77,8 @@ namespace HEIF_Utility
             }
             catch (Exception ex)
             {
-                MessageBox.Show(ex.Message);
+                //test
+                //MessageBox.Show(ex.Message);
                 box.Invoke(new Action(() =>
                 {
                     box.Close();
@@ -98,9 +99,9 @@ namespace HEIF_Utility
         {
             try
             {
-                if (!System.IO.File.Exists(Application.StartupPath + "\\HUD.dll") || !System.IO.File.Exists(Application.StartupPath + "\\opencv_ffmpeg330_64.dll") || !System.IO.File.Exists(Application.StartupPath + "\\opencv_world330.dll"))
+                if (!System.IO.File.Exists(Application.StartupPath + "\\HUD.dll") || !System.IO.File.Exists(Application.StartupPath + "\\opencv_ffmpeg330_64.dll") || !System.IO.File.Exists(Application.StartupPath + "\\opencv_world330.dll") || !System.IO.File.Exists(Application.StartupPath + "\\Newtonsoft.Json.dll"))
                 {
-                    MessageBox.Show("缺少核心组件，HEIF 实用工具无法启动。");
+                    MessageBox.Show("缺少核心组件，HEIF 实用工具无法启动。\r\n请在 https://liuziangexit.com/HEIF-Utility 下载最新版本。");
                     Environment.Exit(0);
                 }
 
@@ -192,8 +193,7 @@ namespace HEIF_Utility
                 filepicker.Multiselect = false;
                 filepicker.Filter = "HEIF(.heic)|*.heic|任意文件|*.*";
                 filepicker.ShowDialog();
-                if (filepicker.FileName == "") return;
-                filename = filepicker.FileName;
+                if (filepicker.FileName == "") return;                
 
                 
                 Thread T;
@@ -204,7 +204,7 @@ namespace HEIF_Utility
                 T.IsBackground = true;
                 T.Start();
 
-                open(filename);
+                open(filepicker.FileName);
 
                 box.Invoke(new Action(() =>
                 {
@@ -249,7 +249,8 @@ namespace HEIF_Utility
 
                 try
                 {
-                    invoke_dll.invoke_heif_to_jpg(heicfile, sq.value, "temp_bitstream.hevc").Save(box.FileName, ImageFormat.Jpeg);
+                    int copysize = 0;
+                    invoke_dll.invoke_heif2jpg(heicfile, sq.value, "temp_bitstream.hevc", ref copysize).Save(box.FileName, ImageFormat.Jpeg);
                 }
                 catch (Exception)
                 {
@@ -280,10 +281,12 @@ namespace HEIF_Utility
 
         void open(string openthis)
         {
-            if (openthis == "") return;
-            filename = openthis;
+            if (openthis == "") return;            
             heicfile = invoke_dll.read_heif(openthis);
-            MainPictureBox.Image = invoke_dll.invoke_heif_to_jpg(heicfile, 50, "temp_bitstream.hevc");
+            int copysize = 0;            
+            MainPictureBox.Image = invoke_dll.invoke_heif2jpg(heicfile, 50, "temp_bitstream.hevc", ref copysize);
+            exifinfo = invoke_dll.invoke_getexif(heicfile, ref copysize);
+            filename = openthis;
             MainPictureBox.Visible = true;
             DetailedButton.Visible = true;
             SoftwareName.Visible = false;
@@ -295,13 +298,8 @@ namespace HEIF_Utility
         {
             try
             {
-                var fi = new FileInfo(filename);
-                fi.OpenRead();
-
-                MessageBox.Show("文件名: " + fi.Name + "\r\n创建日期: " + fi.CreationTime.ToLongDateString() + " " + fi.CreationTime.ToLongTimeString() +
-                    "\r\n大小: " + fi.Length.ToString() + " byte\r\n分辨率: " + MainPictureBox.Image.Width + "x" + MainPictureBox.Image.Height);
-                
-
+                var box = new ImageInfo(filename, exifinfo);
+                box.ShowDialog();
                 DragPicture.Focus();
             }
             catch (Exception) {
