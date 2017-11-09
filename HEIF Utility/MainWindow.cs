@@ -75,16 +75,20 @@ namespace HEIF_Utility
                 }));
                 this.Focus();
             }
-            catch (Exception ex)
+            catch (Exception)
             {
-                //test
-                //MessageBox.Show(ex.Message);
                 box.Invoke(new Action(() =>
                 {
                     box.Close();
                 }));
                 this.Focus();
-                MessageBox.Show("无法打开此文件。");
+
+                var errorbox = new Error();
+                errorbox.maintext.Text = "无法打开此文件。";
+                errorbox.linklabel.Text = "转到在线帮助";
+                errorbox.link = "https://liuziangexit.com/HEIF-Utility/Help/No1.html";
+                errorbox.ShowDialog();
+
                 return;
             }
         }
@@ -101,7 +105,12 @@ namespace HEIF_Utility
             {
                 if (!System.IO.File.Exists(Application.StartupPath + "\\HUD.dll") || !System.IO.File.Exists(Application.StartupPath + "\\opencv_ffmpeg330_64.dll") || !System.IO.File.Exists(Application.StartupPath + "\\opencv_world330.dll") || !System.IO.File.Exists(Application.StartupPath + "\\Newtonsoft.Json.dll"))
                 {
-                    MessageBox.Show("缺少核心组件，HEIF 实用工具无法启动。\r\n请在 https://liuziangexit.com/HEIF-Utility 下载最新版本。");
+                    var errorbox = new Error();
+                    errorbox.maintext.Text = "缺少核心组件，HEIF 实用工具无法启动。";
+                    errorbox.linklabel.Text = "下载新版本";
+                    errorbox.link = "https://liuziangexit.com/HEIF-Utility";
+                    errorbox.ShowDialog();
+
                     Environment.Exit(0);
                 }
 
@@ -214,13 +223,16 @@ namespace HEIF_Utility
             }
             catch (Exception ex)
             {
-                //MessageBox.Show(ex.Message);
                 box.Invoke(new Action(() =>
                 {
                     box.Close();
                 }));
                 this.Focus();
-                MessageBox.Show("无法打开此文件。");
+                var errorbox = new Error();
+                errorbox.maintext.Text = "无法打开此文件。";
+                errorbox.linklabel.Text = "转到在线帮助";
+                errorbox.link = "https://liuziangexit.com/HEIF-Utility/Help/No1.html";
+                errorbox.ShowDialog();
                 return;
             }
         }
@@ -254,7 +266,17 @@ namespace HEIF_Utility
                 }
                 catch (Exception)
                 {
-                    MessageBox.Show("无法保存到 " + box.FileName);
+                    box2.Invoke(new Action(() =>
+                    {
+                        box2.Close();
+                    }));
+                    this.Focus();
+
+                    var errorbox = new Error();
+                    errorbox.maintext.Text = "无法保存到 " + box.FileName;
+                    errorbox.linklabel.Text = "转到在线帮助";
+                    errorbox.link = "https://liuziangexit.com/HEIF-Utility/Help/No2.html";
+                    errorbox.ShowDialog();
                     return;
                 }
 
@@ -267,14 +289,14 @@ namespace HEIF_Utility
                 MessageBox.Show("成功保存到 " + box.FileName);
                 return;
             }
-            catch (Exception ex)
+            catch (Exception)
             {
                 box2.Invoke(new Action(() =>
                 {
                     box2.Close();
                 }));
                 this.Focus();
-                MessageBox.Show(ex.Message);
+                MessageBox.Show("发生未知错误。");
                 return;
             }
         }
@@ -282,10 +304,11 @@ namespace HEIF_Utility
         void open(string openthis)
         {
             if (openthis == "") return;            
-            heicfile = invoke_dll.read_heif(openthis);
+            var tempheicfile = invoke_dll.read_heif(openthis);
             int copysize = 0;            
-            MainPictureBox.Image = invoke_dll.invoke_heif2jpg(heicfile, 50, "temp_bitstream.hevc", ref copysize);
-            exifinfo = invoke_dll.invoke_getexif(heicfile, ref copysize);
+            MainPictureBox.Image = invoke_dll.invoke_heif2jpg(tempheicfile, 50, "temp_bitstream.hevc", ref copysize);
+            exifinfo = invoke_dll.invoke_getexif(tempheicfile, ref copysize);
+            heicfile = tempheicfile;
             filename = openthis;
             MainPictureBox.Visible = true;
             DetailedButton.Visible = true;
@@ -309,9 +332,9 @@ namespace HEIF_Utility
 
         private void HU_DragDrop(object sender, DragEventArgs e)
         {
+            var box = new Processing();
             try
             {
-                var box = new Processing();
                 Thread T;
                 T = new Thread(new ThreadStart(new Action(() =>
                 {
@@ -328,7 +351,20 @@ namespace HEIF_Utility
                 }));
                 this.Focus();
             }
-            catch (Exception) { }
+            catch (Exception)
+            {
+                box.Invoke(new Action(() =>
+                {
+                    box.Close();
+                }));
+                this.Focus();
+
+                var errorbox = new Error();
+                errorbox.maintext.Text = "无法打开此文件。";
+                errorbox.linklabel.Text = "转到在线帮助";
+                errorbox.link = "https://liuziangexit.com/HEIF-Utility/Help/No1.html";
+                errorbox.ShowDialog();
+            }
         }
         
         private void HU_DragEnter(object sender, DragEventArgs e)

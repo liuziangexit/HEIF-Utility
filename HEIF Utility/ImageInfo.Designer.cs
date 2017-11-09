@@ -88,7 +88,6 @@
             this.ShowInTaskbar = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "图片信息";
-            this.TopMost = true;
             this.Shown += new System.EventHandler(this.ImageInfo_Shown);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.ResumeLayout(false);

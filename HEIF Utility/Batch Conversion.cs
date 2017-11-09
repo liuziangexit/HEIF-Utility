@@ -224,7 +224,7 @@ namespace HEIF_Utility
                 this.Text += " - 未启用多线程";
 
             for (int i = 0; i < filelist.Items.Count; i++)
-                filelist.Items[i].BackColor = Color.Orange;
+                filelist.Items[i].BackColor = Color.FromArgb(255, 255, 189, 53);
 
             var prograssbar = new ProgressBar();
             prograssbar.Maximum = 100;
@@ -330,7 +330,7 @@ namespace HEIF_Utility
 
                             this.Invoke(new Action(() =>
                             {
-                                filelist.Items[index_while].BackColor = Color.ForestGreen;
+                                filelist.Items[index_while].BackColor = Color.FromArgb(255, 0, 204, 75);
                                 if (MainPrograssBar.Value < ((float)(index_while + 1) / (float)list_copy.Length) * 100)
                                     MainPrograssBar.Value = (int)(((float)(index_while + 1) / (float)list_copy.Length) * 100);
                             }));
@@ -339,7 +339,7 @@ namespace HEIF_Utility
                         {
                             this.Invoke(new Action(() =>
                             {
-                                filelist.Items[index_while].BackColor = Color.DarkRed;
+                                filelist.Items[index_while].BackColor = Color.FromArgb(255, 229, 100, 90);
                                 if (MainPrograssBar.Value < ((float)(index_while + 1) / (float)list_copy.Length) * 100)
                                     MainPrograssBar.Value = (int)(((float)(index_while + 1) / (float)list_copy.Length) * 100);
                             }));
