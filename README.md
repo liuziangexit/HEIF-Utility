@@ -54,7 +54,6 @@ nymaxmo<br>
 https://liuziangexit.com/HEIF-Utility/download.html <br>
 提供简体中文和英文版本。<br>
 Provides Simplified Chinese and English version.<br>
-<br>
 <h2>相关链接 / Related Links</h2>
 官方网站 / Official Website: https://liuziangexit.com/HEIF-Utility <br>
 HEIF Utility Online: https://liuziangexit.com/HEIF-Utility/Online <br>
