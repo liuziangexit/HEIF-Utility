@@ -12,16 +12,23 @@ HEIF Utility - View/Convert Apple HEIF files on Windows.<br>
   -自定输出质量<br>
   -可选包含 EXIF 元数据(即将到来)
 <h3>批量转换</h3>
-  -支持来自不同文件夹的文件<br>
+  -实时进度显示<br>
   -自动启用多线程转换**<br>
-  <br>
+<br>
 <I>*: 支持的 iOS 相机模式：照片、正方形、全景</I><br>
 <I>*&nbsp;*: 在某些入门级处理器上，批量转换可能使用单线程</I><br>
 <br>
 <h3>View Apple devices-generated HEIF images</h3>
 <h3>View image EXIF</h3>
+  -File Info<br>
+  -Lens Info<br>
+  -GPS Info
 <h3>Convert Apple HEIF images to JPEG images</h3>
+  -Custom output quality<br>
+  -Optional includes EXIF metadata(Coming Soon)
 <h3>Batch Conversion</h3>
+  -Real-time progress display<br>
+  -Enable Multi-Threading automatically**<br>
 <br>
 <I>*: Supported iOS camera modes: Photo, Square, Panorama<br></I>
 <I>*&nbsp;*: On some entry-level processors, Batch Conversion my use single-threaded</I>
