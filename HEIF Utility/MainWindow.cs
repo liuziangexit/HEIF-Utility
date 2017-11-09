@@ -107,7 +107,7 @@ namespace HEIF_Utility
                 {
                     var errorbox = new Error();
                     errorbox.maintext.Text = "缺少核心组件，HEIF 实用工具无法启动。";
-                    errorbox.linklabel.Text = "下载新版本";
+                    errorbox.linklabel.Text = "下载页面";
                     errorbox.link = "https://liuziangexit.com/HEIF-Utility";
                     errorbox.ShowDialog();
 
@@ -221,7 +221,7 @@ namespace HEIF_Utility
                 }));
                 this.Focus();
             }
-            catch (Exception ex)
+            catch (Exception)
             {
                 box.Invoke(new Action(() =>
                 {
@@ -399,6 +399,19 @@ namespace HEIF_Utility
                 }
                 catch (Exception) {
                 }
+            }
+        }
+
+        private void 在线帮助ToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                System.Diagnostics.Process.Start("https://liuziangexit.com/HEIF-Utility/Help");
+            }
+            catch (Exception) {
+                var box = new ShowLinkCopyable();
+                box.link.Text = "https://liuziangexit.com/HEIF-Utility/Help";
+                box.ShowDialog();
             }
         }
 

@@ -195,13 +195,7 @@ namespace HEIF_Utility
 
             try
             {
-                dataGridView1.Rows.Add("海拔高度", exifinfo.Latitude+"米");
-            }
-            catch (Exception) { }
-
-            try
-            {
-                dataGridView1.Rows.Add("定位误差", exifinfo.DOP.ToString() + " DOP");
+                dataGridView1.Rows.Add("海拔高度", exifinfo.Altitude+"米");
             }
             catch (Exception) { }
         }
