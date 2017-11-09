@@ -13,7 +13,7 @@ HEIF Utility - View/Convert Apple HEIF files on Windows.<br>
   -可选包含 EXIF 元数据(即将到来) / Optional includes EXIF metadata(Coming Soon)
 <h4>4.批量转换 / Batch Conversion</h4>
   -实时进度显示 / Real-time progress display<br>
-  -自动启用多线程转换** / Enable Multi-Threading automatically**<br>
+  -自动启用多线程转换** / Use MultiThreading automatically**<br>
 <br>
 <I>*: 支持的 iOS 相机模式：照片、正方形、全景  / Supported iOS camera modes: Photo, Square, Panorama</I><br>
 <I>*&nbsp;*: 在某些入门级处理器上，批量转换可能使用单线程 / On some entry-level processors, Batch Conversion my use single-threaded</I><br>
