@@ -7,10 +7,10 @@ HEIF Utility - View/Convert Apple HEIF files on Windows.<br>
 2.查看图片 EXIF 信息<br>
   -文件属性<br>
   -镜头信息<br>
-  -定位信息
+  -定位信息<br>
 3.将 Apple HEIF 图片转换为 JPEG 图片<br>
   -自定输出质量<br>
-  -可选包含 EXIF 元数据(即将到来)
+  -可选包含 EXIF 元数据(即将到来)<br>
 4.批量转换<br>
   -实时进度显示<br>
   -自动启用多线程转换**<br>
@@ -22,10 +22,10 @@ HEIF Utility - View/Convert Apple HEIF files on Windows.<br>
 2. View image EXIF<br>
   -File Info<br>
   -Lens Info<br>
-  -GPS Info
+  -GPS Info<br>
 3. Convert Apple HEIF images to JPEG images<br>
   -Custom output quality<br>
-  -Optional includes EXIF metadata(Coming Soon)
+  -Optional includes EXIF metadata(Coming Soon)<br>
 4. Batch Conversion<<br>
   -Real-time progress display<br>
   -Enable Multi-Threading automatically**<br>
