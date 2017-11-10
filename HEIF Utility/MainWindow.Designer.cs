@@ -43,6 +43,7 @@
             this.DetailedButton = new System.Windows.Forms.Button();
             this.DragPicture = new System.Windows.Forms.PictureBox();
             this.SoftwareName = new System.Windows.Forms.Label();
+            this.在线帮助ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.TopMenuStrip.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.MainPictureBox)).BeginInit();
             this.TopPanel.SuspendLayout();
@@ -114,6 +115,7 @@
             // 
             this.更多ToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.批量转换ToolStripMenuItem,
+            this.在线帮助ToolStripMenuItem,
             this.关于ToolStripMenuItem});
             this.更多ToolStripMenuItem.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(75)))), ((int)(((byte)(75)))), ((int)(((byte)(75)))));
             this.更多ToolStripMenuItem.Name = "更多ToolStripMenuItem";
@@ -123,14 +125,14 @@
             // 批量转换ToolStripMenuItem
             // 
             this.批量转换ToolStripMenuItem.Name = "批量转换ToolStripMenuItem";
-            this.批量转换ToolStripMenuItem.Size = new System.Drawing.Size(124, 22);
+            this.批量转换ToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
             this.批量转换ToolStripMenuItem.Text = "批量转换";
             this.批量转换ToolStripMenuItem.Click += new System.EventHandler(this.批量转换ToolStripMenuItem_Click);
             // 
             // 关于ToolStripMenuItem
             // 
             this.关于ToolStripMenuItem.Name = "关于ToolStripMenuItem";
-            this.关于ToolStripMenuItem.Size = new System.Drawing.Size(124, 22);
+            this.关于ToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
             this.关于ToolStripMenuItem.Text = "关于";
             this.关于ToolStripMenuItem.Click += new System.EventHandler(this.关于ToolStripMenuItem_Click);
             // 
@@ -217,6 +219,13 @@
             this.SoftwareName.DragDrop += new System.Windows.Forms.DragEventHandler(this.HU_DragDrop);
             this.SoftwareName.DragEnter += new System.Windows.Forms.DragEventHandler(this.HU_DragEnter);
             // 
+            // 在线帮助ToolStripMenuItem
+            // 
+            this.在线帮助ToolStripMenuItem.Name = "在线帮助ToolStripMenuItem";
+            this.在线帮助ToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.在线帮助ToolStripMenuItem.Text = "在线支持";
+            this.在线帮助ToolStripMenuItem.Click += new System.EventHandler(this.在线帮助ToolStripMenuItem_Click);
+            // 
             // MainWindow
             // 
             this.AllowDrop = true;
@@ -267,6 +276,7 @@
         private System.Windows.Forms.Button DetailedButton;
         private System.Windows.Forms.Label SoftwareName;
         private System.Windows.Forms.ToolStripMenuItem 拷贝ToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem 在线帮助ToolStripMenuItem;
     }
 }
 

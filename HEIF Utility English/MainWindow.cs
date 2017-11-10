@@ -15,7 +15,7 @@ namespace HEIF_Utility
 {
     public partial class MainWindow : Form
     {
-        private string filename;
+        private string filename, exifinfo;
         private byte[] heicfile;
         private Point mouseOff;
 
@@ -75,15 +75,20 @@ namespace HEIF_Utility
                 }));
                 this.Focus();
             }
-            catch (Exception ex)
+            catch (Exception)
             {
-                MessageBox.Show(ex.Message);
                 box.Invoke(new Action(() =>
                 {
                     box.Close();
                 }));
                 this.Focus();
-                MessageBox.Show("Unable to open this file.");
+
+                var errorbox = new Error();
+                errorbox.maintext.Text = "Unable to open this file.";
+                errorbox.linklabel.Text = "Online Support";
+                errorbox.link = "https://liuziangexit.com/HEIF-Utility/Help/No1.html";
+                errorbox.ShowDialog();
+
                 return;
             }
         }
@@ -98,9 +103,14 @@ namespace HEIF_Utility
         {
             try
             {
-                if (!System.IO.File.Exists(Application.StartupPath + "\\HUD.dll") || !System.IO.File.Exists(Application.StartupPath + "\\opencv_ffmpeg330_64.dll") || !System.IO.File.Exists(Application.StartupPath + "\\opencv_world330.dll"))
+                if (!System.IO.File.Exists(Application.StartupPath + "\\HUD.dll") || !System.IO.File.Exists(Application.StartupPath + "\\opencv_ffmpeg330_64.dll") || !System.IO.File.Exists(Application.StartupPath + "\\opencv_world330.dll") || !System.IO.File.Exists(Application.StartupPath + "\\Newtonsoft.Json.dll"))
                 {
-                    MessageBox.Show("The core component is missing, HEIF Utility can not start.");
+                    var errorbox = new Error();
+                    errorbox.maintext.Text = "The core component is missing, HEIF Utility can not start.";
+                    errorbox.linklabel.Text = "Download Page";
+                    errorbox.link = "https://liuziangexit.com/HEIF-Utility";
+                    errorbox.ShowDialog();
+
                     Environment.Exit(0);
                 }
 
@@ -192,8 +202,7 @@ namespace HEIF_Utility
                 filepicker.Multiselect = false;
                 filepicker.Filter = "HEIF(.heic)|*.heic|Any File|*.*";
                 filepicker.ShowDialog();
-                if (filepicker.FileName == "") return;
-                filename = filepicker.FileName;
+                if (filepicker.FileName == "") return;                
 
                 
                 Thread T;
@@ -204,7 +213,7 @@ namespace HEIF_Utility
                 T.IsBackground = true;
                 T.Start();
 
-                open(filename);
+                open(filepicker.FileName);
 
                 box.Invoke(new Action(() =>
                 {
@@ -212,15 +221,18 @@ namespace HEIF_Utility
                 }));
                 this.Focus();
             }
-            catch (Exception ex)
+            catch (Exception)
             {
-                //MessageBox.Show(ex.Message);
                 box.Invoke(new Action(() =>
                 {
                     box.Close();
                 }));
                 this.Focus();
-                MessageBox.Show("Unable to open this file.");
+                var errorbox = new Error();
+                errorbox.maintext.Text = "Unable to open this file.";
+                errorbox.linklabel.Text = "Online Support";
+                errorbox.link = "https://liuziangexit.com/HEIF-Utility/Help/No1.html";
+                errorbox.ShowDialog();
                 return;
             }
         }
@@ -249,11 +261,22 @@ namespace HEIF_Utility
 
                 try
                 {
-                    invoke_dll.invoke_heif_to_jpg(heicfile, sq.value, "temp_bitstream.hevc").Save(box.FileName, ImageFormat.Jpeg);
+                    int copysize = 0;
+                    invoke_dll.invoke_heif2jpg(heicfile, sq.value, "temp_bitstream.hevc", ref copysize).Save(box.FileName, ImageFormat.Jpeg);
                 }
                 catch (Exception)
                 {
-                    MessageBox.Show("Can not save to " + box.FileName);
+                    box2.Invoke(new Action(() =>
+                    {
+                        box2.Close();
+                    }));
+                    this.Focus();
+
+                    var errorbox = new Error();
+                    errorbox.maintext.Text = "Can not save to " + box.FileName;
+                    errorbox.linklabel.Text = "Online Support";
+                    errorbox.link = "https://liuziangexit.com/HEIF-Utility/Help/No2.html";
+                    errorbox.ShowDialog();
                     return;
                 }
 
@@ -266,24 +289,27 @@ namespace HEIF_Utility
                 MessageBox.Show("Successfully saved to " + box.FileName);
                 return;
             }
-            catch (Exception ex)
+            catch (Exception)
             {
                 box2.Invoke(new Action(() =>
                 {
                     box2.Close();
                 }));
                 this.Focus();
-                MessageBox.Show(ex.Message);
+                MessageBox.Show("An unknown error occurred.");
                 return;
             }
         }
 
         void open(string openthis)
         {
-            if (openthis == "") return;
+            if (openthis == "") return;            
+            var tempheicfile = invoke_dll.read_heif(openthis);
+            int copysize = 0;            
+            MainPictureBox.Image = invoke_dll.invoke_heif2jpg(tempheicfile, 50, "temp_bitstream.hevc", ref copysize);
+            exifinfo = invoke_dll.invoke_getexif(tempheicfile, ref copysize);
+            heicfile = tempheicfile;
             filename = openthis;
-            heicfile = invoke_dll.read_heif(openthis);
-            MainPictureBox.Image = invoke_dll.invoke_heif_to_jpg(heicfile, 50, "temp_bitstream.hevc");
             MainPictureBox.Visible = true;
             DetailedButton.Visible = true;
             SoftwareName.Visible = false;
@@ -295,13 +321,8 @@ namespace HEIF_Utility
         {
             try
             {
-                var fi = new FileInfo(filename);
-                fi.OpenRead();
-
-                MessageBox.Show("filename: " + fi.Name + "\r\ndate: " + fi.CreationTime.ToLongDateString() + " " + fi.CreationTime.ToLongTimeString() +
-                    "\r\nsize: " + fi.Length.ToString() + " byte\r\nresolution: " + MainPictureBox.Image.Width + "x" + MainPictureBox.Image.Height);
-                
-
+                var box = new ImageInfo(filename, exifinfo);
+                box.ShowDialog();
                 DragPicture.Focus();
             }
             catch (Exception) {
@@ -311,9 +332,9 @@ namespace HEIF_Utility
 
         private void HU_DragDrop(object sender, DragEventArgs e)
         {
+            var box = new Processing();
             try
             {
-                var box = new Processing();
                 Thread T;
                 T = new Thread(new ThreadStart(new Action(() =>
                 {
@@ -330,9 +351,22 @@ namespace HEIF_Utility
                 }));
                 this.Focus();
             }
-            catch (Exception) { }
-        }
+            catch (Exception)
+            {
+                box.Invoke(new Action(() =>
+                {
+                    box.Close();
+                }));
+                this.Focus();
 
+                var errorbox = new Error();
+                errorbox.maintext.Text = "Unable to open this file.";
+                errorbox.linklabel.Text = "Online Support";
+                errorbox.link = "https://liuziangexit.com/HEIF-Utility/Help/No1.html";
+                errorbox.ShowDialog();
+            }
+        }
+        
         private void HU_DragEnter(object sender, DragEventArgs e)
         {
             if (e.Data.GetDataPresent(DataFormats.FileDrop))
@@ -368,6 +402,19 @@ namespace HEIF_Utility
             }
         }
 
+        private void 在线帮助ToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                System.Diagnostics.Process.Start("https://liuziangexit.com/HEIF-Utility/Help");
+            }
+            catch (Exception) {
+                var box = new ShowLinkCopyable();
+                box.link.Text = "https://liuziangexit.com/HEIF-Utility/Help";
+                box.ShowDialog();
+            }
+        }
+
         private void 拷贝ToolStripMenuItem_Click(object sender, EventArgs e)
         {
             try
@@ -376,5 +423,6 @@ namespace HEIF_Utility
             }
             catch (Exception) { }
         }
+        
     }
 }

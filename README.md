@@ -3,17 +3,20 @@
 HEIF 实用工具 - 在 Windows 上查看/转换 Apple HEIF 文件。<br>
 HEIF Utility - View/Convert Apple HEIF files on Windows.<br>
 <h2>功能 / Features</h2>
-1.查看由 Apple 设备生成的 HEIF 图片<br>
-2.查看图片详细信息<br>
-3.将 Apple HEIF 图片转换为 JPEG 图片<br>
-4.批量转换<br>
-*支持的 iOS 相机模式：照片、正方形、全景<br>
+<h4>1.查看由 Apple 设备生成的 HEIF 图片* / View Apple devices-generated HEIF images*</h4>
+<h4>2.查看图片 EXIF 信息 / View image EXIF</h4>
+  -文件属性 / File Info<br>
+  -镜头信息 / Lens Info<br>
+  -定位信息 / GPS Info
+<h4>3.将 Apple HEIF 图片转换为 JPEG 图片 / Convert Apple HEIF images to JPEG images</h4>
+  -自定输出质量 / Custom output quality<br>
+  -可选包含 EXIF 元数据(即将到来) / Optional includes EXIF metadata(Coming Soon)
+<h4>4.批量转换 / Batch Conversion</h4>
+  -实时进度显示 / Real-time progress display<br>
+  -自动启用多线程转换** / Use MultiThreading automatically**<br>
 <br>
-1. View Apple devices-generated HEIF images<br>
-2. View image details<br>
-3. Convert Apple HEIF images to JPEG images<br>
-4. Batch Conversion<br>
-*Supported iOS camera modes: Photo, Square, Panorama
+<I>*: 支持的 iOS 相机模式：照片、正方形、全景  / Supported iOS camera modes: Photo, Square, Panorama</I><br>
+<I>* *: 在某些入门级处理器上，批量转换可能使用单线程 / On some entry-level processors, Batch Conversion my use single-threaded</I><br>
 <br>
 <h2>系统需求 / System Requirement</h2>
 1. Windows 7 或更新版本的操作系统<br>
@@ -51,9 +54,9 @@ nymaxmo<br>
 https://liuziangexit.com/HEIF-Utility/download.html <br>
 提供简体中文和英文版本。<br>
 Provides Simplified Chinese and English version.<br>
-<br>
 <h2>相关链接 / Related Links</h2>
 官方网站 / Official Website: https://liuziangexit.com/HEIF-Utility <br>
+在线支持 / Online Support: https://liuziangexit.com/HEIF-Utility/Help <br>
 HEIF Utility Online: https://liuziangexit.com/HEIF-Utility/Online <br>
 HEIF Utility Native DLL: https://github.com/liuziangexit/HEIF-Utility-Native-DLL <br>
 知乎专栏: https://zhuanlan.zhihu.com/p/29439313

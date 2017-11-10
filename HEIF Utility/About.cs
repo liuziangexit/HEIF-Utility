@@ -40,7 +40,11 @@ namespace HEIF_Utility
             {
                 System.Diagnostics.Process.Start("https://liuziangexit.com/HEIF-Utility");
             }
-            catch (Exception) { }
+            catch (Exception) {
+                var box = new ShowLinkCopyable();
+                box.link.Text = "https://liuziangexit.com/HEIF-Utility";
+                box.ShowDialog();
+            }
         }
 
         private void label9_Click(object sender, EventArgs e)
