@@ -56,6 +56,7 @@ https://liuziangexit.com/HEIF-Utility/download.html <br>
 Provides Simplified Chinese and English version.<br>
 <h2>相关链接 / Related Links</h2>
 官方网站 / Official Website: https://liuziangexit.com/HEIF-Utility <br>
+在线支持 / Online Support: https://liuziangexit.com/HEIF-Utility/Help <br>
 HEIF Utility Online: https://liuziangexit.com/HEIF-Utility/Online <br>
 HEIF Utility Native DLL: https://github.com/liuziangexit/HEIF-Utility-Native-DLL <br>
 知乎专栏: https://zhuanlan.zhihu.com/p/29439313
