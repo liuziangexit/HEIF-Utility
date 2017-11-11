@@ -56,8 +56,8 @@ namespace HEIF_Utility
         {
             try
             {
-                if (filelist_find(str))
-                    return;
+                //if (filelist_find(str))
+                //    return;
                 filelist.Items.Add(str);
             }
             catch (Exception) { }
@@ -335,7 +335,7 @@ namespace HEIF_Utility
                                     MainPrograssBar.Value = (int)(((float)(index_while + 1) / (float)list_copy.Length) * 100);
                             }));
                         }
-                        catch (Exception)
+                        catch (Exception ex)
                         {
                             this.Invoke(new Action(() =>
                             {
