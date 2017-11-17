@@ -111,8 +111,15 @@ namespace HEIF_Utility
             filepicker.ShowDialog();
             if (filepicker.FileNames.Length == 0) return;
 
+            var original = this.Text;
+            this.Text += " - Adding files";
+
+            filelist.BeginUpdate();
             for (int i = 0; i < filepicker.FileNames.Length; i++)
                 filelist_add(filepicker.FileNames[i]);
+            filelist.EndUpdate();
+
+            this.Text = original;
         }
 
         private void pop_file_Click(object sender, EventArgs e)
