@@ -112,7 +112,7 @@ namespace HEIF_Utility
             if (filepicker.FileNames.Length == 0) return;
 
             var original = this.Text;
-            this.Text += " - 正在添加文件到列表";
+            this.Text += " - 正在添加文件";
 
             filelist.BeginUpdate();
             for (int i = 0; i < filepicker.FileNames.Length; i++)
