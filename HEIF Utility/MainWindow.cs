@@ -262,7 +262,10 @@ namespace HEIF_Utility
                 try
                 {
                     int copysize = 0;
-                    invoke_dll.invoke_heif2jpg(heicfile, sq.value, "temp_bitstream.hevc", ref copysize).Save(box.FileName, ImageFormat.Jpeg);
+                    if (!sq.includes_exif)
+                        invoke_dll.invoke_heif2jpg(heicfile, sq.value, "temp_bitstream.hevc", ref copysize).Save(box.FileName, ImageFormat.Jpeg);
+                    else
+                        invoke_dll.invoke_write_exif(invoke_dll.invoke_heif2jpg_to_byte(heicfile, sq.value, "temp_bitstream.hevc", ref copysize), Encoding.Default.GetBytes(exifinfo), Encoding.Default.GetBytes(box.FileName));
                 }
                 catch (Exception)
                 {
