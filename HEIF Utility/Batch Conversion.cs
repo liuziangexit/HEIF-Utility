@@ -56,8 +56,8 @@ namespace HEIF_Utility
         {
             try
             {
-                if (filelist_find(str))
-                    return;
+                //if (filelist_find(str))
+                //    return;
                 filelist.Items.Add(str);
             }
             catch (Exception) { }
@@ -111,8 +111,15 @@ namespace HEIF_Utility
             filepicker.ShowDialog();
             if (filepicker.FileNames.Length == 0) return;
 
+            var original = this.Text;
+            this.Text += " - 正在添加文件";
+
+            filelist.BeginUpdate();
             for (int i = 0; i < filepicker.FileNames.Length; i++)
                 filelist_add(filepicker.FileNames[i]);
+            filelist.EndUpdate();
+
+            this.Text = original;
         }
 
         private void pop_file_Click(object sender, EventArgs e)
@@ -335,7 +342,7 @@ namespace HEIF_Utility
                                     MainPrograssBar.Value = (int)(((float)(index_while + 1) / (float)list_copy.Length) * 100);
                             }));
                         }
-                        catch (Exception)
+                        catch (Exception ex)
                         {
                             this.Invoke(new Action(() =>
                             {
