@@ -262,10 +262,29 @@ namespace HEIF_Utility
                 try
                 {
                     int copysize = 0;
+                    byte[] write_this;
                     if (!sq.includes_exif)
-                        invoke_dll.invoke_heif2jpg(heicfile, sq.value, "temp_bitstream.hevc", ref copysize).Save(box.FileName, ImageFormat.Jpeg);
+                        write_this = invoke_dll.invoke_heif2jpg(heicfile, sq.value, "temp_bitstream.hevc", ref copysize, false);
                     else
-                        invoke_dll.invoke_write_exif(invoke_dll.invoke_heif2jpg_to_byte(heicfile, sq.value, "temp_bitstream.hevc", ref copysize), Encoding.Default.GetBytes(exifinfo), Encoding.Default.GetBytes(box.FileName));
+                        write_this = invoke_dll.invoke_heif2jpg(heicfile, sq.value, "temp_bitstream.hevc", ref copysize, true);
+
+                    FileStream fs = new FileStream(box.FileName, FileMode.Create);
+                    BinaryWriter writer = new BinaryWriter(fs);
+                    try
+                    {
+                        writer.Write(write_this, 0, copysize);
+                        writer.Close();
+                        fs.Close();
+                    }
+                    catch (Exception ex) {
+                        try
+                        {
+                            writer.Close();
+                            fs.Close();
+                        }
+                        catch (Exception) { }
+                        throw ex;
+                    }
                 }
                 catch (Exception)
                 {
@@ -308,8 +327,8 @@ namespace HEIF_Utility
         {
             if (openthis == "") return;            
             var tempheicfile = invoke_dll.read_heif(openthis);
-            int copysize = 0;            
-            MainPictureBox.Image = invoke_dll.invoke_heif2jpg(tempheicfile, 50, "temp_bitstream.hevc", ref copysize);
+            int copysize = 0;
+            MainPictureBox.Image = invoke_dll.ImageFromByte(invoke_dll.invoke_heif2jpg(tempheicfile, 50, "temp_bitstream.hevc", ref copysize, false));
             exifinfo = invoke_dll.invoke_getexif(tempheicfile, ref copysize);
             heicfile = tempheicfile;
             filename = openthis;

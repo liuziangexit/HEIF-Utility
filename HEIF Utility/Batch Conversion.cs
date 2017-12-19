@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.IO;
 using System.Linq;
 using System.Runtime.InteropServices;
 using System.Text;
@@ -16,6 +17,7 @@ namespace HEIF_Utility
         private ListViewWithoutScrollBar filelist;
         private string output_folder;
         private int output_quality = 50;
+        private bool include_exif = true;
         private ProgressBar MainPrograssBar;
         private volatile bool isStart = false;
         private volatile int index = 0;
@@ -24,12 +26,12 @@ namespace HEIF_Utility
         public Batch_Conversion()
         {
             filelist = new HEIF_Utility.ListViewWithoutScrollBar();
-            
+
             InitializeComponent();
 
             FilelistPanel.Controls.Add(filelist);
 
-            //set filelist property
+            //set filelist property            
             filelist.Dock = DockStyle.Fill;
             filelist.AllowColumnReorder = false;
             filelist.Columns.Add("filename", 60);
@@ -50,6 +52,10 @@ namespace HEIF_Utility
             ImageList imageList = new ImageList();
             imageList.ImageSize = new Size(1, 20);//1-256
             filelist.SmallImageList = imageList;
+
+            filelist.AllowDrop = true;
+            filelist.DragDrop += new DragEventHandler(Filelist_DragDrop);
+            filelist.DragEnter += new DragEventHandler(Filelist_DragEnter);
         }
 
         private void filelist_add(string str)
@@ -92,7 +98,7 @@ namespace HEIF_Utility
             }
             catch (Exception) { }
         }
-        
+
         private void Batch_Conversion_Resize(object sender, EventArgs e)
         {
             try
@@ -111,15 +117,50 @@ namespace HEIF_Utility
             filepicker.ShowDialog();
             if (filepicker.FileNames.Length == 0) return;
 
-            var original = this.Text;
-            this.Text += " - 正在添加文件";
+            var box = new AddingFiles();
+            box.progressBar1.Maximum = filepicker.FileNames.Length;
+            box.progressBar1.Minimum = 0;
+            box.progressBar1.Step = 1;
+            try
+            {
+                Thread T;
+                T = new Thread(new ThreadStart(new Action(() =>
+                {
+                    box.ShowDialog();
+                })));
+                T.IsBackground = true;
+                T.Start();
 
-            filelist.BeginUpdate();
-            for (int i = 0; i < filepicker.FileNames.Length; i++)
-                filelist_add(filepicker.FileNames[i]);
-            filelist.EndUpdate();
+                var original = this.Text;
+                this.Text += " - 正在添加文件";
 
-            this.Text = original;
+                filelist.BeginUpdate();
+                for (int i = 0; i < filepicker.FileNames.Length; i++)
+                {
+                    filelist_add(filepicker.FileNames[i]);
+                    box.Invoke(new Action(() =>
+                    {
+                        box.progressBar1.Value++;
+                    }));
+                }
+                filelist.EndUpdate();
+
+                this.Text = original;
+
+                box.Invoke(new Action(() =>
+                {
+                    box.Close();
+                }));
+                this.Focus();
+            }
+            catch (Exception)
+            {
+                box.Invoke(new Action(() =>
+                {
+                    box.Close();
+                }));
+                this.Focus();
+            }
         }
 
         private void pop_file_Click(object sender, EventArgs e)
@@ -151,6 +192,7 @@ namespace HEIF_Utility
             var box = new setjpgquality(output_quality);
             box.ShowDialog();
             output_quality = box.value;
+            include_exif = box.includes_exif;
         }
 
         private void start_Click(object sender, EventArgs e)
@@ -332,8 +374,32 @@ namespace HEIF_Utility
                         try
                         {
                             var heif_data = invoke_dll.read_heif(list_copy[index_while]);
+                            //invoke_dll.invoke_heif2jpg(heif_data, this.output_quality, temp_filename, ref copysize).Save(this.output_folder + "\\" + make_output_filename(list_copy[index_while]));
                             int copysize = 0;
-                            invoke_dll.invoke_heif2jpg(heif_data, this.output_quality, temp_filename, ref copysize).Save(this.output_folder + "\\" + make_output_filename(list_copy[index_while]));
+                            byte[] write_this;
+                            if (!this.include_exif)
+                                write_this = invoke_dll.invoke_heif2jpg(heif_data, this.output_quality, temp_filename, ref copysize, false);
+                            else
+                                write_this = invoke_dll.invoke_heif2jpg(heif_data, this.output_quality, temp_filename, ref copysize, true);
+
+                            FileStream fs = new FileStream(this.output_folder + "\\" + make_output_filename(list_copy[index_while]), FileMode.Create);
+                            BinaryWriter writer = new BinaryWriter(fs);
+                            try
+                            {
+                                writer.Write(write_this, 0, copysize);
+                                writer.Close();
+                                fs.Close();
+                            }
+                            catch (Exception ex)
+                            {
+                                try
+                                {
+                                    writer.Close();
+                                    fs.Close();
+                                }
+                                catch (Exception) { }
+                                throw ex;
+                            }
 
                             this.Invoke(new Action(() =>
                             {
@@ -388,6 +454,45 @@ namespace HEIF_Utility
             catch (Exception)
             {
                 return;
+            }
+        }
+
+        private void Filelist_DragDrop(object sender, DragEventArgs e)
+        {
+            string[] add_this;
+            try
+            {
+                add_this = (string[])e.Data.GetData(DataFormats.FileDrop, false);
+            }
+            catch (Exception)
+            {
+                return;
+            }
+
+            try
+            {
+                var original = this.Text;
+                this.Text += " - 正在添加文件";
+
+                filelist.BeginUpdate();
+                for (int i = 0; i < add_this.Length; i++)
+                    filelist_add(add_this[i]);
+                filelist.EndUpdate();
+
+                this.Text = original;
+            }
+            catch (Exception) { }
+        }
+    
+        private void Filelist_DragEnter(object sender, DragEventArgs e)
+        {
+            if (e.Data.GetDataPresent(DataFormats.FileDrop))
+            {
+                e.Effect = DragDropEffects.All;
+            }
+            else
+            {
+                e.Effect = DragDropEffects.None;
             }
         }
     }
