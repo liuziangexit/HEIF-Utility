@@ -132,6 +132,12 @@
     <Compile Include="MainWindow.Designer.cs">
       <DependentUpon>MainWindow.cs</DependentUpon>
     </Compile>
+    <Compile Include="AddingFiles.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AddingFiles.Designer.cs">
+      <DependentUpon>AddingFiles.cs</DependentUpon>
+    </Compile>
     <Compile Include="Processing.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -190,6 +196,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="MainWindow.resx">
       <DependentUpon>MainWindow.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AddingFiles.resx">
+      <DependentUpon>AddingFiles.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Processing.resx">
       <DependentUpon>Processing.cs</DependentUpon>

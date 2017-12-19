@@ -374,7 +374,6 @@ namespace HEIF_Utility
                         try
                         {
                             var heif_data = invoke_dll.read_heif(list_copy[index_while]);
-                            //invoke_dll.invoke_heif2jpg(heif_data, this.output_quality, temp_filename, ref copysize).Save(this.output_folder + "\\" + make_output_filename(list_copy[index_while]));
                             int copysize = 0;
                             byte[] write_this;
                             if (!this.include_exif)

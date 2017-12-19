@@ -12,7 +12,7 @@ namespace HEIF_Utility
     class invoke_dll
     {
         [DllImport("HUD.dll", CharSet = CharSet.Auto, CallingConvention = CallingConvention.Cdecl)]
-        private unsafe extern static void heif2jpg(byte* heif_bin, int input_buffer_size, int jpg_quality, byte* ouput_buffer, int output_buffer_size, byte* temp_filename, int* copysize);
+        private unsafe extern static void heif2jpg(byte* heif_bin, int input_buffer_size, int jpg_quality, byte* ouput_buffer, int output_buffer_size, byte* temp_filename, int* copysize, bool include_exif);
 
         [DllImport("HUD.dll", CharSet = CharSet.Auto, CallingConvention = CallingConvention.Cdecl)]
         private unsafe extern static void getexif(byte* heif_bin, int input_buffer_size, byte* ouput_buffer, int output_buffer_size, int* copysize);
@@ -35,7 +35,12 @@ namespace HEIF_Utility
             }
         }
 
-        public static unsafe Image invoke_heif2jpg(byte[] heif_bin, int jpg_quality, string temp_filename, ref int copysize)
+        public static Image ImageFromByte(byte[] raw)
+        {
+            return Image.FromStream(new MemoryStream(raw));
+        }
+
+        public static unsafe byte[] invoke_heif2jpg(byte[] heif_bin, int jpg_quality, string temp_filename, ref int copysize, bool include_exif)
         {
             var output_buffer = new byte[heif_bin.Length * 10];
             byte[] temp_filename_byte_array = System.Text.Encoding.Default.GetBytes(temp_filename);
@@ -43,10 +48,10 @@ namespace HEIF_Utility
             fixed (byte* input = &heif_bin[0], output = &output_buffer[0], temp_filename_byte = &temp_filename_byte_array[0])
             fixed (int* copysize_p = &copysize_array[0])
             {
-                heif2jpg(input, heif_bin.Length, jpg_quality, output, output_buffer.Length, temp_filename_byte, copysize_p);
+                heif2jpg(input, heif_bin.Length, jpg_quality, output, output_buffer.Length, temp_filename_byte, copysize_p, include_exif);
             }
             copysize = copysize_array[0];
-            return Image.FromStream(new MemoryStream(output_buffer));
+            return output_buffer;
         }
 
         public static unsafe string invoke_getexif(byte[] heif_bin, ref int copysize)
