@@ -62,5 +62,5 @@ Provides Simplified Chinese and English version.<br>
 在线支持 / Online Support: https://liuziangexit.com/HEIF-Utility/Help <br>
 HEIF Utility Online: https://liuziangexit.com/HEIF-Utility/Online <br>
 HEIF Utility Native DLL: https://github.com/liuziangexit/HEIF-Utility-Native-DLL <br>
-HEIF Utility Write EXIF DLL: https://github.com/liuziangexit/HEIF-Utility-Write-EXIF-DLL <br>
+HEIF Utility Thumbnail Provider: https://github.com/liuziangexit/HEIF-Utility-Thumbnail-Provider <br>
 知乎专栏: https://zhuanlan.zhihu.com/p/29439313
