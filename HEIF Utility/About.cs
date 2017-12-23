@@ -18,13 +18,13 @@ namespace HEIF_Utility
 
         private void label5_Click(object sender, EventArgs e)
         {
-            var box = new Credit();
+            var box = new People();
             box.ShowDialog();
         }
 
         private void label4_Click(object sender, EventArgs e)
         {
-            var box = new sc();
+            var box = new sc("https://github.com/liuziangexit/HEIF-Utility");
             box.ShowDialog();
         }
 
@@ -49,7 +49,8 @@ namespace HEIF_Utility
 
         private void label9_Click(object sender, EventArgs e)
         {
-            MessageBox.Show("Email: liuziang@liuziangexit.com");
+            var box = new sc("Mail: liuziang@liuziangexit.com");
+            box.ShowDialog();
         }
 
         private void label10_Click(object sender, EventArgs e)

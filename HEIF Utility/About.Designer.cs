@@ -77,9 +77,9 @@
             this.label3.Location = new System.Drawing.Point(3, 82);
             this.label3.Name = "label3";
             this.label3.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.label3.Size = new System.Drawing.Size(50, 17);
+            this.label3.Size = new System.Drawing.Size(32, 17);
             this.label3.TabIndex = 2;
-            this.label3.Text = "License";
+            this.label3.Text = "协议";
             this.label3.Click += new System.EventHandler(this.label3_Click);
             // 
             // label4
@@ -92,9 +92,9 @@
             this.label4.Location = new System.Drawing.Point(3, 116);
             this.label4.Name = "label4";
             this.label4.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.label4.Size = new System.Drawing.Size(83, 17);
+            this.label4.Size = new System.Drawing.Size(44, 17);
             this.label4.TabIndex = 3;
-            this.label4.Text = "Source Code";
+            this.label4.Text = "源代码";
             this.label4.Click += new System.EventHandler(this.label4_Click);
             // 
             // label5
@@ -107,9 +107,9 @@
             this.label5.Location = new System.Drawing.Point(3, 65);
             this.label5.Name = "label5";
             this.label5.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.label5.Size = new System.Drawing.Size(43, 17);
+            this.label5.Size = new System.Drawing.Size(32, 17);
             this.label5.TabIndex = 4;
-            this.label5.Text = "Credit";
+            this.label5.Text = "人员";
             this.label5.Click += new System.EventHandler(this.label5_Click);
             // 
             // label6
@@ -137,9 +137,9 @@
             this.label9.Location = new System.Drawing.Point(3, 133);
             this.label9.Name = "label9";
             this.label9.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.label9.Size = new System.Drawing.Size(116, 17);
+            this.label9.Size = new System.Drawing.Size(56, 17);
             this.label9.TabIndex = 8;
-            this.label9.Text = "Contact Developer";
+            this.label9.Text = "联系我们";
             this.label9.Click += new System.EventHandler(this.label9_Click);
             // 
             // label10
@@ -152,9 +152,9 @@
             this.label10.Location = new System.Drawing.Point(3, 99);
             this.label10.Name = "label10";
             this.label10.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.label10.Size = new System.Drawing.Size(77, 17);
+            this.label10.Size = new System.Drawing.Size(56, 17);
             this.label10.TabIndex = 9;
-            this.label10.Text = "Powered by";
+            this.label10.Text = "提供支持";
             this.label10.Click += new System.EventHandler(this.label10_Click);
             // 
             // label7
@@ -164,12 +164,12 @@
             this.label7.Font = new System.Drawing.Font("Microsoft YaHei UI", 9F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.label7.ForeColor = System.Drawing.Color.DarkGray;
             this.label7.ImageAlign = System.Drawing.ContentAlignment.TopLeft;
-            this.label7.Location = new System.Drawing.Point(250, 116);
+            this.label7.Location = new System.Drawing.Point(231, 116);
             this.label7.Name = "label7";
             this.label7.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.label7.Size = new System.Drawing.Size(64, 17);
+            this.label7.Size = new System.Drawing.Size(83, 17);
             this.label7.TabIndex = 11;
-            this.label7.Text = "Release 6";
+            this.label7.Text = "Final Release";
             // 
             // About
             // 

@@ -39,8 +39,9 @@
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(245, 164);
             this.label1.TabIndex = 0;
-            this.label1.Text = "NokiaTechnologies - HEIF\r\nMulticoreWare Inc. - libx265\r\nFFmpeg Team - FFmpeg\r\nOpe" +
-    "nCV Team - OpenCV\r\nMicrosoft - .NET\r\nliuziangexit - liuzianglib";
+            this.label1.Text = "FFmpeg Team - FFmpeg\r\nliuziangexit - liuzianglib\r\nmayanklahiri - easyexif\r\nMicros" +
+    "oft - Dot NET\r\nMulticoreWare Inc. - libx265\r\nNokiaTechnologies - HEIF\r\nOpenCV Te" +
+    "am - OpenCV";
             this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // pb

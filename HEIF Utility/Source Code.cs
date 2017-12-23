@@ -11,9 +11,10 @@ namespace HEIF_Utility
 {
     public partial class sc : Form
     {
-        public sc()
+        public sc(string str)
         {
             InitializeComponent();
+            richTextBox1.Text = str;
         }
     }
 }
