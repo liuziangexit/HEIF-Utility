@@ -37,7 +37,7 @@
             this.progressBar1.Location = new System.Drawing.Point(0, 0);
             this.progressBar1.Name = "progressBar1";
             this.progressBar1.Size = new System.Drawing.Size(280, 26);
-            this.progressBar1.Style = System.Windows.Forms.ProgressBarStyle.Marquee;
+            this.progressBar1.Style = System.Windows.Forms.ProgressBarStyle.Continuous;
             this.progressBar1.TabIndex = 1;
             // 
             // AddingFiles
@@ -56,7 +56,7 @@
             this.ShowIcon = false;
             this.ShowInTaskbar = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Processing...";
+            this.Text = "Adding files...";
             this.ResumeLayout(false);
 
         }
