@@ -108,17 +108,17 @@
     <Compile Include="ListViewWithoutScrollBar.cs">
       <SubType>Component</SubType>
     </Compile>
+    <Compile Include="People.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="People.designer.cs">
+      <DependentUpon>People.cs</DependentUpon>
+    </Compile>
     <Compile Include="Powered by.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Powered by.Designer.cs">
       <DependentUpon>Powered by.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Credit.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Credit.Designer.cs">
-      <DependentUpon>Credit.cs</DependentUpon>
     </Compile>
     <Compile Include="LICENSE.cs">
       <SubType>Form</SubType>
@@ -185,11 +185,11 @@
     <EmbeddedResource Include="ImageInfo.resx">
       <DependentUpon>ImageInfo.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="People.resx">
+      <DependentUpon>People.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Powered by.resx">
       <DependentUpon>Powered by.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Credit.resx">
-      <DependentUpon>Credit.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="LICENSE.resx">
       <DependentUpon>LICENSE.cs</DependentUpon>

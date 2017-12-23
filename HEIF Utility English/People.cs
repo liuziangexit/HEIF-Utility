@@ -9,9 +9,9 @@ using System.Windows.Forms;
 
 namespace HEIF_Utility
 {
-    public partial class Credit : Form
+    public partial class People : Form
     {
-        public Credit()
+        public People()
         {
             InitializeComponent();
         }

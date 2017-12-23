@@ -107,9 +107,9 @@
             this.label5.Location = new System.Drawing.Point(3, 65);
             this.label5.Name = "label5";
             this.label5.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.label5.Size = new System.Drawing.Size(43, 17);
+            this.label5.Size = new System.Drawing.Size(48, 17);
             this.label5.TabIndex = 4;
-            this.label5.Text = "Credit";
+            this.label5.Text = "People";
             this.label5.Click += new System.EventHandler(this.label5_Click);
             // 
             // label6
@@ -164,12 +164,12 @@
             this.label7.Font = new System.Drawing.Font("Microsoft YaHei UI", 9F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.label7.ForeColor = System.Drawing.Color.DarkGray;
             this.label7.ImageAlign = System.Drawing.ContentAlignment.TopLeft;
-            this.label7.Location = new System.Drawing.Point(250, 116);
+            this.label7.Location = new System.Drawing.Point(231, 116);
             this.label7.Name = "label7";
             this.label7.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.label7.Size = new System.Drawing.Size(64, 17);
+            this.label7.Size = new System.Drawing.Size(83, 17);
             this.label7.TabIndex = 11;
-            this.label7.Text = "Release 6";
+            this.label7.Text = "Final Release";
             // 
             // About
             // 

@@ -49,7 +49,7 @@ namespace HEIF_Utility
 
         private void label9_Click(object sender, EventArgs e)
         {
-            var box = new sc("Mail: liuziang@liuziangexit.com");
+            var box = new sc("邮箱: liuziang@liuziangexit.com");
             box.ShowDialog();
         }
 
