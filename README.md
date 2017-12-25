@@ -1,6 +1,6 @@
 ﻿# HEIF 实用工具 / HEIF Utility
 <img src="/img/HEIF-Utility-ico.png" height="125" width="125" />
-HEIF 实用工具 - 在 Windows 上查看/转换 Apple HEIF 图像。<br>
+HEIF 实用工具 - 在 Windows 上查看/转换 Apple HEIF 图片。<br>
 HEIF Utility - View/Convert Apple HEIF images on Windows.<br>
 <h2>功能 / Features</h2>
 <h4>1.查看由 Apple 设备生成的 HEIF 图片* / View Apple devices-generated HEIF images*</h4>
