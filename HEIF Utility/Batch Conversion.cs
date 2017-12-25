@@ -117,7 +117,7 @@ namespace HEIF_Utility
             filepicker.ShowDialog();
             if (filepicker.FileNames.Length == 0) return;
 
-            var box = new AddingFiles();
+            var box = new AddingFiles();            
             box.progressBar1.Maximum = filepicker.FileNames.Length;
             box.progressBar1.Minimum = 0;
             box.progressBar1.Step = 1;
@@ -127,9 +127,12 @@ namespace HEIF_Utility
                 T = new Thread(new ThreadStart(new Action(() =>
                 {
                     box.ShowDialog();
-                })));
+                })));                                
                 T.IsBackground = true;
                 T.Start();
+
+                while (!box.IsHandleCreated)
+                    Thread.Sleep(100);
 
                 var original = this.Text;
                 this.Text += " - 正在添加文件";
@@ -339,6 +342,18 @@ namespace HEIF_Utility
             }
         }
 
+        private bool byte_array_starts_with(ref byte[] input, string value)
+        {
+            if (input.Length < value.Length)
+                return false;
+
+            for (int index = 0; index < value.Length; index++)
+                if (input[index] != value[index])
+                    return false;
+
+            return true;
+        }
+
         private void process(object input_temp_filename)
         {
             //获取临时文件名
@@ -380,6 +395,9 @@ namespace HEIF_Utility
                                 write_this = invoke_dll.invoke_heif2jpg(heif_data, this.output_quality, temp_filename, ref copysize, false);
                             else
                                 write_this = invoke_dll.invoke_heif2jpg(heif_data, this.output_quality, temp_filename, ref copysize, true);
+
+                            if (byte_array_starts_with(ref write_this, "HUD_ERR"))
+                                throw new Exception("HUD_ERR");
 
                             FileStream fs = new FileStream(this.output_folder + "\\" + make_output_filename(list_copy[index_while]), FileMode.Create);
                             BinaryWriter writer = new BinaryWriter(fs);

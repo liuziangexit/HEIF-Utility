@@ -213,6 +213,9 @@ namespace HEIF_Utility
                 T.IsBackground = true;
                 T.Start();
 
+                while (!box.IsHandleCreated)
+                    Thread.Sleep(100);
+
                 open(filepicker.FileName);
 
                 box.Invoke(new Action(() =>
@@ -258,6 +261,9 @@ namespace HEIF_Utility
                 })));
                 T.IsBackground = true;
                 T.Start();
+
+                while (!box2.IsHandleCreated)
+                    Thread.Sleep(100);
 
                 try
                 {
@@ -364,6 +370,9 @@ namespace HEIF_Utility
                 })));
                 T.IsBackground = true;
                 T.Start();
+
+                while (!box.IsHandleCreated)
+                    Thread.Sleep(100);
 
                 open(((string[])e.Data.GetData(DataFormats.FileDrop, false))[0]);
 
