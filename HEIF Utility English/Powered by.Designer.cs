@@ -41,7 +41,7 @@
             this.label1.TabIndex = 0;
             this.label1.Text = "FFmpeg Team - FFmpeg\r\nliuziangexit - liuzianglib\r\nmayanklahiri - easyexif\r\nMicros" +
     "oft - Dot NET\r\nMulticoreWare Inc. - libx265\r\nNokiaTechnologies - HEIF\r\nOpenCV Te" +
-    "am - OpenCV\r\n";
+    "am - OpenCV";
             this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // pb
