@@ -18,6 +18,7 @@ namespace HEIF_Utility
         private string filename, exifinfo;
         private byte[] heicfile;
         private Point mouseOff;
+        public static bool has_icc = false;
 
         private bool isMouseDown = false;
 
@@ -36,6 +37,9 @@ namespace HEIF_Utility
                 this.Size = backup;
             }
             this.MainPictureBox.AllowDrop = true;
+
+            if (invoke_dll.read_profile())
+                has_icc = true;
         }
 
         public MainWindow(string filename, Size s)
@@ -53,6 +57,9 @@ namespace HEIF_Utility
                 this.Size = backup;
             }
             this.MainPictureBox.AllowDrop = true;
+
+            if (invoke_dll.read_profile())
+                has_icc = true;
 
             this.Show();
 
@@ -201,8 +208,10 @@ namespace HEIF_Utility
                 filepicker.Title = "打开";
                 filepicker.Multiselect = false;
                 filepicker.Filter = "HEIF(.heic)|*.heic|任意文件|*.*";
-                filepicker.ShowDialog();
-                if (filepicker.FileName == "") return;                
+                if (filepicker.ShowDialog() != DialogResult.OK)
+                    return;
+                if (filepicker.FileName == "")
+                    return;
 
                 
                 Thread T;
@@ -248,8 +257,11 @@ namespace HEIF_Utility
                 var box = new SaveFileDialog();
                 box.Title = "保存";
                 box.Filter = "JPEG(.jpg)|*.jpg";
-                box.ShowDialog();
-                if (box.FileName == "") return;
+                box.FileName = Batch_Conversion.make_output_filename(filename);
+                if (box.ShowDialog() != DialogResult.OK)
+                    return;
+                if (box.FileName == "")
+                    return;
 
                 var sq = new setjpgquality();
                 sq.ShowDialog();
@@ -269,10 +281,7 @@ namespace HEIF_Utility
                 {
                     int copysize = 0;
                     byte[] write_this;
-                    if (!sq.includes_exif)
-                        write_this = invoke_dll.invoke_heif2jpg(heicfile, sq.value, "temp_bitstream.hevc", ref copysize, false);
-                    else
-                        write_this = invoke_dll.invoke_heif2jpg(heicfile, sq.value, "temp_bitstream.hevc", ref copysize, true);
+                    write_this = invoke_dll.invoke_heif2jpg(heicfile, sq.value, "tmp/temp_bitstream.hevc", ref copysize, sq.includes_exif, sq.color_profile);
 
                     FileStream fs = new FileStream(box.FileName, FileMode.Create);
                     BinaryWriter writer = new BinaryWriter(fs);
@@ -334,7 +343,7 @@ namespace HEIF_Utility
             if (openthis == "") return;            
             var tempheicfile = invoke_dll.read_heif(openthis);
             int copysize = 0;
-            MainPictureBox.Image = invoke_dll.ImageFromByte(invoke_dll.invoke_heif2jpg(tempheicfile, 50, "temp_bitstream.hevc", ref copysize, false));
+            MainPictureBox.Image = invoke_dll.ImageFromByte(invoke_dll.invoke_heif2jpg(tempheicfile, 50, "tmp/temp_bitstream.hevc", ref copysize, false, has_icc));
             exifinfo = invoke_dll.invoke_getexif(tempheicfile, ref copysize);
             heicfile = tempheicfile;
             filename = openthis;
@@ -420,13 +429,13 @@ namespace HEIF_Utility
         {
             try
             {
-                System.IO.File.WriteAllText(Application.StartupPath + "//MainWindowSize", this.Size.Width.ToString() + "\r\n" + this.Size.Height.ToString());
+                System.IO.File.WriteAllText(Application.StartupPath + "/conf/MainWindowSize", this.Size.Width.ToString() + "\r\n" + this.Size.Height.ToString());
             }
             catch (Exception)
             {
                 try
                 {
-                    System.IO.File.Delete(Application.StartupPath + "//MainWindowSize");
+                    System.IO.File.Delete(Application.StartupPath + "/conf/MainWindowSize");
                 }
                 catch (Exception) {
                 }

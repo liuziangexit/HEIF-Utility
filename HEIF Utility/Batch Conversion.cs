@@ -17,7 +17,7 @@ namespace HEIF_Utility
         private ListViewWithoutScrollBar filelist;
         private string output_folder;
         private int output_quality = 50;
-        private bool include_exif = true;
+        private bool include_exif = true, color_profile = true;
         private ProgressBar MainPrograssBar;
         private volatile bool isStart = false;
         private volatile int index = 0;
@@ -56,6 +56,8 @@ namespace HEIF_Utility
             filelist.AllowDrop = true;
             filelist.DragDrop += new DragEventHandler(Filelist_DragDrop);
             filelist.DragEnter += new DragEventHandler(Filelist_DragEnter);
+
+            this.color_profile = MainWindow.has_icc;
         }
 
         private void filelist_add(string str)
@@ -114,8 +116,10 @@ namespace HEIF_Utility
             filepicker.Title = "打开";
             filepicker.Multiselect = true;
             filepicker.Filter = "HEIF(.heic)|*.heic|任意文件|*.*";
-            filepicker.ShowDialog();
-            if (filepicker.FileNames.Length == 0) return;
+            if (filepicker.ShowDialog() != DialogResult.OK)
+                return;
+            if (filepicker.FileNames.Length == 0)
+                return;
 
             var box = new AddingFiles();            
             box.progressBar1.Maximum = filepicker.FileNames.Length;
@@ -196,6 +200,7 @@ namespace HEIF_Utility
             box.ShowDialog();
             output_quality = box.value;
             include_exif = box.includes_exif;
+            color_profile = box.color_profile;
         }
 
         private void start_Click(object sender, EventArgs e)
@@ -238,7 +243,7 @@ namespace HEIF_Utility
                     Thread T;
                     T = new Thread(new ParameterizedThreadStart(process));
                     T.IsBackground = true;
-                    T.Start(make_temp_filename("batch_temp", i));
+                    T.Start(make_temp_filename("tmp/batch_temp", i));
                 }
                 this.isStart = true;
             }
@@ -292,7 +297,7 @@ namespace HEIF_Utility
             this.Controls.Add(prograssbar);
         }
 
-        private string remove_path(string filename)
+        static private string remove_path(string filename)
         {
             try
             {
@@ -307,7 +312,7 @@ namespace HEIF_Utility
             }
         }
 
-        private string make_output_filename(string filename_heic)
+        static public string make_output_filename(string filename_heic)
         {
             try
             {
@@ -391,10 +396,7 @@ namespace HEIF_Utility
                             var heif_data = invoke_dll.read_heif(list_copy[index_while]);
                             int copysize = 0;
                             byte[] write_this;
-                            if (!this.include_exif)
-                                write_this = invoke_dll.invoke_heif2jpg(heif_data, this.output_quality, temp_filename, ref copysize, false);
-                            else
-                                write_this = invoke_dll.invoke_heif2jpg(heif_data, this.output_quality, temp_filename, ref copysize, true);
+                            write_this = invoke_dll.invoke_heif2jpg(heif_data, this.output_quality, temp_filename, ref copysize, this.include_exif, this.color_profile);
 
                             if (byte_array_starts_with(ref write_this, "HUD_ERR"))
                                 throw new Exception("HUD_ERR");

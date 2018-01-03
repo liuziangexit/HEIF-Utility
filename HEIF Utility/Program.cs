@@ -23,7 +23,7 @@ namespace HEIF_Utility
 
             try
             {
-                var fs = new FileStream(Application.StartupPath + "//MainWindowSize", FileMode.Open);
+                var fs = new FileStream(Application.StartupPath + "/conf/MainWindowSize", FileMode.Open);
                 var sr = new StreamReader(fs);
                 s.Width = int.Parse(sr.ReadLine());
                 s.Height = int.Parse(sr.ReadLine());
