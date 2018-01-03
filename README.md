@@ -4,19 +4,18 @@ HEIF 实用工具 - 在 Windows 上查看/转换 Apple HEIF 图片。<br>
 HEIF Utility - View/Convert Apple HEIF images on Windows.<br>
 <h2>功能 / Features</h2>
 <h4>1.查看由 Apple 设备生成的 HEIF 图片* / View Apple devices-generated HEIF images*</h4>
-  -在 Windows 资源管理器显示 HEIF 图片略缩图(将会出现在2018年1月发布的新版本中) / Display HEIF images's thumbnail in Windows Explorer(Will coming in January 2018)
+  -在文件资源管理器显示 HEIF 图片略缩图 / Display HEIF images's thumbnail in File Explorer
 <h4>2.查看图片 EXIF 信息 / View image EXIF</h4>
   -文件属性 / File Info<br>
   -镜头信息 / Lens Info<br>
   -定位信息 / GPS Info
 <h4>3.将 Apple HEIF 图片转换为 JPEG 图片 / Convert Apple HEIF images to JPEG images</h4>
   -自定输出质量 / Custom output quality<br>
-  -包含 EXIF 元数据(将会出现在2018年1月发布的新版本中) / Includes EXIF metadata(Will coming in January 2018)<br>
-  -色域转换和色彩配置文件支持(将会出现在2018年1月发布的新版本中) / Color-Gamut Conversion and Color Profile support(Will coming in January 2018)
+  -包含 EXIF 元数据 / Includes EXIF metadata<br>
+  -包含色彩配置文件 / Includes Color Profile
 <h4>4.批量转换 / Batch Conversion</h4>
   -实时进度显示 / Real-time progress display<br>
   -自动启用多线程转换** / Use MultiThreading automatically**<br>
-  -很可能是最快的 HEIF 批量转换解决方案，超过许多同类产品(欢迎对比测试)<br>
 <br>
 <I>*: 支持的 iOS 相机模式：照片、正方形、全景  / Supported iOS camera modes: Photo, Square, Panorama</I><br>
 <I>* *: 在某些入门级处理器上，批量转换可能使用单线程 / On some entry-level processors, Batch Conversion my use single-threaded</I><br>
@@ -44,13 +43,20 @@ HEIF Utility - View/Convert Apple HEIF images on Windows.<br>
 <img src="/img/HEIFUScreenShot4.png"><br>
 <img src="/img/HEIFUScreenShot5.png">
 <br>
-<h2>鸣谢 / Credit</h2>
-DiNgO_ZY<br>
+<h2>人员 / People</h2>
+<h4>开发团队</h4>
 GiGA_F<br>
+liuziang<br>
+<h4>技术支持团队</h4>
+nymaxmo<br>
+Qich<br>
+<h4>测试团队</h4>
+DiNgO_ZY<br>
 iXerol<br>
 linwangjia<br>
-Qich<br>
-nymaxmo<br>
+RAINDANCE<br>
+ThrillerApple<br>
+Tuaoo
 <h2>提供支持 / Powered by</h2>
 <a href="https://github.com/nokiatech/heif">NokiaTechnologies - HEIF</a><br>
 <a href="http://x265.org/">MulticoreWare Inc. - libx265</a><br>
@@ -68,4 +74,5 @@ Provides Simplified Chinese and English version.<br>
 HEIF Utility Online: https://liuziangexit.com/HEIF-Utility/Online <br>
 HEIF Utility Native DLL: https://github.com/liuziangexit/HEIF-Utility-Native-DLL <br>
 HEIF Utility Thumbnail Provider: https://github.com/liuziangexit/HEIF-Utility-Thumbnail-Provider <br>
+EmbedICCProfile: https://github.com/liuziangexit/EmbedICCProfile<br>
 知乎专栏: https://zhuanlan.zhihu.com/p/29439313
