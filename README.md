@@ -17,8 +17,8 @@ HEIF Utility - View/Convert Apple HEIF images on Windows.<br>
   -实时进度显示 / Real-time progress display<br>
   -自动启用多线程转换** / Use MultiThreading automatically**<br>
 <br>
-<I>*: 支持的 iOS 相机模式：照片、正方形、全景  / Supported iOS camera modes: Photo, Square, Panorama</I><br>
-<I>* *: 在某些入门级处理器上，批量转换可能使用单线程 / On some entry-level processors, Batch Conversion my use single-threaded</I><br>
+<i>*: 支持的 iOS 相机模式：照片、正方形、全景  / Supported iOS camera modes: Photo, Square, Panorama</i><br>
+<i>* *: 在某些入门级处理器上，批量转换可能使用单线程 / On some entry-level processors, Batch Conversion may be single-threaded.</i><br>
 <br>
 <h2>系统需求 / 支援的作業系統 / System Requirement</h2>
 1. Windows 7 或更新版本的操作系统<br>
