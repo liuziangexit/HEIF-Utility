@@ -92,13 +92,14 @@
             this.checkBox2.TabIndex = 6;
             this.checkBox2.Text = "With Color Profile";
             this.checkBox2.UseVisualStyleBackColor = true;
+            this.checkBox2.CheckedChanged += new System.EventHandler(this.checkBox2_CheckedChanged);
             // 
             // setjpgquality
             // 
             this.AcceptButton = this.button1;
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(340, 132);
+            this.ClientSize = new System.Drawing.Size(336, 128);
             this.ControlBox = false;
             this.Controls.Add(this.checkBox2);
             this.Controls.Add(this.checkBox1);
