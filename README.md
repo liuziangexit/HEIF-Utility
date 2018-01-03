@@ -44,13 +44,13 @@ HEIF Utility - View/Convert Apple HEIF images on Windows.<br>
 <img src="/img/HEIFUScreenShot5.jpg">
 <br>
 <h2>人员 / People</h2>
-<h4>开发团队</h4>
+<h4>开发团队 / Dev Team</h4>
 GiGA_F<br>
 liuziang<br>
-<h4>技术支持团队</h4>
+<h4>技术支持团队 / Tech Team</h4>
 nymaxmo<br>
 Qich<br>
-<h4>测试团队</h4>
+<h4>测试团队 / Test Team</h4>
 DiNgO_ZY<br>
 iXerol<br>
 linwangjia<br>
