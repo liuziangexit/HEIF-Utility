@@ -37,11 +37,11 @@ HEIF Utility - View/Convert Apple HEIF images on Windows.<br>
 4. .NET 4
 <br>
 <h2>截图 / Screen Shot</h2>
-<img src="/img/HEIFUScreenShot1.png"><br>
-<img src="/img/HEIFUScreenShot2.png"><br>
-<img src="/img/HEIFUScreenShot3.png"><br>
-<img src="/img/HEIFUScreenShot4.png"><br>
-<img src="/img/HEIFUScreenShot5.png">
+<img src="/img/HEIFUScreenShot1.jpg"><br>
+<img src="/img/HEIFUScreenShot2.jpg"><br>
+<img src="/img/HEIFUScreenShot3.jpg"><br>
+<img src="/img/HEIFUScreenShot4.jpg"><br>
+<img src="/img/HEIFUScreenShot5.jpg">
 <br>
 <h2>人员 / People</h2>
 <h4>开发团队</h4>
