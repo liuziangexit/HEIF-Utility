@@ -58,12 +58,13 @@ RAINDANCE<br>
 ThrillerApple<br>
 Tuaoo
 <h2>提供支持 / Powered by</h2>
-<a href="https://github.com/nokiatech/heif">NokiaTechnologies - HEIF</a><br>
-<a href="http://x265.org/">MulticoreWare Inc. - libx265</a><br>
 <a href="https://www.ffmpeg.org/">FFmpeg Team - FFmpeg</a><br>
-<a href="http://opencv.org/">OpenCV Team - OpenCV</a><br>
-<a href="https://www.microsoft.com/net">Microsoft - .NET</a><br>
 <a href="https://github.com/liuziangexit/liuzianglib">liuziangexit - liuzianglib</a><br>
+<a href="https://github.com/mayanklahiri/easyexif">mayanklahiri - easyexif</a><br>
+<a href="https://www.microsoft.com/net">Microsoft - Dot NET</a><br>
+<a href="http://x265.org/">MulticoreWare Inc. - libx265</a><br>
+<a href="https://github.com/nokiatech/heif">NokiaTechnologies - HEIF</a><br>
+<a href="http://opencv.org/">OpenCV Team - OpenCV</a>
 <h2>下载 / Download</h2>
 https://liuziangexit.com/HEIF-Utility/download.html <br>
 提供简体中文和英文版本。<br>
