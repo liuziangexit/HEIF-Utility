@@ -100,6 +100,18 @@ namespace HEIF_Utility
             }
         }
 
+        public static bool checkDir(string url)
+        {
+            try
+            {
+                return Directory.Exists(url);
+            }
+            catch (Exception)
+            {
+                return false;
+            }
+        }
+
         private void 关于ToolStripMenuItem_Click(object sender, EventArgs e)
         {
             var box = new About();
@@ -114,6 +126,17 @@ namespace HEIF_Utility
                 {
                     var errorbox = new Error();
                     errorbox.maintext.Text = "缺少核心组件，HEIF 实用工具无法启动。";
+                    errorbox.linklabel.Text = "下载页面";
+                    errorbox.link = "https://liuziangexit.com/HEIF-Utility";
+                    errorbox.ShowDialog();
+
+                    Environment.Exit(0);
+                }
+
+                if (!checkDir("conf") || !checkDir("icc-profile") || !checkDir("tmp"))
+                {
+                    var errorbox = new Error();
+                    errorbox.maintext.Text = "找不到路径，HEIF 实用工具无法启动。";
                     errorbox.linklabel.Text = "下载页面";
                     errorbox.link = "https://liuziangexit.com/HEIF-Utility";
                     errorbox.ShowDialog();
