@@ -19,7 +19,6 @@ namespace HEIF_Utility
         private byte[] heicfile;
         private Point mouseOff;
         public static bool has_icc = false;
-
         private bool isMouseDown = false;
 
         public MainWindow(Size s)
