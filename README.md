@@ -1,4 +1,4 @@
-﻿# HEIF 实用工具 / HEIF Utility
+# HEIF 实用工具 / HEIF Utility
 <img src="/img/HEIF-Utility-ico.png" height="125" width="125" />
 HEIF 实用工具 - 在 Windows 上查看/转换 Apple HEIF 图片。<br>
 HEIF Utility - View/Convert Apple HEIF images on Windows.<br>
@@ -43,6 +43,11 @@ HEIF Utility - View/Convert Apple HEIF images on Windows.<br>
 <img src="/img/HEIFUScreenShot4.jpg"><br>
 <img src="/img/HEIFUScreenShot5.jpg">
 <br>
+<h2>许可证 / License</h2>
+<p>
+<a href="https://github.com/liuziangexit/HEIF-Utility/blob/master/LICENSE">MIT License</a><br>
+<a href="https://github.com/liuziangexit/HEIF-Utility/blob/master/LICENSE-LAL2017.txt">liuziangexit Additional License 2017</a>
+</p>
 <h2>人员 / People</h2>
 <h4>开发团队 / Dev Team</h4>
 GiGA_F<br>

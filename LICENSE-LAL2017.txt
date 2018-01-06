@@ -1,19 +1,19 @@
 liuziangexit 附加许可协议 2017
 
-此许可协议是附加许可协议，您不仅需要遵守被授权软件作品使用的主要许可协议(如MIT, GPLv3等)，同时也需要遵守本协议。
+此许可协议是附加许可协议，您不仅需要遵守 HEIF Utility 使用的主要许可协议(如MIT, GPLv3等)，同时也需要遵守本协议。
 
-1.被授权软件作品的二进制文件和源代码绝不允许用于商业用途;
-2.任何基于被授权软件作品开发的、修改的项目必须在某处向用户展示"由 liuziangexit.com 提供支持"或"Powered by liuziangexit.com"的字样。这些字样的格式(包括但不限于空格和字母大小写)都必须与本文件中的相同;
-3.此条款自2018年1月6日起生效。对于任何在此日期之前就基于被授权软件作品进行开发或修改的项目，只要遵守了被授权软件作品的主要许可协议，就可以继续使用已经在使用的被授权软件作品版本(或更早版本)而不需要遵守以上条款，但不得在没有遵守以上条款的情况下使用被授权软件作品之后的新版本;
-4.您可以在遵守以上条款的前提下免费使用被授权软件作品的二进制文件和源代码;
+1.HEIF Utility 的二进制文件和源代码绝不允许用于商业用途;
+2.任何基于 HEIF Utility 开发的、修改的项目必须在某处向用户展示"由 liuziangexit.com 提供支持"或"Powered by liuziangexit.com"的字样。这些字样的格式(包括但不限于空格和字母大小写)都必须与本文件中的相同;
+3.此条款自2018年1月6日起生效。对于任何在此日期之前就基于 HEIF Utility 进行开发或修改的项目，只要遵守了 HEIF Utility 的主要许可协议，就可以继续使用已经在使用的 HEIF Utility 版本(或更早版本)而不需要遵守以上条款，但不得在没有遵守以上条款的情况下使用 HEIF Utility 之后的新版本;
+4.您可以在遵守以上条款的前提下免费使用 HEIF Utility 的二进制文件和源代码;
 
 
 
 liuziangexit Additional License 2017
 
-This is an additional license. You do need to adhere to the main license agreements (eg, MIT, GPLv3, etc.) used in the licensed software, and you also need to comply with this agreement as well.
+This is an additional license. You do need to adhere to the main license agreements (eg, MIT, GPLv3, etc.) used in HEIF Utility, and you also need to comply with this agreement as well.
 
-1.Binary files and source code for the licensed software must not be used for commercial purposes;
-2.Any project development or modification based on the licensed software must include and present the phrase "由 liuziangexit.com 提供支持" or "Powered by liuziangexit.com" to the user. The wording of the work (including but not limited to spaces, capitalization of words) must be the same as in this document;
-3.This license will take effect from January 6, 2018. Any project that has been developed or modified based on the licensed software before this date may continue to use the licensed software version(or earlier versions), do not need to comply with the above terms. However, you are not allowed to use the new version of licensed software without having complied with the aforementioned terms;
-4.You may use the licensed software's binary files and source code free of charge subject to the above terms;
+1.Binary files and source code for HEIF Utility must not be used for commercial purposes;
+2.Any project development or modification based on HEIF Utility must include and present the phrase "由 liuziangexit.com 提供支持" or "Powered by liuziangexit.com" to the user. The wording of the work (including but not limited to spaces, capitalization of words) must be the same as in this document;
+3.This license will take effect from January 6, 2018. Any project that has been developed or modified based on HEIF Utility before this date may continue to use the HEIF Utility version(or earlier versions), do not need to comply with the above terms. However, you are not allowed to use the new version of HEIF Utility without having complied with the aforementioned terms;
+4.You may use HEIF Utility's binary files and source code free of charge subject to the above terms;
