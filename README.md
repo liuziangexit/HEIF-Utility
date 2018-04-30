@@ -15,8 +15,11 @@ HEIF Utility - View/Convert Apple HEIF images on Windows.<br>
   -包含色彩配置文件 / Includes Color Profile
 <h4>4.批量转换 / Batch Conversion</h4>
   -实时进度显示 / Real-time progress display<br>
-  -自动启用多线程转换** / Use MultiThreading automatically**<br>
-<br>
+  -自动启用多线程转换** / Use MultiThreading automatically**
+<h4>5.其他 / Other</h4>
+  -HiDPI 支持 / HiDPI Support<br>
+  -多语言 / Muliti-Language<br>
+  <br>
 <i>*: 支持的 iOS 相机模式：照片、正方形、全景  / Supported iOS camera modes: Photo, Square, Panorama</i><br>
 <i>* *: 在某些入门级处理器上，批量转换可能使用单线程 / On some entry-level processors, Batch Conversion may be single-threaded.</i><br>
 <br>
