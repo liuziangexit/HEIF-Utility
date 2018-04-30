@@ -14,5 +14,10 @@
     <sys:String x:Key="More.About">关于</sys:String>
     <sys:String x:Key="More.Language">语言</sys:String>
     <sys:String x:Key="More.Language.UseSystemLanguage">使用系统语言</sys:String>
+    <sys:String x:Key="More.About.People">人员</sys:String>
+    <sys:String x:Key="More.About.License">协议</sys:String>
+    <sys:String x:Key="More.About.PoweredBy">提供支持</sys:String>
+    <sys:String x:Key="More.About.SourceCode">源代码</sys:String>
+    <sys:String x:Key="More.About.Contact">联系</sys:String>
 
 </ResourceDictionary>

@@ -12,6 +12,6 @@
             <RowDefinition Height="*"/>
             <RowDefinition Height="*"/>
         </Grid.RowDefinitions>
-        <TextBlock Margin="4,0,0,0" Text="{DynamicResource ProgramName}" FontSize="28" Foreground="#518ffc"/>
+        <TextBlock Margin="4,0,0,0" Text="{DynamicResource ProgramName}" FontSize="18" Foreground="#518ffc"/>
     </Grid>
 </Window>
