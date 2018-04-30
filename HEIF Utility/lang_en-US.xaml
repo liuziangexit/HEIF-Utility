@@ -13,6 +13,11 @@
     <sys:String x:Key="More.OnlineSupport">Online Support</sys:String>
     <sys:String x:Key="More.About">About</sys:String>
     <sys:String x:Key="More.Language">Language</sys:String>
-    <sys:String x:Key="More.Language.UseSystemLanguage">使用系统语言</sys:String>
+    <sys:String x:Key="More.Language.UseSystemLanguage">Use System Language</sys:String>
+    <sys:String x:Key="More.About.People">People</sys:String>
+    <sys:String x:Key="More.About.License">License</sys:String>
+    <sys:String x:Key="More.About.PoweredBy">Powered by</sys:String>
+    <sys:String x:Key="More.About.SourceCode">Source Code</sys:String>
+    <sys:String x:Key="More.About.Contact">Contact</sys:String>
 
 </ResourceDictionary>

@@ -8,6 +8,7 @@ using System.Windows.Controls;
 using System.Windows.Data;
 using System.Windows.Documents;
 using System.Windows.Input;
+using System.Windows.Interop;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
@@ -28,6 +29,17 @@ namespace HEIF_Utility_HiDPI
             ChangeLanguage(GetSystemLanguage());
             InitializeComponent();
             ChangeLanguageStatus();
+        }
+
+        protected override void OnSourceInitialized(EventArgs e)
+        {
+            IconRemover.RemoveIcon(this);
+        }
+
+        private void OnLoaded(object sender, RoutedEventArgs e)
+        {
+            var hwnd = new WindowInteropHelper(this).Handle;
+            IconRemover.SetWindowLong(hwnd, IconRemover.GWL_STYLE, IconRemover.GetWindowLong(hwnd, IconRemover.GWL_STYLE) & ~IconRemover.WS_SYSMENU);
         }
 
         private static ResourceDictionary GetLanguage(string Language)
@@ -100,7 +112,8 @@ namespace HEIF_Utility_HiDPI
 
         private void StartAbout(object sender, RoutedEventArgs e)
         {
-            MessageBox.Show("关于");
+            var box = new About();
+            box.ShowDialog();
         }
 
         private void lang_Click(object sender, RoutedEventArgs e)
