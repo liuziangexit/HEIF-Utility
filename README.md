@@ -2,7 +2,8 @@
 <img src="/img/HEIF-Utility-ico.png" height="125" width="125" />
 HEIF 实用工具 - 在 Windows 上查看/转换 Apple HEIF 图片。<br>
 HEIF Utility - View/Convert Apple HEIF images on Windows.<br><br>
-相比原始版本(master 分支)，此版本提供 HiDPI 支持和更好的本地化支持 / This version provides HiDPI support and better localization support than the original version(master branch)<br>
+相比原始版本(master 分支)，此版本提供 HiDPI 支持和更好的多语言适配<br>
+This version provides HiDPI support and better localization support than the original version(master branch)<br>
 <h2>功能 / Features</h2>
 <h4>1.查看由 Apple 设备生成的 HEIF 图片* / View Apple devices-generated HEIF images*</h4>
   -在文件资源管理器显示 HEIF 图片略缩图 / Display HEIF images's thumbnail in File Explorer
@@ -23,7 +24,6 @@ HEIF Utility - View/Convert Apple HEIF images on Windows.<br><br>
   <br>
 <i>*: 支持的 iOS 相机模式：照片、正方形、全景  / Supported iOS camera modes: Photo, Square, Panorama</i><br>
 <i>* *: 在某些入门级处理器上，批量转换可能使用单线程 / On some entry-level processors, Batch Conversion may be single-threaded.</i><br>
-<br>
 <h2>系统需求 / 支援的作業系統 / System Requirement</h2>
 1. Windows 7 或更新版本的操作系统<br>
 2. 64 位操作系统<br>
