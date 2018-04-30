@@ -13,7 +13,7 @@
         <CommandBinding Command="ApplicationCommands.Copy" Executed="Copy_Executed"/>
     </Window.CommandBindings>
     
-    <Grid>
+    <Grid Background="LightGray">
         <Grid.RowDefinitions>
             <RowDefinition Height="25"/>
             <RowDefinition Height="*"/>
@@ -25,7 +25,7 @@
                 <MenuItem Header="{DynamicResource File.Copy}" InputGestureText="Ctrl+C" Command="ApplicationCommands.Copy"/>
             </MenuItem>
             <MenuItem Header="{DynamicResource More}">
-                <MenuItem Header="{DynamicResource More.BatchConversion}" InputGestureText="Ctrl+B" Click="StartBatchConversion" />
+                <MenuItem Header="{DynamicResource More.BatchConversion}" />
                 <Separator/>                
                 <MenuItem Header="{DynamicResource More.OnlineSupport}" Click="StartOnlineSupport"/>
                 <MenuItem Header="{DynamicResource More.About}" Click="StartAbout"/>

@@ -93,11 +93,6 @@ namespace HEIF_Utility_HiDPI
             MessageBox.Show("复制");
         }
         
-        private void StartBatchConversion(object sender, RoutedEventArgs e)
-        {
-            MessageBox.Show("批量转换");
-        }
-
         private void StartOnlineSupport(object sender, RoutedEventArgs e)
         {
             MessageBox.Show("在线支持");
@@ -156,5 +151,6 @@ namespace HEIF_Utility_HiDPI
             ChangeLanguage(GetSystemLanguage());
             ChangeLanguageStatus();
         }
+        
     }
 }
