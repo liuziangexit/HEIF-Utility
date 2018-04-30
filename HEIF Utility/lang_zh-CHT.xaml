@@ -1,0 +1,18 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                    xmlns:local="clr-namespace:HEIF_Utility_HiDPI"
+                    xmlns:sys="clr-namespace:System;assembly=mscorlib">
+
+    <sys:String x:Key="ProgramName">HEIF Utility</sys:String>
+    <sys:String x:Key="File">文件</sys:String>
+    <sys:String x:Key="File.Open">打開(.heic)</sys:String>
+    <sys:String x:Key="File.Save">保存(.jpg)</sys:String>
+    <sys:String x:Key="File.Copy">復制</sys:String>
+    <sys:String x:Key="More">更多</sys:String>
+    <sys:String x:Key="More.BatchConversion">批量轉換</sys:String>
+    <sys:String x:Key="More.OnlineSupport">在線支持</sys:String>
+    <sys:String x:Key="More.About">關於</sys:String>
+    <sys:String x:Key="More.Language">語言</sys:String>
+    <sys:String x:Key="More.Language.UseSystemLanguage">使用系统语言</sys:String>
+
+</ResourceDictionary>

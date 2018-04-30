@@ -1,0 +1,43 @@
+﻿<Window x:Class="HEIF_Utility_HiDPI.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:HEIF_Utility_HiDPI"
+        mc:Ignorable="d"
+        Title="{DynamicResource ProgramName}" Height="545" Width="740">
+    
+    <Window.CommandBindings>
+        <CommandBinding Command="ApplicationCommands.Open" Executed="Open_Executed"/>
+        <CommandBinding Command="ApplicationCommands.Save" Executed="Save_Executed"/>
+        <CommandBinding Command="ApplicationCommands.Copy" Executed="Copy_Executed"/>
+    </Window.CommandBindings>
+    
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="25"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+        <Menu>
+            <MenuItem Header="{DynamicResource File}" Height="25">
+                <MenuItem Header="{DynamicResource File.Open}" InputGestureText="Ctrl+O" Command="ApplicationCommands.Open" />
+                <MenuItem Header="{DynamicResource File.Save}" InputGestureText="Ctrl+S" Command="ApplicationCommands.Save"/>
+                <MenuItem Header="{DynamicResource File.Copy}" InputGestureText="Ctrl+C" Command="ApplicationCommands.Copy"/>
+            </MenuItem>
+            <MenuItem Header="{DynamicResource More}">
+                <MenuItem Header="{DynamicResource More.BatchConversion}" InputGestureText="Ctrl+B" Click="StartBatchConversion" />
+                <Separator/>                
+                <MenuItem Header="{DynamicResource More.OnlineSupport}" Click="StartOnlineSupport"/>
+                <MenuItem Header="{DynamicResource More.About}" Click="StartAbout"/>
+                <Separator/>
+                <MenuItem Header="{DynamicResource More.Language}">
+                    <MenuItem x:Name="enUS" Header="English" IsCheckable="True" Click="lang_Click"/>
+                    <MenuItem x:Name="zhCHS" Header="简体中文" IsCheckable="True" Click="lang_Click"/>
+                    <MenuItem x:Name="zhCHT" Header="繁體中文" IsCheckable="True" Click="lang_Click"/>
+                    <Separator/>
+                    <MenuItem Header="{DynamicResource More.Language.UseSystemLanguage}" Click="use_sys_lang_Click"/>
+                </MenuItem>
+            </MenuItem>
+        </Menu>
+    </Grid>
+</Window>
