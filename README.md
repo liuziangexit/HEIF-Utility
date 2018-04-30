@@ -40,11 +40,6 @@ HEIF Utility - View/Convert Apple HEIF images on Windows.<br>
 4. .NET 4
 <br>
 <h2>截图 / Screen Shot</h2>
-<img src="/img/HEIFUScreenShot1.jpg"><br>
-<img src="/img/HEIFUScreenShot2.jpg"><br>
-<img src="/img/HEIFUScreenShot3.jpg"><br>
-<img src="/img/HEIFUScreenShot4.jpg"><br>
-<img src="/img/HEIFUScreenShot5.jpg">
 <br>
 <h2>许可证 / License</h2>
 <p>
@@ -66,22 +61,5 @@ RAINDANCE<br>
 ThrillerApple<br>
 Tuaoo
 <h2>提供支持 / Powered by</h2>
-<a href="https://www.ffmpeg.org/">FFmpeg Team - FFmpeg</a><br>
-<a href="https://github.com/liuziangexit/liuzianglib">liuziangexit - liuzianglib</a><br>
-<a href="https://github.com/mayanklahiri/easyexif">mayanklahiri - easyexif</a><br>
-<a href="https://www.microsoft.com/net">Microsoft - Dot NET</a><br>
-<a href="http://x265.org/">MulticoreWare Inc. - libx265</a><br>
-<a href="https://github.com/nokiatech/heif">NokiaTechnologies - HEIF</a><br>
-<a href="http://opencv.org/">OpenCV Team - OpenCV</a>
 <h2>下载 / Download</h2>
-https://liuziangexit.com/HEIF-Utility/download.html <br>
-提供简体中文和英文版本。<br>
-Provides Simplified Chinese and English version.<br>
 <h2>相关链接 / Related Links</h2>
-官方网站 / Official Website: https://liuziangexit.com/HEIF-Utility <br>
-在线支持 / Online Support: https://liuziangexit.com/HEIF-Utility/Help <br>
-HEIF Utility Online: https://liuziangexit.com/HEIF-Utility/Online <br>
-HEIF Utility Native DLL: https://github.com/liuziangexit/HEIF-Utility-Native-DLL <br>
-HEIF Utility Thumbnail Provider: https://github.com/liuziangexit/HEIF-Utility-Thumbnail-Provider <br>
-EmbedICCProfile: https://github.com/liuziangexit/EmbedICCProfile<br>
-知乎专栏: https://zhuanlan.zhihu.com/p/29439313
