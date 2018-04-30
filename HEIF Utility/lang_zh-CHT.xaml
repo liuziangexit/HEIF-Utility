@@ -4,6 +4,7 @@
                     xmlns:sys="clr-namespace:System;assembly=mscorlib">
 
     <sys:String x:Key="ProgramName">HEIF Utility</sys:String>
+    <sys:String x:Key="ProgramNameEnglish">HEIF Utility</sys:String>
     <sys:String x:Key="File">文件</sys:String>
     <sys:String x:Key="File.Open">打開(.heic)</sys:String>
     <sys:String x:Key="File.Save">保存(.jpg)</sys:String>
@@ -14,10 +15,12 @@
     <sys:String x:Key="More.About">關於</sys:String>
     <sys:String x:Key="More.Language">語言</sys:String>
     <sys:String x:Key="More.Language.UseSystemLanguage">使用系统语言</sys:String>
+    <sys:String x:Key="More.About.Developer">liuziangexit.com</sys:String>
     <sys:String x:Key="More.About.People">People</sys:String>
     <sys:String x:Key="More.About.License">License</sys:String>
     <sys:String x:Key="More.About.PoweredBy">Powered by</sys:String>
     <sys:String x:Key="More.About.SourceCode">Source Code</sys:String>
     <sys:String x:Key="More.About.Contact">Contact</sys:String>
+    <sys:String x:Key="More.About.Version">WPF Remastered</sys:String>
 
 </ResourceDictionary>

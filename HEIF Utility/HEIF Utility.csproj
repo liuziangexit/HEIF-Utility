@@ -1,0 +1,231 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{13999DEC-9097-44B6-A6BC-7A9DB56497EB}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <RootNamespace>HEIF_Utility</RootNamespace>
+    <AssemblyName>HEIF-Utility</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <TargetFrameworkProfile />
+    <PublishUrl>publish\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Disk</InstallFrom>
+    <UpdateEnabled>false</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <ApplicationRevision>0</ApplicationRevision>
+    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationIcon>icon.ico</ApplicationIcon>
+  </PropertyGroup>
+  <PropertyGroup>
+    <SignManifests>false</SignManifests>
+  </PropertyGroup>
+  <PropertyGroup>
+    <SignAssembly>false</SignAssembly>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Newtonsoft.Json, Version=10.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>packages\Newtonsoft.Json.10.0.3\lib\net40\Newtonsoft.Json.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="About.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="About.Designer.cs">
+      <DependentUpon>About.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Batch Conversion.cs" />
+    <Compile Include="Batch Conversion.Designer.cs">
+      <DependentUpon>Batch Conversion.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Confirm.cs" />
+    <Compile Include="Confirm.Designer.cs">
+      <DependentUpon>Confirm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Error.cs" />
+    <Compile Include="Error.Designer.cs">
+      <DependentUpon>Error.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ImageInfo.cs" />
+    <Compile Include="ImageInfo.Designer.cs">
+      <DependentUpon>ImageInfo.cs</DependentUpon>
+    </Compile>
+    <Compile Include="invoke_dll.cs" />
+    <Compile Include="ListViewWithoutScrollBar.cs" />
+    <Compile Include="Powered by.cs" />
+    <Compile Include="Powered by.Designer.cs">
+      <DependentUpon>Powered by.cs</DependentUpon>
+    </Compile>
+    <Compile Include="People.cs" />
+    <Compile Include="People.Designer.cs">
+      <DependentUpon>People.cs</DependentUpon>
+    </Compile>
+    <Compile Include="LICENSE.cs" />
+    <Compile Include="LICENSE.Designer.cs">
+      <DependentUpon>LICENSE.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MainWindow.cs" />
+    <Compile Include="MainWindow.Designer.cs">
+      <DependentUpon>MainWindow.cs</DependentUpon>
+    </Compile>
+    <Compile Include="AddingFiles.cs" />
+    <Compile Include="AddingFiles.Designer.cs">
+      <DependentUpon>AddingFiles.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Processing.cs" />
+    <Compile Include="Processing.Designer.cs">
+      <DependentUpon>Processing.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="ShowLinkCopyable.cs" />
+    <Compile Include="ShowLinkCopyable.Designer.cs">
+      <DependentUpon>ShowLinkCopyable.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Source Code.cs" />
+    <Compile Include="Source Code.Designer.cs">
+      <DependentUpon>Source Code.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Set JPG Quality.cs" />
+    <Compile Include="Set JPG Quality.Designer.cs">
+      <DependentUpon>Set JPG Quality.cs</DependentUpon>
+    </Compile>
+    <Compile Include="TitleBar.cs" />
+    <Compile Include="TitleBar.designer.cs">
+      <DependentUpon>TitleBar.cs</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="About.resx">
+      <DependentUpon>About.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Batch Conversion.resx">
+      <DependentUpon>Batch Conversion.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Confirm.resx">
+      <DependentUpon>Confirm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Error.resx">
+      <DependentUpon>Error.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ImageInfo.resx">
+      <DependentUpon>ImageInfo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Powered by.resx">
+      <DependentUpon>Powered by.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="People.resx">
+      <DependentUpon>People.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="LICENSE.resx">
+      <DependentUpon>LICENSE.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MainWindow.resx">
+      <DependentUpon>MainWindow.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AddingFiles.resx">
+      <DependentUpon>AddingFiles.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Processing.resx">
+      <DependentUpon>Processing.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <EmbeddedResource Include="ShowLinkCopyable.resx">
+      <DependentUpon>ShowLinkCopyable.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Source Code.resx">
+      <DependentUpon>Source Code.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Set JPG Quality.resx">
+      <DependentUpon>Set JPG Quality.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="TitleBar.resx">
+      <DependentUpon>TitleBar.cs</DependentUpon>
+    </EmbeddedResource>
+    <None Include="packages.config" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="icon.ico" />
+    <None Include="Resources\MinimizeWhite.png" />
+    <None Include="Resources\Minimize.png" />
+    <None Include="Resources\MaximizeWhite.png" />
+    <None Include="Resources\Maximize.png" />
+    <None Include="Resources\CloseWhite.png" />
+    <None Include="Resources\Close.png" />
+    <None Include="Resources\Close.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>

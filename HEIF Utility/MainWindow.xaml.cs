@@ -113,6 +113,7 @@ namespace HEIF_Utility_HiDPI
         private void StartAbout(object sender, RoutedEventArgs e)
         {
             var box = new About();
+            box.Owner = this;
             box.ShowDialog();
         }
 

@@ -5,13 +5,43 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:HEIF_Utility_HiDPI"
         mc:Ignorable="d"
-        Title="{DynamicResource More.About}" Height="200" Width="318" ResizeMode="NoResize" ShowInTaskbar="False" Topmost="True">
-    <Grid>
+        WindowStartupLocation="CenterOwner"
+        Title="{DynamicResource More.About}" Height="175" Width="318" ResizeMode="NoResize" ShowInTaskbar="False" Topmost="True">
+    <Grid Background="#F0F0F0">
         <Grid.RowDefinitions>
-            <RowDefinition Height="*"/>
-            <RowDefinition Height="*"/>
+            <RowDefinition Height="auto"/>
+            <RowDefinition Height="auto"/>
             <RowDefinition Height="*"/>
         </Grid.RowDefinitions>
-        <TextBlock Margin="4,0,0,0" Text="{DynamicResource ProgramName}" FontSize="18" Foreground="#518ffc"/>
+        <TextBlock Margin="6,0,0,0" Text="{DynamicResource ProgramNameEnglish}" FontWeight="Regular" FontSize="24" Foreground="#518ffc"/>
+        <TextBlock Margin="7,0,0,0" Text="{DynamicResource More.About.Developer}" FontWeight="Regular" FontSize="12" Foreground="DarkGray" Grid.Row="1"/>
+        <Grid Grid.Row="2">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+            </Grid.ColumnDefinitions>
+            <Grid VerticalAlignment="Bottom" Grid.Column="0">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="auto"/>
+                    <RowDefinition Height="auto"/>
+                    <RowDefinition Height="auto"/>
+                    <RowDefinition Height="auto"/>
+                    <RowDefinition Height="auto"/>
+                </Grid.RowDefinitions>
+                <TextBlock Text="{DynamicResource More.About.People}" Foreground="DimGray" FontSize="12" HorizontalAlignment="Left" Margin="6,0,0,0"/>
+                <TextBlock Text="{DynamicResource More.About.License}" Foreground="DimGray" FontSize="12" HorizontalAlignment="Left" Margin="6,0,0,0" Grid.Row="1"/>
+                <TextBlock Text="{DynamicResource More.About.PoweredBy}" Foreground="DimGray" FontSize="12" HorizontalAlignment="Left" Margin="6,0,0,0" Grid.Row="2"/>
+                <TextBlock Text="{DynamicResource More.About.SourceCode}" Foreground="DimGray" FontSize="12" HorizontalAlignment="Left" Margin="6,0,0,0" Grid.Row="3"/>
+                <TextBlock Text="{DynamicResource More.About.Contact}" Foreground="DimGray" FontSize="12" HorizontalAlignment="Left" Margin="6,0,0,4" Grid.Row="4"/>
+            </Grid>
+            <Grid VerticalAlignment="Bottom" Grid.Column="1">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="auto"/>
+                    <RowDefinition Height="auto"/>
+                </Grid.RowDefinitions>
+                <TextBlock Text="{DynamicResource More.About.Version}" Foreground="DarkGray" FontStyle="Italic" FontSize="12" HorizontalAlignment="Right" Margin="0,0,4,0"/>
+                <TextBlock Text="20180501" Foreground="DarkGray" FontStyle="Italic" FontSize="12" HorizontalAlignment="Right" Margin="0,0,4,4" Grid.Row="1"/>
+            </Grid>            
+        </Grid>
     </Grid>
 </Window>
