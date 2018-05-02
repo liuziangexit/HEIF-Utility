@@ -9,6 +9,7 @@
     <sys:String x:Key="File.Open">打开(.heic)</sys:String>
     <sys:String x:Key="File.Save">保存(.jpg)</sys:String>
     <sys:String x:Key="File.Copy">复制</sys:String>
+    <sys:String x:Key="File.Info">图片信息</sys:String>
     <sys:String x:Key="More">更多</sys:String>
     <sys:String x:Key="More.BatchConversion">批量转换</sys:String>
     <sys:String x:Key="More.OnlineSupport">在线支持</sys:String>
@@ -22,5 +23,6 @@
     <sys:String x:Key="More.About.SourceCode">源代码</sys:String>
     <sys:String x:Key="More.About.Contact">联系</sys:String>
     <sys:String x:Key="More.About.Version">WPF 重制版</sys:String>
+    <sys:String x:Key="ShowLinkTitle">无法打开浏览器，请手动复制链接</sys:String>
 
 </ResourceDictionary>

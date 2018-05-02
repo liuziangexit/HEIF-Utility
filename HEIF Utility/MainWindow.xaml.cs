@@ -107,7 +107,17 @@ namespace HEIF_Utility_HiDPI
         
         private void StartOnlineSupport(object sender, RoutedEventArgs e)
         {
-            MessageBox.Show("在线支持");
+            try
+            {
+                System.Diagnostics.Process.Start("https://liuziangexit.com/HEIF-Utility/Help");
+            }
+            catch (Exception)
+            {
+                var box = new ShowLink();
+                box.Owner = this;
+                box.linktextbox.Text = "https://liuziangexit.com/HEIF-Utility/Help";
+                box.ShowDialog();
+            }
         }
 
         private void StartAbout(object sender, RoutedEventArgs e)
@@ -165,6 +175,10 @@ namespace HEIF_Utility_HiDPI
             ChangeLanguage(GetSystemLanguage());
             ChangeLanguageStatus();
         }
-        
+
+        private void FileInfo_Click(object sender, RoutedEventArgs e)
+        {
+            MessageBox.Show("HI");
+        }
     }
 }

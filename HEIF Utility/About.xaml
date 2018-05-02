@@ -39,7 +39,7 @@
                     <RowDefinition Height="auto"/>
                     <RowDefinition Height="auto"/>
                 </Grid.RowDefinitions>
-                <TextBlock Text="{DynamicResource More.About.Version}" Foreground="DarkGray" FontStyle="Italic" FontSize="12" HorizontalAlignment="Right" Margin="0,0,4,0"/>
+                <TextBlock Text="{DynamicResource More.About.Version}" Foreground="DarkGray" FontStyle="Italic" FontSize="12" HorizontalAlignment="Right" Margin="0,0,5,0"/>
                 <TextBlock Text="20180501" Foreground="DarkGray" FontStyle="Italic" FontSize="12" HorizontalAlignment="Right" Margin="0,0,4,4" Grid.Row="1"/>
             </Grid>            
         </Grid>

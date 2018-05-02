@@ -9,6 +9,7 @@
     <sys:String x:Key="File.Open">Open(.heic)</sys:String>
     <sys:String x:Key="File.Save">Save(.jpg)</sys:String>
     <sys:String x:Key="File.Copy">Copy</sys:String>
+    <sys:String x:Key="File.Info">Image Info</sys:String>
     <sys:String x:Key="More">More</sys:String>
     <sys:String x:Key="More.BatchConversion">Batch Conversion</sys:String>
     <sys:String x:Key="More.OnlineSupport">Online Support</sys:String>
@@ -21,6 +22,7 @@
     <sys:String x:Key="More.About.PoweredBy">Powered by</sys:String>
     <sys:String x:Key="More.About.SourceCode">Source Code</sys:String>
     <sys:String x:Key="More.About.Contact">Contact</sys:String>
-    <sys:String x:Key="More.About.Version">WPF Remastered</sys:String>    
+    <sys:String x:Key="More.About.Version">WPF Remastered</sys:String>
+    <sys:String x:Key="ShowLinkTitle">无法打开浏览器，请手动复制链接</sys:String>
 
 </ResourceDictionary>

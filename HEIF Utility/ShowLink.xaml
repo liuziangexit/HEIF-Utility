@@ -1,0 +1,14 @@
+﻿<Window x:Class="HEIF_Utility_HiDPI.ShowLink"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:HEIF_Utility_HiDPI"
+        mc:Ignorable="d"
+        WindowStartupLocation="CenterOwner"
+        Title="{DynamicResource ShowLinkTitle}" Height="141.871" Width="362.386" ShowInTaskbar="False" ResizeMode="NoResize">
+    <Grid>
+        <TextBox Background="Transparent" BorderThickness="0" IsReadOnly="True" TextWrapping="Wrap"
+                 x:Name="linktextbox" Foreground="Black" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="14"/>
+    </Grid>
+</Window>

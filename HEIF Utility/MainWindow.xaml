@@ -21,8 +21,10 @@
         <Menu>
             <MenuItem Header="{DynamicResource File}" Height="25">
                 <MenuItem Header="{DynamicResource File.Open}" InputGestureText="Ctrl+O" Command="ApplicationCommands.Open" />
-                <MenuItem Header="{DynamicResource File.Save}" InputGestureText="Ctrl+S" Command="ApplicationCommands.Save"/>
-                <MenuItem Header="{DynamicResource File.Copy}" InputGestureText="Ctrl+C" Command="ApplicationCommands.Copy"/>
+                <MenuItem Header="{DynamicResource File.Save}" InputGestureText="Ctrl+S" Command="ApplicationCommands.Save" IsEnabled="False"/>
+                <MenuItem Header="{DynamicResource File.Copy}" InputGestureText="Ctrl+C" Command="ApplicationCommands.Copy" IsEnabled="False"/>
+                <Separator/>
+                <MenuItem x:Name="FileInfo" IsEnabled="False" Header="{DynamicResource File.Info}" Click="FileInfo_Click"/>
             </MenuItem>
             <MenuItem Header="{DynamicResource More}">
                 <MenuItem Header="{DynamicResource More.BatchConversion}" />
@@ -39,5 +41,8 @@
                 </MenuItem>
             </MenuItem>
         </Menu>
+        <Image Grid.Row="1" Source="https://liuziangexit.com/img/HeroStarryNight.jpg">
+            
+        </Image>
     </Grid>
 </Window>
