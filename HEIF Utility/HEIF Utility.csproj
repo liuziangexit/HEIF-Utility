@@ -8,7 +8,7 @@
     <OutputType>WinExe</OutputType>
     <RootNamespace>HEIF_Utility</RootNamespace>
     <AssemblyName>HEIF-Utility</AssemblyName>
-    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <TargetFrameworkVersion>v4.6</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
     <TargetFrameworkProfile />
@@ -38,6 +38,7 @@
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
     <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+    <Prefer32Bit>false</Prefer32Bit>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
     <PlatformTarget>AnyCPU</PlatformTarget>
@@ -48,6 +49,7 @@
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
     <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+    <Prefer32Bit>false</Prefer32Bit>
   </PropertyGroup>
   <PropertyGroup>
     <ApplicationIcon>icon.ico</ApplicationIcon>
@@ -58,10 +60,12 @@
   <PropertyGroup>
     <SignAssembly>false</SignAssembly>
   </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationManifest>app.manifest</ApplicationManifest>
+  </PropertyGroup>
   <ItemGroup>
     <Reference Include="Newtonsoft.Json, Version=10.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
-      <HintPath>packages\Newtonsoft.Json.10.0.3\lib\net40\Newtonsoft.Json.dll</HintPath>
-      <Private>True</Private>
+      <HintPath>packages\Newtonsoft.Json.10.0.3\lib\net45\Newtonsoft.Json.dll</HintPath>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
@@ -108,17 +112,17 @@
     <Compile Include="ListViewWithoutScrollBar.cs">
       <SubType>Component</SubType>
     </Compile>
+    <Compile Include="People.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="People.designer.cs">
+      <DependentUpon>People.cs</DependentUpon>
+    </Compile>
     <Compile Include="Powered by.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Powered by.Designer.cs">
       <DependentUpon>Powered by.cs</DependentUpon>
-    </Compile>
-    <Compile Include="People.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="People.Designer.cs">
-      <DependentUpon>People.cs</DependentUpon>
     </Compile>
     <Compile Include="LICENSE.cs">
       <SubType>Form</SubType>
@@ -185,15 +189,14 @@
     <EmbeddedResource Include="ImageInfo.resx">
       <DependentUpon>ImageInfo.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Powered by.resx">
-      <DependentUpon>Powered by.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="People.resx">
       <DependentUpon>People.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Powered by.resx">
+      <DependentUpon>Powered by.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="LICENSE.resx">
       <DependentUpon>LICENSE.cs</DependentUpon>
-      <SubType>Designer</SubType>
     </EmbeddedResource>
     <EmbeddedResource Include="MainWindow.resx">
       <DependentUpon>MainWindow.cs</DependentUpon>
@@ -226,6 +229,9 @@
     <EmbeddedResource Include="TitleBar.resx">
       <DependentUpon>TitleBar.cs</DependentUpon>
     </EmbeddedResource>
+    <None Include="app.manifest">
+      <SubType>Designer</SubType>
+    </None>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
