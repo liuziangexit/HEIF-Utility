@@ -2,6 +2,27 @@
 <img src="/img/HEIF-Utility-ico.png" height="125" width="125" />
 HEIF 实用工具 - 在 Windows 上查看/转换 Apple HEIF 图片。<br>
 HEIF Utility - View/Convert Apple HEIF images on Windows.<br>
+<br>
+<img src="/img/03warning.png" height="50" width="50" />
+尽管“HEIF 实用工具”在过去几年间得到了用户的青睐，一些媒体甚至称赞其是最好最快的 HEIF 转换器，并且竟然是免费无广告的。但我们已经注意到，随着操作系统供应商逐渐提供了更好的对于 HEIF 图像的第一方支持，我们的程序已经不再配得上这些赞誉，它已经不再是最优和最快的方案。
+
+因此，我们不再推荐您使用 HEIF 实用工具，我们建议您使用如下解决方案：
+在 Windows 10 上安装由 Microsoft 推出的“HEIF 图像拓展”，这样您就可以使用系统自带的 “照片”app 打开 HEIF 图像；
+在 macOS 10.13 High Sierra 或更高版本中，您可以使用系统自带的 Preview 程序打开 HEIF 图像；
+在 Andriod P 或更高版本中，系统各组件和接口业已原生支持 HEIF 图像格式；
+
+感谢您在过去几年中对 HEIF 实用工具 的支持与贡献，如果您仍然需要 HEIF 实用工具，您还是可以像往常一样在这里找到代码与可执行文件。
+
+
+
+Although "HEIF Utility" has been favored by users in the past few years, some media even praised it as THE BEST AND FASTEST HEIF converter. But we have noticed that as operating system vendors gradually provide better first-party support for HEIF images, our program is no longer worthy of these praises, it is no longer the best and fastest HEIF program.
+
+Thus, we no longer recommend you to use the HEIF Utility. Instead, we recommend that you use the following solutions:
+Install the "HEIF Image Extension" developed by Microsoft on Windows 10, so that you can use the system built-in Photo app to open HEIF images;
+In macOS 10.13 High Sierra or later, you can use the built-in Preview app to open HEIF images;
+In Andriod P or higher, the system components and APIs already natively support the HEIF image format;
+
+Thank you for your support and contribution to HEIF Utility over the past years. If you still need the HEIF Utility, you can still find the source code and binary releases here as usual.
 <h2>功能 / Features</h2>
 <h4>1.查看由 Apple 设备生成的 HEIF 图片* / View Apple devices-generated HEIF images*</h4>
   -在文件资源管理器显示 HEIF 图片略缩图 / Display HEIF images's thumbnail in File Explorer
